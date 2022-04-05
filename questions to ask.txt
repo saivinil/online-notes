@@ -1,0 +1,43 @@
+
+
+mentor questions:
+aws ML specialty certificate?
+	need aws developer certificate- any courses 
+which udemy course?
+docker or kubernetes?
+need other certifications?
+level of ml expertise
+my roles and responsibilites?
+	model scaling
+	model drifting or data drifting
+	ask opinion on model re engineering
+	after model engineering- integrating with other parts or api's
+	
+how many mle's per project?
+depends size on project
+what is the average duration of a project?
+
+heirarchy of MLE:
+	mle
+	sr mle
+	lead mle
+	subject matter expert
+
+takeaway:
+udemy course link?
+ask a lot of doubts
+chennai meetup
+review?
+	how he handles deliveries?
+	productivity- time taken to solve things skillfully
+	are they trying to learn out of the box?
+	communication-(with clients and others?)
+	punctuality
+	client appreciations?
+linkedin?
+
+doubts to abilash:
+what is the difference between https://raw.githubusercontent.com/ageron/handson-ml/master/ and https://github.com/ageron/handson-ml/tree/master/
+
+ashraf:
+what is code to delete?

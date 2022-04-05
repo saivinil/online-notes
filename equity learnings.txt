@@ -1,0 +1,78 @@
+if you say stock, it can be of any company. if you say shares, it can be related to one company.
+
+advance-decline ratio: if we consider a set of stocks, we can form a ratio of bullishness or bearishness based on the positive and negative moment count of advance decline ratio
+advancedecline ratio=no of positive moving stocks/no of negatively moving stocks-> if >1 we can assume the movement of the sector is likely to be positive
+
+each technical indicators will be based on 1:volume,2:price,3: Open Interest
+types of indicators:
+indicators that generate signal are classified into:
+	1:Leading indicators- they generate buy/sell signals ex: fibonacci retracement
+	2:lagging indicators- they confirm the trend, ex:Moving average-they confirm either the stock is in bullish or bearish move.
+indicators based on position
+	1: Overlays- the indicators that lie on top of candle chart (or drawn on to of price movement chart) are overlays. ex: EMA,DMA, Fibonacci retracement
+	2:Oscillator- the indicators that lie seperately from candle chart (or drawn on to of price movement chart) are called Oscillators.Ex: MACD,RSI
+learn to draw arrows on volume.
+if volume is in proportion to the trend(bullish or bearish), more chances that the trend is because of strong reason and is more preferrable than the one with less or no proportion to trend.(in short words, if the stock is moving bullishly and the volume is increasing day by day(or time frame by time frame) then it is most probable that big players or OPERATORS are making this happen)
+percentage of stock taken as delivery- (if a 10% stock is taken as delivery by investors, then it means 10% of the stock is bought or sold by someone) let us suppose a stock is fallen by 20% and out of 100% trades happened 60% of the TRADES is taken as delivery, then it means investors sold this stock(as it is fallen by 20%), therefore, IT IS IMPORTANT THAT DELIVERY VOLUME WILL MOST PROBABLY BE IN SUPPORT OF STOCK MOVEMENT.
+
+timings of market:
+9 am to 9:15 am- pre market ( all AMO's (after market orders) get settled at this time and if buyers are showing interest to buy shares at a higher price than yesterday's close, then it will open gap up(higher than yesterday's closing price), similarly vicea versa)
+9:15 am to 3:30 pm- market hours
+3:40 pm to 4:00 pm - post market (pending settlement orders get executed at this time)
+4:00 am to 9:00 pm- After market 
+
+GAPS-
+1:common gaps- gaps that are formed in range bound, these gaps are not useful for any observation
+2:break away gap- this is important gap formation, when a ticker is in rangebound or if it nears resistance, then instead of candle breaking the resistance, if there is a gap up opening,then the base of the gap is treated as an important support and as long as the next candles does not close downside the support formed by the gap, there are chances of reversal and, if the candle closes below the line, then we may have chances of trend reversal
+3: run away gap: after a break away gap forms or in a trend, a gap formed without any breaking of support and resistance.
+4:eshaustion gap: the gap that will be formed almost after the long run of a trend, which will probably indicate a trend reversal 
+we have the need to check candle and volume formations for run away gap and exhaustion gap as they dont really help us form solid observations
+
+this helps to decide wether we should keep SL or trailing SL.
+
+
+mentalities of market:
+bull- optimistic and swings his head upwards
+bear- pessimistic and thinks the market should move down like a bear
+chicken- unable to take risk and is worried by smallest mishap(like a chicken runs when someone approaches him)
+pig- greedy and unable to book profits(similar to a pig that thinks every food should be its even though it can't eat all)
+eagle- very accurate and take risk when they think they surely are going to win this.
+wolf- thinks to earn by unethical means
+ostrich- in times of panic, does not do anything when they make a mistake, thereby making more losses(similar to an ostrich trying to bury its head in ground in times of distress)
+sheep- just trying to follow someones opinion blindly similar to a sheep following it's herd blindly
+dead cat bounce-similar to a  dead cat which falls from a great height bounces as soon as it hit the ground, there might be a situation where a stock is falling heavily and gives a fake upmove to trap more investors.
+
+price action strategy-
+there are 4 stages in price action strategy-
+1:price advancing- this phase will see price increase in the stock 
+2:price distribution- this stage comes after the price advancing, in this stage, price will be in range bound
+3:price declining- this stage will see the price reduction because the bulls are not able to keep up the rally or the absence of positive news may be the reason
+4: price accumulation- after price falls in price declining state, the stock will form a base and then the investors feel the stock is under valued and it will have buying and accumulation happens and is more likely to have a rally from then.
+*check wyckoff method
+pullback or retracement- the process of movement of forming higher lows in an uptrend,lower lows in an downtrend and respecting the trendline, is called pullback or retracement
+reversal- the process of breaking the trend(uptrend or down trend) and moving in the opposite direction(downside in an uptrend or upside in down trend) is called reversal
+
+
+
+#gap should be filled with the notes in own laptop
+
+
+
+
+
+
+
+
+
+
+
+video link:(https://youtu.be/DC5JfBckIG0)
+slippage: if you want to sell a very large amount of shares, suppose shareprice is visible as 18 rupees, but you can be able to sell at 17.9 the difference of 10 paise is slippage,(also interesting factor is you can't all shares at 17.9 because, as the shares size is too large, you are selling and thereby supply increase and therefore price falls further)
+video link-(https://youtu.be/hxUYcgE6WtI)
+criteria for stock selection:
+should not be in news for a longer time (with multiple or strong negative reasons)
+consider value not volume because 1000 shares worth 1 rupee each, 1000 shares with 10,000 each will have same volume but not same value
+	for volume-go to link https://www.nseindia.com/market-data/live-equity-market select an index,and sort by value and select top stocks with volume
+how control emotions in trading-
+you should not loose 1% of total capital in a single trade
+	it is better to have clarity on the trade before we take it, because when we have clarity we have idea on 3 things- entry stoploss and target, you can trail stoploss after you reach target.

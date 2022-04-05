@@ -1,0 +1,9 @@
+notepad:
+ctrl+shift+u ->to convert selected text to uppercase
+ctrl+u -> to convert text to lowercase
+ctrl+shift+l -> to delete a line
+
+vs code:
+to select text horizontally: alt+shift+moving cursor in desired direction
+ctrl+` -> to open or collapse terminal
+ctrl+u -> to clear the long command in terminal
