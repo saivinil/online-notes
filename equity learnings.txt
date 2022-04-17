@@ -1,6 +1,6 @@
-if you say stock, it can be of any company. if you say shares, it can be related to one company.
+if you say stock, it can be of any company. if you say shares, it can be related to one company.(in real world,stock represents a quantity, it can be a quantity of single type or many types, whereas share can be of particularly something,it should have a name related to it to have a meaning, for example- I have an 20% share in this RELIANCE MART retail store, 50% share of the profit i get from selling this will be donated to SHARADHA DEVI orphanage , in the both examples you can see reliance mart and sharadha devi orphanage which mean the word share definetly has some relation with a name/company.)
 
-advance-decline ratio: if we consider a set of stocks, we can form a ratio of bullishness or bearishness based on the positive and negative moment count of advance decline ratio
+advance-decline ratio: if we consider a set of stocks or index, we can form a ratio of bullishness or bearishness based on the positive and negative moment count of advance decline ratio
 advancedecline ratio=no of positive moving stocks/no of negatively moving stocks-> if >1 we can assume the movement of the sector is likely to be positive
 
 each technical indicators will be based on 1:volume,2:price,3: Open Interest
@@ -18,6 +18,7 @@ percentage of stock taken as delivery- (if a 10% stock is taken as delivery by i
 timings of market:
 9 am to 9:15 am- pre market ( all AMO's (after market orders) get settled at this time and if buyers are showing interest to buy shares at a higher price than yesterday's close, then it will open gap up(higher than yesterday's closing price), similarly vicea versa)
 9:15 am to 3:30 pm- market hours
+3:30 pm to 3:40 pm- this time is used to calculate closing price of the stock and it is calculated on weighted average
 3:40 pm to 4:00 pm - post market (pending settlement orders get executed at this time)
 4:00 am to 9:00 pm- After market 
 
@@ -25,7 +26,7 @@ GAPS-
 1:common gaps- gaps that are formed in range bound, these gaps are not useful for any observation
 2:break away gap- this is important gap formation, when a ticker is in rangebound or if it nears resistance, then instead of candle breaking the resistance, if there is a gap up opening,then the base of the gap is treated as an important support and as long as the next candles does not close downside the support formed by the gap, there are chances of reversal and, if the candle closes below the line, then we may have chances of trend reversal
 3: run away gap: after a break away gap forms or in a trend, a gap formed without any breaking of support and resistance.
-4:eshaustion gap: the gap that will be formed almost after the long run of a trend, which will probably indicate a trend reversal 
+4:exhaustion gap: the gap that will be formed almost after the long run of a trend, which will probably indicate a trend reversal 
 we have the need to check candle and volume formations for run away gap and exhaustion gap as they dont really help us form solid observations
 
 this helps to decide wether we should keep SL or trailing SL.
@@ -52,14 +53,79 @@ there are 4 stages in price action strategy-
 pullback or retracement- the process of movement of forming higher lows in an uptrend,lower lows in an downtrend and respecting the trendline, is called pullback or retracement
 reversal- the process of breaking the trend(uptrend or down trend) and moving in the opposite direction(downside in an uptrend or upside in down trend) is called reversal
 
+trends concept:
+1: what is an uptrend,downtrend or sideways trend? how they are drawn
+
+swing low: the bottom formed in an uptrend or downtrend is called swing low. and generally a swing low point is taken as support/resistance
+
+swing high: the high  formed in an uptrend or downtrend is called swing high.
+
+uptrend: next swing high(or swing low) will always be greater than previous swing high. in simple words trend inwhich higher highs and higher lows are formed is called uptrend(an uptrend in higher lows will be the best option to buy)
+downtrend: next swing low(or swing high) will always be lesser than previous swing low. in simeple words trend in which lower highs and lower lows are formed is called downtrend
 
 
-#gap should be filled with the notes in own laptop
+
+it is suggested never to sell at higher highs, but is suggested to have an entry position at higher lows.
+2:how to draw trendlines and include moving averages in trendlines?
+no trendline is PERFECT.  a trendline should have atleast minimum 2 touch points and can have as many as it can. we can consider trendline touching body and wicks as many touch points as it can , when you do draw one line(try drawing support line first), then use "paralell channel" option and then draw line which will have maximum touch points. give more importance to recent swings (touch points formed by recent higher highs and lows)
+
+ema 20- for intraday
+ema 48- for swing trading
+ema 105- short term
+ema 200- goldern standard, long term trend(positive or negative)
+
+trendlines are preferred over ema and ema should give an additional information to trendline
+3:how to see trend reversal?
+a trend is reversed when the movement is not in the direction of trend.
+3.1-in an uptrend try to form a straight line at higher lows(down line or the support line of the trend), the trend reversal is confirmed when we see the trend line breaking the previous higher low(if a horizontal line is drawn at the previous higher low and the candle formation in the trend falls below the horizontalline that is drawn at previous higher low), the candles that are forming while the trend is respected might not be strong, but when a trend is broken, there are higher chances of formation of strong candles which will make the trend reversal look terrible, because the investors who are already following the trend might start panicking
+3.2- in a down trend we need to form the line which is respecting the lower highs(i.e, the resistance line or the upper  line), because when ever the upper line is broken, that means there is possibility of trend reversal, when there is a chance of trend reversal, then we have to draw a horizontal line at the previous lower high, and if the candle formation series breaks that line and moves, then there are higher chances that there is a trend reversal, and the horizontal line formed at the previous lower high will act as a suppport.
+
+in both of the above discussed cases when the down line or the upper line that is formed is breaken, then it is better to not to take any new trades as the horizontal line(that is drawn at the previous higher low in uptrend,or the previous lower high line ) is not yet broken, and maintain the nuetral view, the candles that are being formed breaks
+(i) the down line or the upper line, then there is more likely to have a previous trend continuation,
+(ii) the horizontal line , which conveys that it is more likely to have a trend reversal
+4:how to check the trend which is an uptrnd/downtrend in longer time frame, which is reversed in shorter time frames?
+suppose there is a uptrend in a weekly time frame and we have noticed a pullback that is being formed from higher high to a higher low. but when whe change timeframe from weekly to daily, then the place where we found a pullback migh actually represent a downtrend, so the timeframe we choose should depend on the choice of the trade or investment we are going to make,for example a weekly timeframe is good for investment purpose,a day timeframe is good for intraday
+
+a good approach of trading the breakage of the trend is to enter the trade with half amount at trend breakage and invest other half after pullback is confirmed(the candle sticks approaching the trend breakage level )
+let's suppose that there is a breakage of trend and if the candle that is formed is of large size compared to the existing previous candles then we can understand that we have to be cautious
 
 
-
-
-
+TIMEFRAMES:
+whenever we are using timeframes we have to have 2 time frames for any approach
+	1:higher timeframe or trend deciding timeframe-
+	this helps us to decide the bulllish trend or bearish trend, after deciding trend we can confirm wether we have to sell or buy
+	2:Lower timeframe or trade execution timeframe-
+	after deciding wether to buy or sell on higher timeframe(trend deciding timeframe) we have to decide where do we have to place buy/sell and where to keep target and where to keep StopLoss
+THESE 2 STEPS DISCUSSED ABOVE ARE HIGHLY IMPORTANT.
+monthly- used for long term investing
+Trading-
+in Trading a checking weekly time once will just give an overview to us,
+Trading is classified in to scalping,intraday,swing trade
+SCALPING- 
+	scalping is the process of keeping the timeframe lowest possible, we have the minimum profit and loss, but having high quantity and more number of trades
+	higher timeframe- 5 min
+	lower timeframe- 1 min
+INTRADAY-
+	higher timeframe- 1 hr
+	lower timeframe- 15 min
+SWING TRADING-
+	Here we keep the delivery trade for few days and we wait for move in the direction of our expectation
+	higher timeframe- 1 day
+	lower timeframe- hourly
+positional,longterm-
+	positional trade will be for months and longterm will be for years
+	higher timeframe- weekly
+	lower timeframe- daily
+lower timeframe can be higher timeframe/4 or higher timeframe/6	
+multi timeframe analysis means analysing and forming an opinion using one or more timeframes, and this multi timeframe analysis should be a top down approach
+difference between higher timeframe and lower timeframe:
+these 2 are important in their own way
+HIGHER TIMEFRAMES have the higher reliability,the resistances and supports in this timeframe are more important than the lower timeframe formed support and resistance.
+lower timeframes will have more signals compared to higher timeframe
+lower timeframes are suitable for people who have more time and capital to trade and higher timeframe are used for someone who have less time and capital to trade
+suppose we have taken a trade in lower timeframe and it is moving in the direction of our expectation, let's suppose that it is nearing a resistance in higher timeframe, now we need to be cautious and
+1:if it failed to break resistance, we might have the need to near our stoploss or be cautious on the trade
+2:if it successfully broke resistance and sustained there, then we have more probability for the trade to move further in expected direction
 
 
 
