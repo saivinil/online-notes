@@ -1,0 +1,365 @@
+---------------------------------------Futures Basic concepts-------------------------------------------------
+
+there are 4 types of derivatives:
+1:forwards
+2: futures
+3: options
+4: swaps 
+
+--Futures:
+the way land owner who signs the contract has the land with them, similarly the future contract seller(hypothetically) also will have shares with them.
+-there are 3 types of expiries in futures:
+near expiry- the contract(or derivative) which expires in one month (or current month) is called near expiry
+next expiry- the contract(or derivative) which expires in the next month is called next expiry
+far expiry- the contract (or derivative ) which expires in the month after the next month (or 3rd month ) is called far expiry
+
+if you buy a future expecting the price will go up and if it went up and you hold it till expiry date then the stocks related to the future contract you buy will come in to your demat.
+-lot size explanation:
+let us assume that a stock prize is 300 and the lot size of it is 5700 , so one lot future value is 300*5700 =17,10,000 but it is not meant that you should be having this much amount in your demat, you need a lot less amount than this(the brokerage you are using will hold a minimum portion of the amount of the future lot value that you are holding), but an intraday trader will have the need of having less amount than the trader who wishes to carry his position for a few days, also with an increase in stock rice the future lot value increases but it is impossible to maintain large amount of money with brokerages, so with increase in stockprice the lot size decreases and vice a versa.
+
+-hedging: the purpose why fno contracts are introduced is hedging,i.e, if you predict that a particular company is going to deliver bad results which will lead to fall of the share price, let us think you are already holding the stock, so you ultimately think that it is better to exit the stock at current level and buy at a lesser price, but let us think the price of the stock is 600 and you think of exiting at 600 (if you sell and buy later you will attract charges and there might be a chance of the stock price moving higher) to keep the loss minimum you can sell a future contract of the same price and the lot size is 2000 , so for every fall of 1 rupee (600 to 599) in share price you will get 2000 profit in the contract that you sold(lotsize 2000 *1), 
+but mostly these future contract is traded by traders , if they expect that stock price will go up they will buy the future contract, if they think the stock price will fall down then they will sell the contract.
+why selling a contract is prefferred-> in equity you cannot hold sell position for more than a day,if you know( you need a very very high conviction here) that the stock will definetly (99.9999999% sure) that the stock price will definetly fall tomorrow in the coming days, then selling a contract is preferred.
+why buying a contract is prefferred-> when you know that a stock price is going to move upwards why buying a contract is preferred over buying equity shares is, if a future lot value is around 17,00,000 the amount (margin) that is needed to buy a contract will be aroud 5,00,000
+
+let us suppose the date is feb 10th and the future settlement date is on feb 28, on feb 10th a seller sells a lot shares of(size 3000) a company to a buyer at 310 rupees, and if the settlement date comes and (3 or 5 days before the settlement date ) the buyer has to maintain 930000 ruppes in his demat and the seller should have 3000 shares in his demat and the exhange happens between buyer and seller with shares and money, if they dont maintain the needed quantity or amount 2 or 5 days before the settlement date, then they will square off 2 or 5 days or before the settlement date.
+
+why commodities are traded in futures?
+there are multiple companies who do business based on commodities, for example gold shops(use gold commodity), paint manufacturing companies (use crude oil as commodity), textile companies(use cotton as agri commodity), these are some of the companies that use the normal commodities and agriculture commodities, these companies dont have the pricing power of commodities they use and observe the below 4 points:
+1:the commodities  they use if they go up and the company is already holding the commodity it is a profit for the company,
+2: the commodities they use if they go down and the company is already holding the commodity it is a loss for the company,
+3:the commodities  they use if they go up and the company is not holding enough it has to buy commodity and it is a loss for the company
+4:the commodities they use if they go down and the company is holding more than enough it is a loss for the company
+so company never makes profit on fluctuating prices, whatever the price of the commodity it will make the product and sells the end product at a marginal profit and makes money
+, coming to the point why commodities are traded in futures, it has two reasons:
+1: if the company is already holding enough commodity and want to hedge their loss if the commodity price falls, then they will sell the corresponding future of the commodity so that it will hedge their loss
+2:if the company thinks that commodity price is going to rise but they dont have enough quantity with them, then they will buy corresponding futures and hedge their losses
+
+as explained it will help common people like us, if we think that gold prices will go up , then we can buy gold futures(instantly and avoid the time taking process of going shop and buying it) so that it will help us to 
+
+futures only have monthly expiry, but options have weekly monthly expiry, in options-stocks dont have weekly expiry, only indexes have weekly expiry and some stocks have monthly expiry as of now, weekly expiry will be on every thursday, if thurday is holiday, then a day beforei.e, wednesday will be expiry
+all stocks dont trade in futures
+spot price: the price of normal stock or underlying asset(example such as nifty or banknifty) is called spot price
+future price: the price at which the given future contract is trading is called future price
+
+cash settlement: if you carry your contract till expiry date ,
+if you are a contract buyer you should have the amount which is needed to purchase the lot
+or
+if you are a seller then you should have the lot of stocks in your demat, 
+if the settlement happens through deduction of money or credit of money, then it is cash settlement,
+if the settlement happens through deduction or credit of stocks then it is physical settlement, 
+or you can perform roll over (when you want to carry the contract beyond expiry) from existing contract to near contract
+from 2019 oct sebi is allowing only physical settlement
+
+different trading methods have different settlements and they are as follows:
+1:stocks->physical
+2:index->cash
+3:commodities->both physical and cash
+4:currencies->cash
+
+to carry an future position over night, then we need nrml margin that means, a certain percentage of shareprice*lot count
+ex: if lot size is 5000 and stock price is 200 and the margin is 10% then we need to ahve 10% of 5000*200
+for intraday we might need a lot less amount but from sep 2021 intraday needs the same amount as over nigh position i.e, a certain percentage of (lot size * stock price)
+
+you have to maintain 50% excess amount than the contract value that you are going to purchase
+let's say the contract value is 50,000 (the profit or loss will be settled in your account each day) and you got 20,000 profit the t+1 day and 15,000 profit on t+2 day and 50,000 loss on t+3 day so your accounr shows -15,000 loss at the end of the t+3 day, and if you dont add 15,000 to make your account look 0 or positive, you might be levied the penalty charges and your broker might have the rights to square off your position without your approval
+
+general pattern followed in futures is(most possibly)
+spotprice<near future contract price <next future contract price<far future contract price
+
+factors influence the stock price positively and negatively:
+1: number of days left till future (or option) expiry: it is directly proportional to premium price or contract price (increases or decreases), option volatality is also directly proportional to premium price
+2: dividend: if the dividend is expected at a certain date of a certain month, then corresponding month future contract also reduces the contract price by dividend amount
+3:sentiment: if market sentiment is high or if the market increases suddenly, then the future price automatically increases 
+another important point is that, there is no rule that if a stock price increases by 2 points, then the future or option script should also increase by 2 points because the price may vary because of supply and demand between buyers and sellers, but in general if stock price increases by 1 rupee corresponding future or option contract might
+---------------------------------------Options Basic concepts-------------------------------------------------
+Two types of options exist:
+1:call - this is purchased when we have the thought that the price will go up
+2:put - this is purchased when we have the thought that the price will go down
+most of the times call is inversely proportional to put
+
+simply put the relation between stock price, future price ,call price, put price observe the relation below
+
+if stock price increases -> future price increases , call price increases, put price decreases
+
+lot size and settlement is similar to future contract structure
+
+option price has 2 important parameters:
+1:price-the price at which the buyer gets the contract
+2:date- the date at which the contract expires
+
+theory for understanding:
+option buying is similar to purchasing a land, most of the cases you will not purchase the land, you simply give an extra amount to get contract 
+as buyer pays the premium he has the right to 
+1: take the deal forward before contract expires
+2: or just let the contract expire and let go of the money he gave to preserve contract
+
+
+let's take an example of tatamotors:
+share price is-330
+near future price is 331
+tata motors 330 ce(call option) STRIKE PRICE-15
+tata motors 330 pe(put option) STRIKE PRICE - 14
+one lot size- 5,700
+on lot call prize= 5700*15=85,500
+
+a call buyer mentality will be that tata motors will move upwards from 330 to 340,350 or something
+a call seller mentality will be that tata motors price will not move up to 340,350 and so on.. but it might go down to 320 or so levels or might stay at 330 or even at below levels.
+
+how a contract is built here
+let us assume the above 330 call contract is being traded
+a buyer will have the option to get 5700 shares of tatamotors at the 330 price, provided that he will pay 85,500 to seller to get them even though if the tata motors share price goes to 350,360 or at any price, but buyer can opt out if needed from the contract.
+
+let us explore the below scenarios of table for  different price levels at expiry day for tatamotors 330ce bought at 15 premium
+
+------------------------------------------------------------------------------------------------------
+price of share at expiry	 |		buyer state			|		seller state
+---------------------------------------------------------------------------------------------------------
+330 or below		 		 |		loss				|		profit (here the seller had took 15 rupees extra already so it is better for buyer to buy from open market as even in the open market it is the same price)
+345									no loss no profit			no loss no profit (here the contract was for 345(330+15) the price is also same )
+350 or 380 or above					profit						loss(here the buyer will get shares for 345 from the seller even if they are trading above 350 levels in open market)
+for the above example buyer will be profitable only if the stock price moves above 345 before expiry in else cases seller will be more profitable
+the above case is for expiry, but if a buyer buys at 15 premium of tata motors 330ce if the share price moves to 331 or more then the buyer will be in profit
+
+
+what are the risk and reward ratio for seller and buyer?
+Buyer-> risk limited , profit unlimited (because the stock can go to any higher point from the current point)
+seller-> risk unlimited, profit limited (because with the increase in stock price hehave to pay more to buyer)
+but retail investors do more option buying, hni do option selling more
+
+what happens in a put option?
+same example of tata motors at 330
+we think tata motors will fall from 330 , then we will buy 330 pe then the share price went to 280 for suppose , here seller has to by a lot(5700) shares from you at 330 price,
+PUT IS MORE OR LIKE OPPOSITE TO CALL
+
+observe the below table
+MARKET OR STOCK PRICE						CALL								PUT
+------------------------------------------------------------------------------------------------
+moving up									buy									sell
+moving down									sell								buy
+buyer										buy									buy
+seller										sell								sell
+------------------------------------------------------------------------------------------------
+IT IS VERY IMPORTANT TO UNDERSTAND THE BELOW SCENARIOS
+- a buyer in the above tabular representation will buy a call option if he thinks the stock price(for ex:currently at 100) might go up(more than 100) and he wants to buy them at a fixed(lower at 100) price
+a buyer will buy a put option if he thinks the stock price(currently at 100) might go down (<100) and he wants to sell them at a fixed higher price (100)
+a seller selling a call option agrees to sell shares at current price in future for some premium
+a seller selling put option will agree to buy shares in future from buyer even if the share price goes lower
+
+-- stock price 330, ce strike price-5, pe strike price-5
+buyer of ce will get profit if stock ends above 335 on expiry, same way for seller of ce profit starts when loss of ce buyer starts i.e, if stock ends on or below 335, then seller will be in profit
+buyer of pe will get profit if stock ends below 325 on expiry, same way for seller to be in profit starts when loss of pe buyer starts i.e, id stock ends at 325 or above 325 on expiry	
+
+-- if the stock price is at 100 call or put	options at 100 will have more price compared to 140 or 60 call and put options
+
+--qna:
+imagine a scenario where bank nifty is trading at 35400 you bought a banknifty strike price of 36,000 ce at 100 premium( value is 100 *25(lot size)= 2500)
+you can be profitable in 2 scenarios:
+short term- before expiry and immediately after you bought 36000ce the bank nifty which was trading earlier at 35400  moved to 35800 then the premium might move from 100(the strike price at which you bought 36000 ce) to 110, then you will be in profits
+long term-the expiry came and if the index is above 36100 (because the strike at which you bought is 36000 and the strike price is 100 adding them the price will be 36100 so the common math now is that if you dont sell above the buy price 36100 you will be in loss)
+
+--ITM,ATM,OTM
+option price depends upon majorly 3 factors
+
+
+any strike price can be classified into 3 types -> ITM,OTM and ATM 
+classification and order are changed based on call and put:
+	
+	in call:
+		option price=intrinsic price(stock price-strike price)+time value(no of days to expiry)+ volatality,[interest rate and dividend are also contributing but they are almost ignored]
+		if the option price calculated using above formula is negative, then it is considered as zero
+		ITM<ATM<OTM(ITM is the smallest and OTM is the largest)-	let us suppose the stock price is 328 and for ce ATM will be the next smallest yet higher than the current stock price i.e, 330 ce will be the ATM and strike price less than 328 all of them are considered as ITM strike prices, strike prices greater than 330(here we are not considering 328 because 328 is ATM) will all be OTM strike prices.
+		the strike price for OTM is proportional to the distance it has from the OTM(i.e, 330 CE) strike price 
+		TO BE PROFITABLE on expiry YOU HAS TO BE IN ONE OF THE 2 SCENARIOS BELOW
+		1:you have an itm strike (320 ce) at 20 premium and the stock price is 330 then that means(320+20-330) your profit is 10*lot size is the profit
+		2:you buy an OTM strike(400ce) and the stock price moves above your strike price+premium is greater than current stockprice
+	in put:
+		option price=intrinsic price(strike price-stock price)+time value(no of days to expiry)+ volatality,[interest rate and dividend are also contributing but they are almost ignored]
+		if the option price calculated using above formula is negative, then it is considered as zero
+		ITM>ATM>OTM(OTM is the smallest and ITM is the largest)-	let us suppose the stock price is 328 and for pe ATM will be the next largest yet smaller than the current stock price i.e, 325 pe will be the ATM and strike price less than 328 all of them are considered as OTM strike prices, strike prices greater than 325(here we are not considering 328 because 325 is ATM) will all be OTM strike prices.
+
+
+detailed explanation of intrinsic value:
+intrinsic value can be 0 or positive
+let us think the stock price is 300
+1: if the strike price is 340, then the intrinsic value is 300-340 which is -40 but the intrinsic value is never negative so the intrinsic value is 0 in the current case
+2: if the strike price is 300, then intrinsic price is 300-300 which is 0
+3: if the strike price is 280, then intrinsic price is 300-280 which is 20
+
+-conditions to buy a call or put option:
+if a buyer is confident-he can go for ITM
+if a buyer is having normal view- he can go for ATM
+if a buyer is having no view and want to take risk like hero-zero then 	- he can go for OTM
+but it is danger if - if he goes for deep OTM
+
+-conditions to sell a call or put option:
+if a seller is confident - he can go for ATM, if he is more confident , then he can go for ITM
+if a seller is having normal view- he can go for OTM
+if a seller is having no view  	- he can go for DEEP OTM
+
+-option greeks are 5 in total(the greeks value is displayed in upstox,zerodha or sensibul option chain,but upstox is easier)
+1:Delta (1st important greek)
+2:gamma
+3: theta (easy)
+4: vega (2nd important greek)
+5: rho
+
+explanation of option greeks:
+1: Delta: 
+for example tatamotors 300 ce is at 12 premium and the stock price is at 305 and the delta is 0.7090 then for movement of 1 rupee in tata motors stock price from 305 to 306 then the premium price is increased by one delta value (0.7090) i.e, from 12 to 12.7090
+3: theta:
+for example tatamotors 300 ce is at 12 premium and the stock price is at 305 and the theta is 0.6110 and the stock price is staying at 305 at the end of the day then the strike price will decrease by one theta(0.6110 in the current example) i.e, 12-0.6110=11.399
+4:vega :
+for example tatamotors 300 ce is at 12 premium and the stock price is at 305 and the vega is 0.1240 and the implied volatality(IV) is 48 and if the IV increase from 48 to 49 then the option premium(12 in current example)  will increase by vega i.e,(in the current example it will increase from 12 to 12.1240) and also in a similar way decreases with decrease in IV
+5: rho-
+for example tatamotors 300 ce is at 12 premium and the stock price is at 305 and the vega is 0.1240 and if the risk free interest rates(provided by governement) increase or decrease by 1% then the premium increase or decrease by vega i.e,(12+ or - by 0.1240), but we can neglect rho because most of the times the interest amount wont increase or decrease more frequently
+
+--let us take a example
+nifty is at 15000 
+15000ce strike price-150
+15000 pe strikeprice- 150
+after some time
+scenario:1
+	nifty is at 15100
+	15000ce strike price- 210
+	15000 pe strikeprice- 105
+scenario:2	
+	nifty is at 15100
+	15000ce strike price- 110
+	15000 pe strikeprice- 220
+this price difference is because of option greeks explained above, especially delta which is in direct relation with strike price because of its relation with stock price
+
+example for delta:
+	stock price-300 
+	300ce-5
+	delta-0.5
+	scenarion1:
+		after sometime if stock price increases by 11
+		then the new strike price should be old strike price +delta*(increase or decrease in price)
+		here 
+		new strike price= 5+(0.5*11)
+						=10.5
+	scenarion2:
+		after sometime if stock price increases by 4
+		then the new strike price should be old strike price +delta*(increase or decrease in price)
+		here 
+		new strike price= 5+(0.5*-4)
+						=5-2=3
+in simple words:
+case 1:
+	you  buy a call option and the stock price moves up, similarly you  bought put option put option and the stock price moves down, this is called the contract is going in the expected direction, in this case the strike price will be calculated as 
+	new strike price = (price increase or decrease * delta)+ old strike price
+	here the new strikeprice should greater than the older value as the contract moved as planned
+case 2:
+	you bought a call option and stock price started moving down or if you bought put option and the stock price moved up then this mean the contract going in the opposite direction, this case the strike price will be calculated as 
+	for call option 
+		new strike price= old strike price(premium)-(price increase or decrease * delta)
+	for put option
+		new strike price=(price increase or decrease * delta)-old strike price(premium)
+	here the new strike price is lesser than the old one as the contract does not move in expected direction
+	
+-delta value will be different for different call an put options
+
+------------------------------------------------------------------------------------------------------
+							delta (CE)								delta (PE)			
+------------------------------------------------------------------------------------------------------
+ITM			|				0.6 to 1				 |    		   -(0.6 to 1)
+------------------------------------------------------------------------------------------------------
+ATM			|				0.45 to 0.55			 |			   -(0.45 to 0.55)
+------------------------------------------------------------------------------------------------------
+OTM			|				0 to 0.45 				 |		       -(0 to 0.45)
+------------------------------------------------------------------------------------------------------
+
+ITM have more delta because they are trading near the stock price and they have higher chances of getting right and therefore more demand and thereby more delta value
+
+we will understand the above table with an example:
+tata motrs stock is trading at 300 let us have a look at call options
+300ce will be atm
+options less than 300ce i.e, 290 ce,280 ce and ... will be itm
+options more than 300 ce i.e, 310 ce, 320 ce and ... will be otm 
+from the above table we can see delta prices will be in the order of
+ITM of delta> ATM of delta> OTM of delta
+
+this is all good 300 ce is at strike price of 5
+and after sometime the stock price moved from 300 to 311 and delta is 0.45 and gamma is 0.02
+then the new strike price(can be calculated from above discussed formula)= 5+ (0.45*11)=9.95
+but while increasing the stock price does not suddenly jump from 300 to 311 it will move like 300,311,313,314,310 .... 311 so as i bought 300 ce and when the stock price moves above 300 my contract should be treated as ITM and delta value should be increasing but it is not possible to do it directly so here another greek option called gamma(which is not discussed whil introduction of greek optins happened above) comes into picture.
+so if we thought stock moves up and it moved from 300 to 301, then the delta will be increased by one gamma
+old delta value is 0.45 after stock moves up the new delta will be 0.45+0.02 i.e, 0.47 and if again the stock moves up by one point then new delta will be 0.47+0.02 i.e, 0.49 , now if the stockprice fall by 4points the new delta will be 0.49 - (0.02*3)=0.43
+
+--now we predict that a stockprice is now 220 and it will move till 240 and the stoploss is 210 and 220ce iv is 31.93 , the strikeprice of 220ce is 1.4 and to know what will be the strike price of the 220ce contract when the stockprice reaches 240 you have to use (https://zerodha.com/tools/black-scholes/) blackscholes formula
+you have to enter spotprice(the price which will be the target you think till the stock might move, here it is 240)
+strike will the the value of the contract(here 220ce-> 220) expiry will be the expiry date of the contract(here as it is a stock and we are trading options , options for a stock will havemonthly expiry i.e, the last friday of the expiry month), volatality for a specific contract will be available on the nse website, this will give call option premium of 21.36 if the stock reacehs 240, similarly you can check for 210 and make it as a stoploss for your contract
+these target and stoploss values are not 100% accurate and a call will get more premium if the stockhas a ositive news and similarly a put will get more premium if the stock has a negative news, and also depends upon increasnig or decreasing volatality
+
+sometimes you buy a OTM and stock is slowly moving in the predicted direction, then also you will be in loss, because theta will let the strike price reduce and to gain profit, your stock price along with delta should beat theta or else you will be in loss.(else try avoiding OTM contract trades)
+
+open interest:
+a person named a seller sold and a buyer bought it, then a contract is formed and open interest is 1 as there is one contract, if the seller who sold bought it again from the buyer who bought it from him or a different buyer then the contract is closed. the OI is 0 but the qty is 2, as the qty means no of deals happened
+volume-> this represents number of quantity(stock) traded->plays a role in stocks,future and options
+open interest: let us suppose a person named ram sold 5 contracts to shiva, now the open contracts are 5 and open interest is 5 and after a while shiva returned 3 contracts back to ram, now the open interest is 5-3 i.e, 2 , but the volume will be quantity of stocks changed hands i.e, 5+3=8
+now gain shiva sold the remaining 2 contracts he bought from ram to ram, now the open interest is (2 previous OI)-2=0,and the volume is 8+2=10, the open interest is calculated this way, but the contract transaction not happens between 2 people alone, but between many people in market
+
+Open Interest,if open interest is increasing that means number of contracts are increasingwhen a stock or contract price is shooting up and volume is also in favour then we can trust that price is well defined,see the below table
+------------------------------------------------------------------------------------------------
+	price	openinterest	view
+------------------------------------------------------------------------------------------------
+1	up 		up				long buildup(this is a bullish view,price is increasing and number of contracts are increasing it's reasonable that stock price is increasing,building their long positions is called long buildup)
+
+2	down 	up				short buildup(price is decreasing and number of contracts are increasing , its reasonable that stock price is going down,building their short positions is called short covering	)
+
+3	up		down			short covering(when market is raising and if the open interest is decreasing then the shorters(bears) are closing their positions and which looks like buying but actually its not, covering their short positions is called short covering, this happens when people who are holding the contracts want to exit them because of profit or loss)	
+
+4	down	down			long unwinding(even though after trying to let stay their long positions as the contracts are not building up,the price is going down so the poeple who took the long positions are leaving them which inturn explains that long positions are getting unwinded so ergo long unwinding)
+-----------------------------------------------------------------------------------------------
+for points 3 and 4, the openinterest is reducing which means there are now open contracts increasing, which indicates there is no strngth in the direction of price, be it increase in price or decrease in price.
+
+in short if the open interest is increasing then we should respect the direction of price wether it is up or down but in the vice versa we should not be paying much attention and while checking for open interest you should be checking for near expiry contract
+to see this we can use moneycontrol,
+search for "moneycontrol open interest" or try navigating moneycontrol->markets->Open Interest analysis->click on the type based on the need
+
+you can click on 2 options:
+1-increase in open interest,increase in price, - stock might get bullish, check chart analyse then enter
+2-increase in open interest, decrease in price, - stock might get bearish, check chart analyse then enter
+
+oi- count of contracts open (a contract is formed when both buyers and sellers are formed for a transaction)
+change in oi shows the change in contract count compared to the prevous trading day
+
+in option chain at a particular strike price we can see both call option open interest and put option open interest, open interest means the count of contracts created by both buyer and seller combined, but we will consider open interest contracts as for sellers alone because of the 2 points discussed below....
+1:profit and loss
+
+				profit				loss
+buyer			unlimited			limited
+seller			limited				unlimited
+
+buyer can gain unlimited profit ex: suppose you bought a tcs 4000 ce at 15 premium, and if the tcs is going up like 5000,6000,7000 and so on... the buyer can have unlimited profit which indirectly explains  that the profit that option buyer gains has to be paid by seller, which leads seller to unlimited loss.
+2:money
+a seller needs more money to sell because as the option price increases the amount he has to pay to buyer increases, so indirectly he needs to maintain more money as price increase indirectly needs to be paid to buyer
+
+here in the above case as seller has the more risk of loosing money the movement of seller will be more dynamic to cover his loss or move(manipulate) the underlying asset (if it is nifty(he will manipulate the heavy weights) or share, if it is a option related to shares). so we should be prefering the openinterest biased to seller point of view
+
+let's take an example-
+this is an good example to explain a range bound market:
+	1:what open interest means for call option:
+	for 17500 strike price for call option open interest is higher than other all call options, the open interest at 17500 strike price is 75000, that means there are 75000 sellers who sold call options of 17500 strike price(if a call option is sold at a particular strike price then it is sold in the expectation that it wont go beyond that strike price, it typically acts as resistanve), so they expect it not to go above 17500
+	2:what open interest means for sell option:
+	for 17000 strike price for put option open interest is higher than all other put options , the open interest at 17000 strike price is 50000, that means there are 50000 sellers who sold put options of 17000 strike price(if a put option is sold at a particular strike price, then that means sellers are believing that the strike price wont fall below it, it typically acts as support), so they expect it not to go below 15000
+	
+	from one and 2 points we can conclude that market may lie in the range between 15000 and 17500
+	
+we understood how open interest works, change in open interest denotes how many new contracts were created(if the contract count is positive) or how many contracts were written(contracts are removed) in an intraday.So to find the support or resistance according to open interest, you have to check where the open interest and change in open interest is higher(both should be positive, if change in OI is negative , the strike price with highest OI and positive change in OI will be the possible support or resistance), 
+
+this is the good example to explain one sided moving market:
+let us look at a market scenario, the current market level is 18000, due to a global positive news there is a sudden jump from 18000 to 18200,now let us consider the sellers of call and put options at 18000,
+1: the sellers of 18000 ce will be in loss(an option seller loss is unlimited as discussed above) so that they will unwind their current position and go to an upper level (let it be 18100,18200 or anything above 18000 and sell call option there)
+2: the sellers of 18000 pe will be in profit and as the 18000 is ITM when compared to 18200, now the premium reduces to normal amount, so the 18200 pe sellers move from 18200 to something above 18200 level(ex:18300,18400..)
+
+when the both sellers of call and put option move above the current index level, then it is an indication that there are more chances of the market moving up, similarly vice a versa(both sellers of call and put option moving down from current market level unwinding their current positions and creating new positions at a lower level) for the market moving down.
+
+-if change in OI is negative, that means the current open positions at that level are being unwinded , which indicates that the current level is weak one, so check for the next highest OI with a positive-change in OI 
+
+-when you are nearing the expiry, it is not a good choice to decide the support and resistance by just watching current expiry OI, it is always suggested:
+1- for an stock options, it is suggested to check current expiry and next month expiry(as there is no weekly expiry)
+2- for an index option, it is suggested to watch
+	2.1: if the current expiry is monthly as well weekly expiry- means this is the last expiry of the month-current expiry , next month first week expiry , next month end expiry
+	2.2: if the current expiry is week expiry alone- then check it with this month end expiry
