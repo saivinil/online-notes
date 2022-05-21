@@ -2,8 +2,26 @@ notepad:
 ctrl+shift+u ->to convert selected text to uppercase
 ctrl+u -> to convert text to lowercase
 ctrl+shift+l -> to delete a line
+shift+alt - to horizontally select
 
 vs code:
 to select text horizontally: alt+shift+moving cursor in desired direction
-ctrl+` -> to open or collapse terminal
+ctrl+` -> to open or collapse terminal or to shift focus to terminal
 ctrl+u -> to clear the long command in terminal
+ctrl+b ->collapses or activates side panel
+
+windows:
+windows+ctrl+(left or right arrow) to shift left and right along desktops
+
+chrome:
+ctrl+shift+a, this will let you easily navigate over tabs by pressing ctrl+shift+a and then searching for keyword and then shift, or to switch to the last active opened tab, press ctrl+shift+enter and then enter again
+to open hyperlink in a new tab drag the link to the status bar
+alt+d opens the search path where you can type anything and search your query
+alt+d and then alt+enter duplicates the tab
+
+command prompt:
+type <filepath.ext> will simply return/print the contents of the file
+
+Word:
+to convert lower case to upper case or vice a versa use shift+f3 or shift+function+f3
+ctrl+space will remove all the styles that are applied and will give a clean format, (ex: if you are typing something on bold and italic, and you want to return back to normal format, press ctrl+space)

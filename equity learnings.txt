@@ -1,3 +1,10 @@
+topics:
+1:paper trade
+2:indicators:
+
+
+
+
 if you say stock, it can be of any company. if you say shares, it can be related to one company.(in real world,stock represents a quantity, it can be a quantity of single type or many types, whereas share can be of particularly something,it should have a name related to it to have a meaning, for example- I have an 20% share in this RELIANCE MART retail store, 50% share of the profit i get from selling this will be donated to SHARADHA DEVI orphanage , in the both examples you can see reliance mart and sharadha devi orphanage which mean the word share definetly has some relation with a name/company.)
 
 advance-decline ratio: if we consider a set of stocks or index, we can form a ratio of bullishness or bearishness based on the positive and negative moment count of advance decline ratio
@@ -60,7 +67,7 @@ swing low: the bottom formed in an uptrend or downtrend is called swing low. and
 
 swing high: the high  formed in an uptrend or downtrend is called swing high.
 
-uptrend: next swing high(or swing low) will always be greater than previous swing high. in simple words trend inwhich higher highs and higher lows are formed is called uptrend(an uptrend in higher lows will be the best option to buy)
+uptrend: next swing high(or swing low) will always be greater than previous swing high. in simple words trend inwhich higher highs (IMPULSE: the move that is made in the updirection(direction in the favour of the trend) is called impulse) and higher lows (PULLBACK OR RETRACE: the move that is made in down direction (direction that is against the trend) ) are formed is called uptrend(an uptrend in higher lows will be the best option to buy)
 downtrend: next swing low(or swing high) will always be lesser than previous swing low. in simeple words trend in which lower highs and lower lows are formed is called downtrend
 
 
@@ -142,3 +149,99 @@ consider value not volume because 1000 shares worth 1 rupee each, 1000 shares wi
 how control emotions in trading-
 you should not loose 1% of total capital in a single trade
 	it is better to have clarity on the trade before we take it, because when we have clarity we have idea on 3 things- entry stoploss and target, you can trail stoploss after you reach target.
+		
+	
+1:paper trade:
+before doing paper trade- understand the strategy and look for few days, then start paper trade with minimum qty, then gradually get familiarity and then increase the quantity
+while doing paper trade, your mind should be as serious as the way it will be, when you trade with real money, this is the best way to succeed in market
+
+video link:
+https://youtu.be/SShMG0SIBcw
+
+trading and investment needs a lot of PRACTICE
+2:indicators:
+indicators are of 5 types:
+trend indicators (shows bullish or bearish trends):
+	moving averages,macd,parabolic sar,adx, super trend, vwap
+	
+momentum indicators(momentum- speed or intensity through which it moves, ex: bank nifty has more momentum compared to nifty)
+	rsi,cci,stochastic,mfi,williams %r,aroon
+volatalilty indicators (volatality-sudden reversal from the existing trend, if bnifty took 2 hours to move 5% upside and after that in the next 30 minutes, if it moves 5% downside, then it is said to be volatality)
+	bollinger bands, atr,donchain channel
+volume based
+	obv, chaikin,[vwap,mfi]
+others
+	fibonacci (retracements and extensions), pivot point/cpr(central pivot ranges - 3 ranges are there)
+####################################################################################	
+topic moving averages:
+video link- https://youtu.be/jZ4edvsiPx0
+moving averages are of high importance and with proper knowledge and discipline, you can get profitable and genereate cue's for literally any kind of situation you may face in stock market
+1:what is moving average(MA)?
+MA for 5 candles = (last 5 candles closing price)/5
+we have mentioned as candles not days, because MA is calculated on units of time frame, for example- if we are in hourly time frame, we will take closing price of last 5 hours to calculate the MA of last 5 candles, which is last 5 hours, so unit of time used to calculate average is dependant on the unit of timeframe that we select in the chart
+2:how to apply MA on charts?
+click on add indicator and type Moving average and select it
+when you click on settings in MA on chart, under source you can see different options such as open,close,high,low,hl2,hlc3,ohlc4 this simply means that, which price is to be taken in to consideration for average, is it open or high or close or low. the hl2 stands for (high+low)/2,hlc3-> (high+low+close)/3 ohlc4 -> (open+high+close+low)/4
+of all these the close price is taken in to consideration because all the external factors (such as negative news,positive news, high pe,low pe or anything else) will settle at the end of the day. so closing price(unless it is a Lower circuit (LC) or Upper Circuit (UC) which happens very rarely) is something on which all participants of the market agrees
+3:what are the types of MA?
+3.1- simple moving average: this will simply calculate the average of past n day's price i.e, last n days are treated equally, so the recent price movment is not given priority(which might look as if it is not better for someone who is doing intraday)
+3.2- Exponential Moving Average (EMA): this will take last n days for average, but the recent price movements are given most weightage, so that, the moving average reacts and generate signals WHICH ARE USEFUL FOR INTRADAY TRADERS, as EMA is more susceptible to recent prices, there are good chances that it might also be a fake breakout, so to avoid or mitigate this issue, you can use another indicator or trendline or any supporting factor to make signal more clear
+
+4:what is importance of timeframes in MA?
+timeframe is an important factor when we are using indicators
+for scalping-9ema
+for intraday(time frame 15 min)-21 ema
+for daily time frame - 21ema,(have a glance and idea purpose (for support and resistance) just check 50,100,200 ema also)
+swing trade(time frame 1hr) -48 ema, when it falls below 48, you can exit if you want to, if it is touching the line and is retracing, then you can see that as a buying opportunity
+long term/investment - 200 ema(it is always better to buy above 200 day moving average)
+5:how to decide and which MA is best?
+this may change with time and situations, but above discussed options are best.
+6:how to trade with MA?
+the direction of MA is importsnt, if it is upside, then it shows that price is MOVING UP and if the candle formation is ABOVE THE LINE, then it is a bullish confirmation, vice a versa is bearish confirmation,
+if the candle formations which are above the MA line, comes near the line and again moves up, it is treated as support, vice a versa is resistance
+you can also trail if the price movement is slow and gradual the MA line and candle formation will be overlapping, you can wait (if you want) till it moves a considerable distant from the line and then exit
+
+7:how to identify worst trades?
+no trading zone: if the price (candle formation) is too far from the line, it is not suggested to take new trades in such situation
+8:price action + MA:
+in previous videos it has been explained how to identify bullish or bearish trends using higher highs,higher lows and so on... now if there is bullish trend and MA and candle formation is coming up every now and then, each time when the candles are formed upside the MA line, then it isa buy signal, and vice versa for bearish trend
+9:disadvantages of MA
+9.1 if the scrip is in range bound, stop loss hits frequently
+9.2 if there is a gap up or gap down happening 
+advantages:
+USE MOVING AVERAGE IN HIGHLY TRADED STOCKS
+10:conclusion
+
+####################################################################################
+topic fibonacci retracement: (video link- https://youtu.be/KUVqTH5BX5c)
+CONFLUENCE:the scenario in which multiple factors supporting the direction in which we try to take a trade, THE TRADE MIGHT GO WRONG BUT THE QUALITY OF DECISION GETS BETTER.
+what is fibonacci?
+fibonacci is a series-> 0,1,1,2,3,5,8,...
+fibonacci retracement and extensions are the ratios that we get by applying logics on fibonacci series
+fibonacci is widely represented in nature: ex- sunflower seeds, tornadoes, ear structure and so on and so forth...
+important concepts related to it?
+
+how to apply on chart?
+we use fibonacci retracement and trend based fibonacci extension(which are available under trendline section in trading view).
+fibonacci retracement is always considers values between 0 to 1
+
+fibonacci retracement is applied on chart (only on UPTREND AND DOWNTREND alone) only to get retracement, i.e., to get an idea where the next higher low will be formed in an uptrend or to see the levels when the market highly falls and then tries to retrace
+
+using fibonacci retracement: for set up refer the link with timestamp-https://youtu.be/KUVqTH5BX5c&t=13m50s in an uptrend to know the next higher low(consider the WICK OF THE CANDLE AS WELL) that is going to be formed using fibonacci retracement, then all you need to have is the recent higher high(after which you want to predict where the next higher low is going to be formed) and the higher low (this is the higher low that is formed before the higher high that is discussed previously), select fibonacci retracement and then click on the higher low and then drag it till recent higher high, you can see various lines that are there between recent higher high and the higher low before it, those lines are the critical areas where you can see impulse or trend reversal
+vice a versa for bearish trend, 
+to put it in simple words, if you want to find the retracement in bearish trend, then the retracement should start from up and end at down i.e, the 100% should be upside(recent impulse starting point and ending point), similarly for bullish trend retracement should start from bottom point and end at the recent high i.e., the 100% should be downside (recent impulse start and end points)
+
+ALL WE WILL BE DOING IS SELECTING 2 POINTS, SELECT FIBONACCI, CLICK ON STARTING POINT OF THE IMPULSE, NEXT, CLICK ON ENDING POINT OF THE IMPULSE. as simple as that
+
+fibonacci should be showing us signs, we should not be taking trading/investment decisions purely based on this., fibonacci should be a contributing factor for confluence(one of the sign that is contributing to our opinion)
+
+among the percentages formed in the fibonacci, the range that is formed between 50% and 61.8% is known as value zone (ALSO KNOWN AS GOLDEN RATIO), buying/selling based on the trend should be preferable here, the area that lies between 38.2%<-> 50% <-> 61.8 is the zone on which we should be focussing
+
+key points in fibonacci retracement:
+1: it tries to give us a hint of value zone
+2: it tried to show what can be the possible support and resistance zones
+3: it just tries to add few points to have our CONFULENCE get better
+
+FIBONACCI RETRACEMENT EXTENSION: 
+fibonacci retracement extension will be used to see next all time high or next all time low, because you can not find resistance using normal trendlines as there is no price action movement beyond all time high/low beyond that point
+this is similar to fibonacci retracement and in fibonacci retracement you need 2 touch points and in fibonacci extension you need 3 touch points. the third point will be the 

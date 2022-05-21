@@ -544,14 +544,16 @@ the list will be =[1,2,1.5]
 		
 --let's suppose you are importing a python script named config (which is in the same folder), you can import it in 2 ways:
 	1: use import statement as
-		from config import <class name>
+		(let say there is a folder in current working directory(folder) named src, inside that folder you have a py file called ingest_data)
+		from folder.python_file import classname
+		from src.config import Config
 		then you have to run as
-		python3 -m <path script.file>
+		python3 -m <parent folder.python file>
 		ex:python3 -m src.ingest_data
-	2:use import statement as
+	2:use import statement as (not clear example)
 		from <parent foldername.filename> import <class name>
 		then you have to run as
-		python3 <parent folder.
+		python3 <parent folder.>
 --pd.get_dummies work in favour of text columns similar to one hot encoding
 	drop_first=True this will remove one column out of n columns so that if n-1 columns are 0, then it means the removed column value will supposedly be 1
 -- if you want to downgrade to a lower version of python in an environment in conda, you can use normal conda install command

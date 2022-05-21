@@ -2547,6 +2547,8 @@ git init <PROJECT NAME> (PROJECT NAME IS NEEDED WHEN YOU WANT TO CREATE A PROJEC
 	Using the -a flag allows you to skip over running “git add” on all changed files. This is because the -a flag instructs git to stage all modified files. HOWEVER, THE -A FLAG WILL NOT STAGE ANY NEW FILES.
 -The .gitignore file in your repository must be version controlled like any other file in Git
 -suppose you have a project in your local git and you have to establish a connection with a remote repo on github, us the below command
+-when you want to get some one's project, first you want to fork it to your github account and then clone it in to your local using git clone command.
+
 -git remote add origin git@github.com:username/reponame.git
 -ORIGIN is the primary remote location name used by convention in Git
 -it is a good habit to take a pull before you push to repository for the following reasons:

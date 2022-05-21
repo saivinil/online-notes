@@ -1,0 +1,12 @@
+ML flow:
+	an open source platform developed by databricks for managing end to end machine learning life cycle.
+it does:
+	1: have language agnostic and library agnostic approach
+	2: runs the samw way anywhere
+	3:easy to use
+	4: scales from local env to large servers
+MLflow components:
+	MLflow tracking:
+		offers server, record and query experiments that tracks code, config and results and all stuff you want to know about experiments
+	MLflow projects:
+		

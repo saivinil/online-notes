@@ -50,6 +50,8 @@ ls -> command
 / -> argument
 -ls -a or ls --all 
 both commands are same
+-list the files in order of time or order of date (sort files by time)
+ls -lt 
 -$ ls -F /
 this will list all the files along with its types in root directory
 -The -p option allows mkdir to create a directory with nested subdirectories in a single operation:
@@ -502,4 +504,33 @@ find: find command works recursively, finds files with specific properties that 
 notes:
 -if you want to copy contents of a file to clipboard give:
 	command:clip.exe < filepath
-	
+-if you want to close an active host:
+ps -A
+it will show list of active ports that are available:
+kill all the process using kill command
+kill <process name>
+-apt update:
+lists all available packages and information about packages that can be upgraded
+-apt list --upgradable
+this command will list the packages for which updates ara available
+-apt upgrade -y
+upgrades all available packages that we can check using above command (apt list -u or apt list --upgradable)
+-to run commands as root user (considering the situation where you know root user credentials)
+su -
+-if you dont know root user password, then you can use the following sudo command:
+sudo -i
+-if you want to come put of root user or exit out of root user simply type below command:
+exit 
+-type the following command to check with which user you are running commands:
+whoami
+-less 
+this command only displays a portion of the data that is to be returned, if you want to see the remaining portion, then you can press space and continue to navigate unless you want to stop, press q to exit
+- to get local host value in linux 
+ip a
+the value you get after inet is your localhost
+-curl command:
+Linux curl command is used to download or upload data to a server via supported protocols such as HTTP, FTP, IMAP, SFTP, TFTP, IMAP, POP3, SCP, etc. It is a remote utility, so it works without user interaction. The data transfer from one place to another is one of the vital and most used tasks of a computer system.
+-to unzip the tar file and save it in a directory use:
+command: tar -zxvf <path of file> -C <destination path>
+tar -zxvf mletrainings-vinil-0.0.7.tar.gz -C ../..
+/temp/

@@ -36,8 +36,47 @@ review?
 	client appreciations?
 linkedin?
 
-doubts to abilash:
-what is the difference between https://raw.githubusercontent.com/ageron/handson-ml/master/ and https://github.com/ageron/handson-ml/tree/master/
 
-ashraf:
-what is code to delete?
+
+venkat-
+what health tests done?
+blood,urine,erpa
+where are they done?
+kurnool
+monthly to yearly change related charges?
+no charges
+
+health test date maname set cheskovacha?
+within one week
+
+how much time it might take to approves health test
+one week
+
+it declaration done? if so assist me.
+
+premium- 3.75cr
+disability benefit-5000000
+monthly premium-3.5k
+
+
+
+
+
+
+
+mle-gcp:
+where is DATASET_DISPLAY_NAME used- an alternative variable used to store dataset in vertex-ai datasets
+why is RAW_SCHEMA_DIR used? -> to store schema.pbtxt file
+i know why ! is used, why % and %% are used? %-> to execute single line magic command, %%-> to execute block code 
+why is it assigned PROJECT == "[your-project-id]":?? 
+
+
+
+why do we have vertexai datasets, cloud storage, big query differently, if their purpose is to store data 
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/...' -># assigning service account key to link big query ,(not coming if we try os.environ with same dev in different tab)
+many dependecy issues are coming while trying to install pip install req.txt 
+videos/ links to be read?
+important notebooks to go through?
+changes that are made on requirements are not staying, dependency issues coming if i try to update requirements based on coming errors (including package in req.txt stopping installation)
+can we make changes in source code?
+export command not working
