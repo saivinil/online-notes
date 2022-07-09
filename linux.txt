@@ -534,3 +534,19 @@ Linux curl command is used to download or upload data to a server via supported 
 command: tar -zxvf <path of file> -C <destination path>
 tar -zxvf mletrainings-vinil-0.0.7.tar.gz -C ../..
 /temp/
+-list biggest files or size order by size:
+sudo du -a <path> | sort -n -r | head -n 20
+
+centos:
+which python -> to see which python is being used
+ls -ls /usr/bin/python* to check all python versions in centos
+
+misc:
+make file is a simple bash script that is used to compile/run our code files
+
+commonly used commands:
+to just print the output of an env variable: echo $<env variable> # here $  is just a sign of the shell prompt, means that shell is ready to accept commands, anything after $ is executed as command
+cd ~ : will change cwd to home
+.* is a wild character which will match any character, any number of times. it is used in grep as well
+cat /etc/*-release  - used to check which linux distribution are you using, ex: fedora, debian, centos
+./ or ../ indicates that we are considering relative path, not absolute

@@ -1,0 +1,20 @@
+
+
+what might go wrong:
+1:	if this doesnt work- https://softwarejargon.com/dockerizing-python-flask-app-and-conda-environment/ try trouble shooting, even if does not work then
+	try https://www.dabbleofdevops.com/blog/develop-a-python-flask-application-with-docker-and-deploy-to-aws-part-1-docker-beginnings
+2: try with ubuntu slim or alpine image
+	2.1 try with conda env create
+	2.2 try manual installation using commands for boto3 and mysql
+3: EXPOSE port
+
+
+to delete
+ec2 instances
+s3
+lambda
+sec grps
+rds aurora
+
+
+

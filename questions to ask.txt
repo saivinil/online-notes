@@ -38,25 +38,6 @@ linkedin?
 
 
 
-venkat-
-what health tests done?
-blood,urine,erpa
-where are they done?
-kurnool
-monthly to yearly change related charges?
-no charges
-
-health test date maname set cheskovacha?
-within one week
-
-how much time it might take to approves health test
-one week
-
-it declaration done? if so assist me.
-
-premium- 3.75cr
-disability benefit-5000000
-monthly premium-3.5k
 
 
 
@@ -64,19 +45,49 @@ monthly premium-3.5k
 
 
 
-mle-gcp:
-where is DATASET_DISPLAY_NAME used- an alternative variable used to store dataset in vertex-ai datasets
-why is RAW_SCHEMA_DIR used? -> to store schema.pbtxt file
-i know why ! is used, why % and %% are used? %-> to execute single line magic command, %%-> to execute block code 
-why is it assigned PROJECT == "[your-project-id]":?? 
+
+
+really small team
+client side architect - regan
+client manager- borris
+
+sbd- part of data science dept - lot of data science projects in sbd
+
+set up platform for them to work on- development environment data scientists work on
+
+here,everything is on kubernetes
+
+automate pipeline what data scientsts work
+
+set up is complex, we have templates, need to tweak the templates
 
 
 
-why do we have vertexai datasets, cloud storage, big query differently, if their purpose is to store data 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/home/...' -># assigning service account key to link big query ,(not coming if we try os.environ with same dev in different tab)
-many dependecy issues are coming while trying to install pip install req.txt 
-videos/ links to be read?
-important notebooks to go through?
-changes that are made on requirements are not staying, dependency issues coming if i try to update requirements based on coming errors (including package in req.txt stopping installation)
-can we make changes in source code?
-export command not working
+
+
+
+
+
+https://drive.google.com/file/d/1IH0fLJK7niqSixpxd8eXFlM31NyU3XM4/view
+repository specific credentials: 14m30s - deploy keys : person with admin access can always create credentials at repository level
+16m 45 sec changes part, did not understand	
+
+
+after making commit, the pipeline is throwing error, if we build again with parameters it is working fine, any workaround for this?
+naming convention for jenkinsfile is always Jenkinsfile(.*)
+
+jenkinsfile.infra
+command,cat,tty part, what does it mean? 
+can you explain terraform commands
+
+
+cloud 'mlops' \\this cloud is pre configured
+prod_docker_login,prod_image_repo,prod_last_preprod_commit,prod_app_commit_hash
+unstable-https://www.jenkins.io/doc/pipeline/tour/post/ in what sense a pipeline is deemed unstable
+git branch: 'master', link: https://www.jenkins.io/doc/pipeline/steps/git/
+agent inside a stage which is already inside another agent
+beforeAgent true ; can't see any agent after this declaration, does this mean the containers declared previously will be used in this secnario after before agent executes?
+!(currentBuild.previousBuild != null && "SUCCESS".equals(currentBuild.previousBuild.result))
+
+									
+

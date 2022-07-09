@@ -1,0 +1,22 @@
+setting up flask on centos: https://www.golinuxcloud.com/flask-python-web-app-example/
+https://linuxize.com/post/how-to-install-flask-on-centos-7/
+setting up gunicorn with flask and nginx: https://www.golinuxcloud.com/flask-gunicorn-nginx/#Step-4_Setup_Flask_Web_Application
+
+rds db in private subnet: https://www.youtube.com/watch?v=2smo_0qJ-hA
+aws mysql aurora using mysql workbench: https://www.youtube.com/watch?v=GZNGNe5Rd3c&t=156s
+rds aurora mysql public subnet : https://www.youtube.com/results?search_query=rds+aurora+mysql+in+public+subnet
+create rds mysql instance, connect with EC2 : https://www.youtube.com/watch?v=Yi_QGM3DjOM
+connecting public RDS using python pymysql -https://www.youtube.com/watch?v=RerDL93sBdY
+connecting EC2 instance to RDS aurora serverless mysql using boto3: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.Connecting.Python.html
+aws EC2 auto scaling - https://www.youtube.com/watch?v=KNzxuANCtdY
+lambda function for auto scaling groups - https://www.padok.fr/en/blog/autoscaling-ec2-instances#lambda, https://gist.github.com/veuncent/3e8ea08b0b593620451e887daef1595a
+
+docker image for flask app on EC2 with docker yt series: https://www.youtube.com/playlist?list=PL5KTLzN85O4K3zhnNPNCgE_Lt-pUsY7YO
+build and push docker image to ECR: https://www.freecodecamp.org/news/build-and-push-docker-images-to-aws-ecr/
+Pushing the Docker Image to Amazon ECR : https://towardsdatascience.com/how-to-deploy-a-flask-api-on-aws-ecs-part-3-c1ca552e65d
+normal python flask app: https://softwarejargon.com/dockerizing-python-flask-app-and-conda-environment/
+Python Flask Application with Docker and Deploy to AWS: https://www.dabbleofdevops.com/blog/develop-a-python-flask-application-with-docker-and-deploy-to-aws-part-1-docker-beginnings
+run docker container automatically at EC2 instance start: https://www.youtube.com/watch?v=QqIp9rsh4Ro
+
+creating aws eks cluster using aws web console: https://www.youtube.com/watch?v=aZd0UolVwD4
+

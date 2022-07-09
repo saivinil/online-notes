@@ -1,0 +1,8 @@
+module.db.random_password.master_password[0]
+module.parameter-store.aws_ssm_parameter.secret
+module.db.module.db_instance.data.aws_iam_policy_document.enhanced_monitoring
+module.db.module.db_instance.data.aws_partition.current
+module.db.module.db_instance.aws_db_instance.this[0]
+module.db.module.db_instance.random_id.snapshot_identifier[0]
+module.db.module.db_option_group.aws_db_option_group.this[0]
+module.db.module.db_parameter_group.aws_db_parameter_group.this[0]
