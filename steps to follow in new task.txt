@@ -1,20 +1,73 @@
+points to understand:
+The training dataset that you used to train the model is usually a good baseline dataset. The training dataset data schema and the inference dataset schema should exactly match (the number and order of the features). 
+the prediction/output columns are assumed to be the first columns in the training dataset. 
+From the training dataset, you can ask SageMaker to suggest a set of baseline constraints and generate descriptive statistics to explore the data.
+These two new steps (QualityCheckStep,ClarifyCheckStep) will always calculate new baselines using the dataset provided.
+"0.2.6. Define pipeline parameters" in the notebook
 
+points ignored:
+supplied_baseline_statistics and supplied_baseline_constraints : If skip_check is set to False, baselines can be provided to this step through this parameter. If provided, the step will compare the newly calculated baselines (CalculatedBaselines) against those provided here instead of finding the latest baselines from the Model Registry. In the case of ClarifyCheckStep, only supplied_baseline_constraints is a valid parameter, for QualityCheckStep, both parameters are used.
+
+points pending from execution/implementation:
+1:understand pipelinemodel
+	from sagemaker import PipelineModel
+
+	pipeline_model = PipelineModel(
+	   models=[sklearn_model, xgboost_model],
+	   role=role,sagemaker_session=pipeline_session,
+	)
+2:check 
+
+
+
+
+steps to follow
+1: check if baseline examples has some good examples
+1: try getting algorithm_arn if you can, that might make deployment easier
+2: try model code with input_fn, method as mentioned in sagemaker-pipelines-example/tabular/train-register-deploy-pipeline-model/train register and deploy a pipeline model.ipynb for training part
+3: register model as a package and then try deploying 
+4: 
+5: 
+6: 
 
 what might go wrong:
-1:	if this doesnt work- https://softwarejargon.com/dockerizing-python-flask-app-and-conda-environment/ try trouble shooting, even if does not work then
-	try https://www.dabbleofdevops.com/blog/develop-a-python-flask-application-with-docker-and-deploy-to-aws-part-1-docker-beginnings
-2: try with ubuntu slim or alpine image
-	2.1 try with conda env create
-	2.2 try manual installation using commands for boto3 and mysql
-3: EXPOSE port
+#pipeline monitoring:
+1: data type declaration np.int64 and others in pre processing step
+2: BiasConfig and its usage with its parameter values
+3: change the input dataset in such a way that it resembles with abalone data, and try to remove the issue in ModelQualityCheckStep
+3.1: if that does not work, then try checking the pre processed data of abalone and try its relation with parameters passed with BiasConfig method
 
 
-to delete
-ec2 instances
-s3
-lambda
-sec grps
-rds aurora
+#explainability
+	test_dataframe = pd.read_csv(test_dataset, header=None) #first row is sent as shap is sent here
+	baseline=shap_baseline, #this might go wrong because we are passing first row(shap_baseline = etst) as value, in example it is given differently
+		follow one of the below steps to overcome shap problem
+		i) dont pass any values to SHAPConfig
+		ii) use diff aggregate methods
+		iii) changing sex and embarked columns to numerical values using one hot encoding try local model, then try in sm script mode
+			a) chop the extra list in predict fn so that shap_baseline that is getting attached will be removed
+				1) understand how csv strings are being handled by input,predict,output fns in script mode
+				3)age and fare are to be converted as float
+				2) add exception code if needed
+		iv) run explainability monitoring without ground truth
+		v) just fetch part a, part c, then add additonal elements of part b if needed
+		vi) replace payload = row.rstrip("\n") with payload = row.rstrip("\n").split('\n')[0]
+	
+	"expected_value": 0.0 # in output of shap baselining job
+	
+	with open(test_dataset, "r") #here header of this column is getting attached with the validation data, so instead of one
+	test_data we use 2 datasets with different headers and also see shap_baseline value, if it is interfering with reports
+	
+	check this s3 path: s3://sagemaker-us-east-1-752564314130/sagemaker/DEMO-ClarifyModelMonitor-20220923-1/datacapture/xgboost-vinil-titanic-em-csv-2022-09-23-01-52-07/AllTraffic/2022/09/23/03/ to see the eventId in event metadata of the failed record in sm capture job
+	
+	check whether the test_dataset_size is interfering with i in artificial traffic
+	
+	
+steps to do:
+ if you want to merge bias and explainability monitor: remove wait for first execution,wait for execution,ModelConfig to finish 
 
+when we use estimators,it will use training script and try to create pipeline out of this , we can directly provide the train step inside the pipeline
+estimator in sagemaker contains a docker container, training script will be the entrypoint for that container
+after we create an estimator, then a pipeline can be built, we will deploy the model using sagemaker model registry and then , model monitoring using sagemaker 
 
-
+steps to try:

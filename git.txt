@@ -2623,3 +2623,17 @@ Here are some recommendation for a GIT based development workflow for your day-t
 	8:Before you assign a reviewer, take a look at the diff view showing the changes from the PR and review it once and fix any glaring issues. Also, verify that the CI tests pass. Now, request a review from your team members.
 
 	9:Note that you don’t have to wait until you have completed everything to open a PR. Sometimes, it is very useful to get early feedback on your approach before you go too far down the wrong road. In such cases the convention is to add a prefix [WIP] (Work In Progress) to indicate that the PR is not yet complete. You can ask a team member for a review and be specific about what you are looking for. Once you are done and ready for a final review, ensure all the requirements in the previous step are taken care of and remove the WIP prefix and request a review.
+misc:
+to stop adding particular files -> git add --all -- ':!path/to/file1.txt' ':!path/to/file2.txt' ':!path/to/folder1/*' or git add -- . -- ':!path/to/file1.txt' ':!path/to/file2.txt' ':!path/to/folder1/*'
+to ignore a git directory from being pushed, you create a .gitignore file in the same directory which you want to ignore and add * in the .gitignore file inside the directory, which will ignore all the files
+when you do git pull, it pulls newly remotely created branches as well, but for you to see them in local, you need to give git branch -av
+to push to a remote branch that does not exist in your local (simply means you are pushing code from current branch to a remote branch that is not in your local) 
+	syntax: git push <remote> <local_branch>:<remote_name>
+	example: git push origin main:preprod (preprod branch is not in your system but you are pushing code from your local main branch to a remote branch)
+-if you are not able to see the remote branches in your local, and you want them in your local, just give the command "git checkout <name of remote branch that you want in your local>
+-whenever you have created an issue branch and then made some changes to code, you can merge it with main in 2 ways,1: by checking out to issue branch and then merging with main, 2: checking out to main branch and merge issue branch with it, the second way is better because this way main branch will have the final push
+-if you want to copy changes from a branch X to branch Y and then 
+	1: git checkout Y #checking out to branch Y
+	2:git pull origin X #to make sure that we are taking latest code of branch X
+	3:git pull origin Y #to make sure that we are taking latest code of branch Y
+	4:git push origin Y # to push all the combined changes to branch Y

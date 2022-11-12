@@ -1,0 +1,37 @@
+
+EC2 instances
+images
+rds aurora
+SG
+VPC
+RDS
+skim assignments for other things
+
+wrap up:
+
+
+
+read glossary and environment variables in jenkins
+play with contents of jenkinsfiles shared in playground, git example
+https://tigeranalytics.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/22086678?course_portion_id=91148#questions -> handson pending
+terraform assignments skimming in learning perspective
+pending video recording jagadeeswari
+
+google makefile, bandit
+junit plugin jenkins
+git add -a -m . #play with this
+git restore . 
+
+helm tutorial pending
+
+
+
+
+
+priority
+1: at 42 min in kt video  -> check drawio image, and check paralell implementation in code ->
+2: what is bandit
+3: junit plugin
+4: search about ARG in docker at 1h11m in kt video
+5: build-arg in docker build command is used to pass variable in to the docker file
+6: go through EMR pipeline jenkinsfile.commodity

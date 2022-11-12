@@ -1,0 +1,2459 @@
+revise map and reduce implementation
+#website to learn python->data-flair python-->https://data-flair.training/blogs/python-tutorials-home/ 
+ 
+categories:
+class:
+Data Flair
+import:
+tuple_func:
+dataframe_func:
+list_func:
+set_func:
+dict_func:
+iterable_func:
+requests module:
+string_func:
+annotations:
+snippets:
+arithmetic operators:
+math_library:
+zip_functionality:
+regex_func:
+oops_explanation_with_python:
+scope_explanation:
+miscellaneous:
+competitive_programming_tips:
+file names and file path operations:
+topics to learn:
+interview questions:
+Data Flair
+#############################################################################################################
+--Functions:A function in Python is a collection of statements grouped under a name.
+--Classes:Python is an object-oriented language. It supports classes and objects. A class is an abstract data type(Abstract Data type (ADT) is a type (or class) for objects whose behaviour is defined by a set of value and a set of operations).In other words,it is a blueprint for an object of a certain kind. It holds no values. An object is a real-world entity and an instance of a class.
+ex:explaining about a parrot is called class, a real parrot is an object
+--Modules:A Python module is a file containing python statements and definitions
+--Packages-Python package is a collection of related modules (note the difference between package and module even in alhabets first M(Module) then P(package) i.e, collection of modules is called package)
+--in python doc string(documentation string) is  a string between three double quotes/single quotes (ex:'''this is a doc string''') used for documenting information about a module i.e, what does this module do,it can be retrieved using syntax: module/function.__doc__ ,difference between docstring and comment is that we cannot retrieve whatever is present in comment by using python commands but we can retrieve the information in docstring using the above mentioned command, the data stored is treated as a string datatype.
+print(method/library.__doc__)  will print the documentation details of that method/library,documentation info is declared in triple quotes right after the function is declared(starting of the loop)
+ex:list.__doc__
+--python features are:interpreted,open source,easy to learn,vast packages,GUI programming can be done,Object oriented,portable,supports multi programming paradigms,python is "extensible"(you can write some of your code in other languages while coding in python) and "embeddable"(code of python can be used in other language programs)
+-multiprogramming paradigms supported by python:it supports
+procedural(this programming paradigm divides the program in to routines or functions, simply put it tells computer step by step of solving a program or solves the program using procedures or functions),functions inside the class in object oriented programming   and are called methods)
+object oriented:
+	the process of solving a programming problem by creating objects is called object oriented programming.,
+functional (a paradigm in which we try to bind everything using pure mathematical functions,typically has usage of iterators and generators,
+	ex:L = [1, 2, 3]#or you can use "reduce" example and 
+	it = iter(L)
+	it  
+	<...iterator object at ...>
+	it.__next__()  # same as next(it)
+	1
+	next(it)
+	2
+	next(it)
+	3
+	next(it)
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	StopIteration
+imperative programming(this programming paradigm uses statements that can change the state of a program) paradigm:
+	procedural and object oriented programming approach come under imperative programming approach, it mainly focusses on how to complete a program.this uses block approach(group of statements under a name-> objects or methods)
+	ex: sum = 0
+		for x in my_list:
+			sum += x
+		print(sum)#even if the length varies the sum will be calculated this is an example for imperative programming.
+-Python Django is a free and open-source framework written in Python and is the most common framework for Python. It allows you to create database-driven websites. It follows the DRY Principle (Don’t Repeat Yourself). This is a design philosophy that keeps code simple and eloquent. 
+Like Django, Flask is a web framework written in Python itself. It is a micro framework because it does not need certain libraries and tools. 
+django,pyramid and flask are python frameworks( a framework is a combination of certain components and packages,a framework will help programmers to focus on high level functionality as the framework takes care of the low level functionality by itself, a framework will let us save time from doing the routine stuff as it already has those things configured, in other words a framework is a software providing generic functionality which can be changed using few lines of code thereby developing application specific framework) which help in developing webapps
+-Data science:earlier python was used for automation,building applications and writing scripts,but below packages changed python to favourites of data science enthusiasts
+pandas:Data analysis
+numpy(implemented in C, so it is quicker):scientific and numerical calculations
+matplotlib,seaborne:for data visuvalizations
+scikitlearn:ML
+tensorflow(an array of n dimensions),keras:ML and DL
+-for artificial intelligence:
+NLTK:Natural Language ToolKit
+OpenCV:open source computer vision library
+microsoft cognitive toolkit: deep learning framework
+--Automation-python can be used to automate test cases,scrape web and also automate mundane tasks,it also can read all types of files easily.
+(frameworks and libraries used for this are -robotFramework,Pytest,Pyunit,Selenium Python)	
+-python has a lot of micro frameworks , mega frameworks and web frameworks.
+-CPython:This is the most widely accepted implementation of Python. It is written in the language C, and is an interpreter.
+-PyPy is Python implemented in Python.
+
+--positional arguments example:complex(3,6)->3+6j,complex(6,3) will have 6+3j as value in the sense-the parameter which is first passed is taken as real number and the latter one is an imaginary number, (1+2j).imag will return 2 and (1+3j).real will return 1
+phase and modulus of complex number z=3+2j (or any complex number can be calculated using the code below)
+from cmath import phase#cmath module will have mathematical functions related to complex numbers
+if __name__=='__main__':
+    input_complex=complex(input());
+    print(abs(input_complex))
+    print(phase(input_complex))
+keyword arguments:if you want 3+6j as output then example(complex(imag=6,real=3)) will give 3+6j as output ,irrespective of position it will take the value as input
+def dunc(a,b,/,c,d,*,e,f)#(python 3.8 feature)the parameters before / should be definetly positional and the parameters after * should definetly be keyword arguments
+valid examples:
+dunc(1,2,3,4,e=5,f=6)
+dunc(1,2,c=3,d=4,e=5,f=6)
+invalid examples:
+dunc(a=1,b=2,3,4,e=5,f=6)
+dunc(1,2,c=3,d=4,5,6)
+--pickle :
+	Python pickle module is used for serializing and de-serializing a Python object structure, an object is pickled in python so that the object which is initially stored in python memory to a file so that it can be accessed from a different source or progrmamming langauge, pickling is nothing but serializing the object and then writing it in to a file, to explain in detail, picking is the process of converting an object in to a character stream, so further in future, we can use this character stream to reconstruct the object, marshal module also serves more or less the same purpose.
+	example program:
+		import pickle
+		def storeData():
+			# initializing data to be stored in db
+			Omkar = {'key' : 'Omkar', 'name' : 'Omkar Pathak','age' : 21, 'pay' : 40000}
+			Jagdish = {'key' : 'Jagdish', 'name' : 'Jagdish Pathak','age' : 50, 'pay' : 50000}
+			# database
+			db = {}
+			db['Omkar'] = Omkar
+			db['Jagdish'] = Jagdish
+			dbfile = open('examplePickle.txt', 'ab')# Its important to use binary mode
+			# source, destination
+			pickle.dump(db, dbfile)  #deserializing, it is not mandatory to deserialize it to a file, we can just assign it to a variable vari=pickle.dump(db)
+			dbfile.close()
+		def loadData():
+			dbfile = open('examplePickle.txt', 'rb')     # for reading also binary mode is important
+			db = pickle.load(dbfile)#serializing
+			for keys in db:
+				print(keys, '=>', db[keys])
+			dbfile.close()
+		if __name__ == '__main__':
+			storeData()
+			loadData()
+--fstrings in python support debugging,python 3.8 allows fstrings with "=" operator
+example:
+A=5
+print(f"{A=}")
+--python 3.8 supports final keyword:
+a class declared as final will not be allowed to get inherited 
+a variable declared final will not be allowed to get reassigned
+a method declared as final will not be allowed to get overridden
+note: a method and class will use annotations as @final,a variable will use Final
+-@final Decorator (classes, methods)
+
+from typing import final
+
+@final
+class Base:
+    # Cannot inherit from Base
+
+class Base:
+    @final
+    def foo(self):
+        # Cannot override foo in subclass
+-Final annotation
+
+from typing import Final
+PI: Final[float] = 3.14159     # Cannot set PI to another value
+KM_IN_MILES: Final = 0.621371  # Type annotation is optional
+class Foo:
+    def __init__(self):
+        self.bar: Final = "baz"   # Final instance attributes only allowed in __init__
+
+--p=0
+print(p==False)# will return true as it forcechecks the type
+--syntax error:EOL while scanning the literal->indicates that interpreter is unable to find the end of the line
+--python doesn't mandate semicolons,each line is a statement in python.to get some work done in multiple lines we use:
+ex1:print("Hi\
+how are you?")
+ex2:a\
+=\
+10
+will simply assign 10 to a
+ex3:
+a multiline string or docstring can use multiple lines without any backward slash
+ex:print("""hi
+how
+are
+you
+""")
+--we can use multiple statements in a single line using semicolons
+a=1;b=2;c=3
+print(a,b,c)
+--run this(these below print statements will make us include apostrophe or inverted quotes as part of a string while printing)
+print('s"hi"')#output:s"hi"
+print("s'hi'")#output:s'hi'
+print("s'hi")#output:s'hi
+print('s"hi')#output:s"hi
+--fstrings in python will take the print value of the variable in the print satement but we mention the name of identifier/variable in print statement
+ex:x_value=10
+print(f'the value of x is {x_value})
+################################################################################################################
+file names and file path operations:
+-filepath in windows are seperated by \
+whereas filepath in mac os and linux are seperated by /
+so inorder to generate a script that can traverse over different operating systems independantly we can use os module.
+if the file named sample.txt is in folder 1.3 which is in folder 1.2 which is in folder 1 which is in c drive
+then by simply using
+path=os.path.join(folder1,folder1.2,folder1.3,sample.txt)
+print(os.sep) #explains what type of seperator does the os uses
+os.getcwd() #will return the current working directory in string format
+if you give any folder or file without any path then the interpreter assumes that the file is in current working directory, it choses to analyze relative path (cwd does not have any relation to the location of interpreter or compiler).
+os.chdir(path) can be used to change the cwd to the required path
+ 
+paths can be classified as two types:
+1:absolute file path: this file path is configured right from the root folder and it stays the same even if the cwd changes
+2:relative file path: this file path is in relation to cwd and if it changes the path also should change inorder to be appropriate
+in relative file path we have two conventions:
+.  -> current directory or current folder
+.. ->parent folder
+. is are used when we know what are the files that are present in current folder i.e, for example i know c: will have users folder inside
+ex: ./python/sample.py
+here in the current directory it will check for python folder and then it looks for a file named sample with py extension
+.. is used when we want to move to parent folder and traverse from there to another path, it is done like this cd ../ will change cwd to parent directory
+another example is ..\sample\vini.txt what happens here is from the current directory it will move to parent folder and then opens folder named sample and then opens a file named vini
+below are some of the methods we use in path traversing
+os.path.abspath(<filename or folder name>) # the output will be the cwd+<filename or foldername> this is useful when we have to create a folder or file in the cwd
+similarly we can also create folder or path in the parent or grandparent directory:
+creating file or folder in parent directory: os.path.abspath('../<file or folder>')
+creating file or folder in grandparent directory: os.path.abspath('../../<file or folder>')
+-os.path.isabs(path): this will return true if the path passed is an absolute path	else it will return false, it will return True if the given absolute path does not exist in real
+-print(os.path.relpath(r'C:\Users\saivinil.pratap','c:\\Users')) #output:saivinil.pratap
+this will print the relative path from the second parameter and will not throw error if the second parameter is not a parent or grandparent or so, it will just return the maximum match possible 
+-os.rename(old_name(withpath),new_name(withpath)
+ex:print(os.rename(r"C:\Users\saivinil.pratap\Desktop\teams online.py",r"C:\Users\saivinil.pratap\Desktop\teamonline.py"))      
+-os.path.dirname(path)# this will return the parent folder absolute path of the last folder
+-os.path.basename(path) # this will return the last folder or file of the path passed
+-os.path.exists(path) # will return True if the path exists in real in the os , else false
+-os.path.isfile(path) # will return True if the path passed is a file , else false
+-os.path.isdir(path) #will return True if the path passed ends with a folder, not a file, else false
+isdir and isfile return true only if the file or directory exists in real, else false 
+-os.path.getsize(path) #will return the size of file or folder in bytes
+-os.listdir(path) will return all files and paths under the current path, will raise an error if path doesnot exist in real,does not go recursive.
+-os.makedirs(path) will create folders , the input path must be real and it can be absolute filepath or relative filep
+the root folder is the starting folder or the lowest folde, in windows it is C:\\ in mac or linux it is /
+--copy and rename commands
+import shutil
+shutil.copy(filepath,directory) #this will copy the file from filepath to specified directory
+shutil.copy("C:\Users\saivinil.pratap\Desktop\python_virtual_env\pyvenv.cfg",C:\\Users\\saivinil.pratap\\Desktop\\vinil.txt) #this will copy the pyvenv file from current file path and it will paste with a new name called vinil in desktop
+shutil.copytree(source_path,destination_path) #this will recursively copy all folders from source path untill end into destination_path, if destination_path does not exists , then it will create and then perform copy operations
+shutil.move(file/folder path,destination_path)#this will recursively move all folders and files from specified source to destination path if destination_path does not exists , then it will create and then perform copy operations
+shutil.move(file path, destination_path) 
+ex:shutil.move(r"C:\Users\saivinil.pratap\Desktop\python_virtual_env\pyvenv.cfg",r"C:\Users\saivinil.pratap\Desktop\python_virtual_env\pyvenvs.cfg")
+# this will move file from source to destination path and if you declare destination path with extension newfilename.txt,  ex:r'D:\b\name.txt' this is technically renaming the file as the contents from old file are moved to a new file with different name
+#can also be used to rename it by specifying the same directory path,but with a different file name
+ex:shutil.move(r"C:\Users\saivinil.pratap\Desktop\python_virtual_env\Scripts\python automation scripts\vpn.py",r"C:\Users\saivinil.pratap\Desktop\python_virtual_env\Scripts\python automation scripts\vpncopy.py")
+--temporary and permanently delete commands:
+os.unlink(r"C:\Users\saivinil.pratap\Desktop\sample_folder\Account.class")#this will permanently remove the file from the memory,check if it can delete a directory (with files inside it) as well
+os.rmdir(r"D:\b")# will delete the folder in the path permanentlywill work only if the directory is empty
+shutil.rmtree(r'D:\b') #will start deleting permanently the folder and its contents recursively including b folder
+# you can avoid this by performing a dry run where you comment the delete command try first printing the paths and then checking them and uncomment and carry on..
+import send2trash
+send2trash.send2trash(r"C:\Users\saivinil.pratap\Desktop\Capstone Project")#this will move the file or folder from its location to recycle bin instead of deleting permanently
+-to traverse over a directory:
+path=r"D:\A"
+for folder_name,sub_folders,file_names in os.walk(path):
+    '''
+    this is just to navigate the current folder and go till the very end, 
+    this is helpful when you want to check many folders which have different types of files and folders
+    you can use regex or other function to find particular set of files(with particular extensions) or folders 
+    you can use deleting syntaxes such as unlink or copytree to delte or move files to a new locations
+    '''
+    print('the folder is '+folder_name)
+    print('the subfolders in the '+folder_name+'is '+str(sub_folders))
+    print('the filenames in the '+folder_name+'is '+str(file_names))
+    print()
+
+################################################################################################################
+aptitude:
+supported operand types for @
+################################################################################################################
+link-https://www.geeksforgeeks.org/python-requests-tutorial/
+requests module:
+--import requests# a third party module for downloading web pages and files,this will help us import the requests module which can be used to get the data that is diplayed on a webpage using an url
+res=requests.get(r'https://en.wikipedia.org/wiki/Wikipedia') # this will return a requests object and store it in res
+res.status_code#this will return the status code of the res object 200-> retrieval is successfull,404->not found, any code that starts with 2 and is of length 3 will be a good response
+res.text #this will return the text in raw format which means it is sent from the server'
+res.raise_for_status()#this will raise an exception if the request does not go well,returns None if the request fetches the data correctly
+samp_file=open('romeoandjuliet.txt','wb')#a file is opened in write binary mode as the content fetched is in binary form
+for chunk in res.iter_content(10000):#iter_content is used ro get chunks similar to iteritems for dictionary
+    print(chunk)#each chunk will have 10000 bytes of text
+samp_file.close()
+	
+--a simple parse to get an price of the item using beautiful soup and requests module
+import bs4,requests
+
+def get_price(flipkart_url):
+    res=requests.get(flipkart_url) #returns a requests object
+    res.raise_for_status() #this raises an exception if the request object res is not retrieved properly and notice the open and close brackets
+    soup_obj=bs4.BeautifulSoup(res.text,'html.parser')#res.text not res , html.parser is required to inform interpreter that the object is of html, not a mandatory one but raises an exception if not mentioned
+    elems = soup_obj.select('#container > div > div._2c7YLP.UtUXW0._6t1WkM._3HqJxg > div._1YokD2._2GoDe3 > div._1YokD2._3Mn1Gg.col-8-12 > div:nth-child(2) > div > div.dyC4hf > div.CEmiEU > div > div._30jeq3._16Jk6d')  #to get an parameter to be passed to the select object we need to right click on the object we need to parse and then click copy selector in edge ,chrome browsers and it might be mentioned as css in some other browsers
+    print(elems[0])
+    return elems[0].text.strip() #the above elems is a list and each element will have a text object, elem object will have tags as well and to remove them we choose elems.text to retrieve the text
+price=get_price('https://www.flipkart.com/realme-narzo-20-glory-sliver-64-gb/p/itm4ac58d879006d')
+price
+--automating a web browser for some tasks in python
+from selenium import webdriver
+
+browser=webdriver.Firefox()#this runs and opens new firefox window
+browser.get(url) #this will open a new url in the opened tab of firewfox
+elem=browser.find_element_by_css_selector('<unique css selector>')#for the element to operate on you should have to right click on the element and copy the unique css selector
+elem1=browser.find_elements_by_css_selector('p')# this is similar to above syntax but it will fetch all the elements with p(paragraph) tag
+#similarly you can find elements by class,id,link_text,partial_link,name,tag_name
+elem.click()#this will click the selected element 
+#to give an input to a field, you get the unique css selector and generate an element ibject as mentioned above, then follow below syntax
+elem.send_keys('<text to be entered>')
+#there is no rule that each input box should have a submit button , but most of them will have , in the above example after entering text you want to click on search, but for that therre is no need to find the search button selector we can do that using elem.submit()
+elem.submit() #this also works for submit buttons i think, have to play and search
+browser.back() #this will navigate to previous step or previous url opened
+browser.forward() # this will navigate forward
+browser.refresh() #this will refresh the page
+browser.quit() # this will close the browser
+#to get a particular text element such as para
+elem=browser.find_element_by_css_selector('<selector id>')
+elem.text #this will have the text inside it
+#to get all the content pass html or body tag
+elem=browser.find_element_by_id('html')
+elem.text
+
+
+--request module have get,post,put,delete,head,patch methods
+--get method : will get url as input and the response method (calling request.get/put/post/delete/patch will return a response method) will contain the head and body of the url(text and all other content), that response method is a powerfull object which can give other details about the request method which had given the response object(ex:response.url will return the url which is passed as a parameter in the earlier request method)
+--post request : a post request requests a web server to accept data  enclosed in the body of the request message , most likely for storing it(url is not given as a parameter here)
+--put method : the put method requests that enclosed entity to be stored under the supplied url, if the url is an existing resource then it is modified,or else a new resource is created.
+--delete method: deletes the specified resource
+--head method : similar to get request it accepts the url and returns the head of the response without body
+--patch method : it has modifying capabilities , patch request should only contain the data that needs to be changed in the resource
+as requests.method will return a response object there are many operations which we can perform with a response object.
+ex:rm = requests.get(url)#here rm is a response object
+rm.headers#returns a dictionary of response headers
+rm.encoding#returns the encoding used to decode the response content as encoding format differs over a wide range
+rm.elapsed#as the name suggests it will return the time elapsed between request sent and response recieved
+rm.close()#will close the connection to the server
+rm.content#will return the content of the  response in bytes
+rm.cookies#will return the cookie jar with cookies sent back from the server
+rm.history#will return the llist of response objects the holding the history of request
+rm.
+################################################################################################################
+import:
+--
+from itertools import product
+'''if you have two lists of same or different sizes and you want one to one mapping for each element in the list then you can use product'''
+a=[[1,2,3],[4,5]]
+print(*product([1,2,3],repeat=2))
+print(list(product([1,2,3],[4,5])))
+print(list(product(*a)))#* used here is called unpack operator in python the unpacking operator simply removes the data type(list,tuple or dictionary) in which the variables are stored and just send the items that are there in the datatype, the below example program gives you a clear idea
+def num_sum(item1,item2,item3):
+    return item1+item2+item3
+num_sum(*[1,2,3])
+--import smtplib
+conn=smtplib.SMTP('smtp.gmail.com',587)#the first parameter is smtp server domain name and the second parameter is 587
+'''
+gmail.com->smtp.gmail.com, port->587
+outlook.com/hotmail.com->smtp-mail.outlook.com ,port->587
+yahoo mail ->smtp.mail.yahoo.com ,port->587
+AT&T-> smtp.mail.att.net , port ->465
+comcast->smtp.comcast.net ,port->587
+verizon->smtp.verizon.net, port->465
+'''
+conn.ehlo()
+'''output:
+250, b'smtp.gmail.com at your service, [117.195.81.65]\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8'''
+'''the output 250 is the code , code in multiple of hundred and starts with 2 is a successful response, next b'smtp.g... means a binary code'''
+conn.starttls()
+'''output:
+(220, b'2.0.0 Ready to start TLS'), this starts encryption so that you can login
+'''
+conn.login('pratapsaivinil@gmail.com','ironMan@1')
+'''
+output:(235,b'2.7.0 Accepted')
+as i said above code that starts with 2 is success
+'''
+conn.sendmail(frommail,tomail,'Subject:  enter subject here.. \n\n enter body of the mail\nsecond line\n third line \n\n regards,\nvinil')
+'''output:{}
+the empty dictionary(i can also call it as a set, but it is a dictionary because if you get any error while executing sendmail method,then it will return an dictionary with key,value pairs that it fail to sent
+)'''
+conn.quit()
+'''output:
+(221,b'2.0.0 closing connection........<some text>)'''
+-- openpyxl package can be used to create sheets and edit them and save them in a workbook at a path of our requirement
+import openpyxl
+workbook=openpyxl.load_workbook(r"D:\genome data\member data scenarios new.xlsx")#here we can use the relative path as well if needed,this will return an existing workbook to read
+
+workbook.get_sheet_names() #this will return all the names of the sheets that are present in the workbook
+first_sheet=workbook.get_sheet_by_name('member data scenarios')#this will return a sheet object which will have all the data in form of cell objects
+first_cell=first_sheet['A1'] #this will return a cell objects and the input A1-> A column,1st row
+print(first_cell.value) #we can also type cast it to the type we want
+# first_sheet.cell(row=0,column=2)#this will through error as row or column value starts with 1
+first_sheet.cell(row=1,column=1)#this is equivalent to first_sheet['A1'] but this method help us to iterate in a forloop easily.
+first_sheet['A1']='temp'
+print(first_cell.value)
+# workbook.save('D:\genome data\member data scenarios new.xlsx')#this will save the changes made on the workbook till now to a specified path,using the same path to save as the original file might not be a good practice as if we make any error in program and save it, we might not be able to retreive it so save the changed file with a new name.
+wb=openpyxl.Workbook()#this will create a new workbook object all further operations on this object can be saved to a new excel
+wb.get_sheet_names()#the newly created sheet object will have only one sheet named 'Sheet'
+sheet=wb.get_sheet_by_name('Sheet')
+sheet['A1']='first value'
+sheet2=wb.create_sheet()#this will not only create a sheet object but also returns the newly created sheet object and assigns it to sheet2 variable in this code
+sheet2.title #will return the name of the sheet object which is currently stored
+sheet2.title='second sheet'#this will assign the newly typed name in the form of a variable assignment that is done in general
+wb.create_sheet(index=0,title='sheet at 1st position') #index starting from 0 means the sheet created here will be at first position at excel
+# wb.save(r"C:\Users\saivinil.pratap\Desktop\person.xlsx")
+--reading emails:
+import imapclient
+conn=imapclient.IMAPClient('smtp.gmail.com',ssl=True)
+conn.login('gmail id','password')
+conn.select_folder('INBOX',readonly=True) # the first parameter here is (in most of the cases will be inbox)
+UIDs= conn.search(['since 20-Aug-2015']) #this will return a list of unique id's 
+for further information refer to automate the boring stuff book
+-pyautogui is an useful module helps in automating screen to perform routine tasks easily
+import pyautogui
+height,width= pyautogui.size() #this will give the screen resolution size
+pyautogui.position() # this will give the current cursor position co ordinates, starts at 0,0
+# pyautogui.moveTo(100,100,1) #here the first 2 parameters suggest x and y positions to which the cursor is to be moved, if you give x or y values beyond the resolution point, it will raise FailSafeException which denotes the program execution stops, the third parameter is speed(in seconds), i.e, it should take exactly specified amount of seconds to move to that specific points
+# pyautogui.moveRel(-10,-80,1) #this is also moving the cursor,but it moves it from the current position, the third parameter is speed in seconds, if you use negative value for x it will move towards left and negative value for y will move it up north
+pyautogui.position()
+# pyautogui.click(787,232)#the parameters here are optional, if you dont give any paramters it will click at where ever is the cursor before executing the current statement
+pyautogui.click(pyautogui.moveRel(10,10,1))#this is also valid
+pyautogui.click(350,350,1)#this will take the cursor to the specified poisiton and click at the given position
+pyautogui.rightClick(350,350,1)
+pyautogui.doubleClick(700,700,1)
+pyautogui.middleClick()
+pyautogui.leftClick()
+# pyautogui.dragRel(x,y)#similar to moveto and moveRel but the cursor is dragged
+# pyautogui.dragTo()
+# pyautogui.displayMousePosition()# this does not work in idle but works in command prompt and helps us in locating x and y positions of cursor easily and note down it's x and y co ordinates, it also shows the values of the point where cursor is positioned in real time
+
+'''
+this module is a great way of automating stuff as it can go to any program it want and click on anything or do anything we can do with a mouse, we can also automate keyboard and we will do that after a while
+there might be a scenario where the automated program goes out of control and starts doing something which we doesnt want to do, python automation code for mouse moves it at a speed of 1/10th part of a second as fast as we can we should be moving it to the any corner on the screen which by default will raise a failsafeException which will stop the execution of a program
+'''
+-- keyboard automation in python
+import pyautogui
+pyautogui.typewrite('randomtext',interval=0.2) #before you execute this query it is needed to place the cursor in the typable area, giving interval gives human touch and also it is preferable beccause the system may not react as fast as the python does and it might lead to unpredictable results
+pyautogui.typewrite(['a','b','left','left','X','Y'])#python lets you perform a series of operations when passed through a list, the current example will type a,b and then press the left arrow twice and then press X,Y
+'''to know the keys that are there in the keyboard you can use the below syntax'''
+pyautogui.KEYBOARD_KEYS#this will suppport all the keys that exist such as numlock,home and wide range of variety of keys
+pyautogui.press('volumeup')#will press the key,here it will increase the volume
+pyautogui.hotkey('ctrl','o')#there will be scenarios where you might want to press more than 1 keys at a time then you can use this hotkey method
+below is a sample code of automation to open a notepad and write some info into it
+-
+import pyautogui
+import time
+pyautogui.click(pyautogui.moveTo(340,1040,1))
+pyautogui.typewrite('notepad++',interval=0.2)
+pyautogui.doubleClick(pyautogui.moveTo(670,400,1))
+pyautogui.press('escape')
+time.sleep(1)
+# pyautogui.typewrite(['alt','f'])
+pyautogui.hotkey('alt','f')
+pyautogui.press('N')
+pyautogui.typewrite('i did this purely using python code but it took me around 2 hours lol',interval=0.2)
+--taking a screenshot and searching 
+'''in the above automations of keyboard and mouse it will blindly try to do whatever we have coded, if we try to type on a 
+video player that will not work, so to give eyes to the program we can use screenshot featurein pyautogui which we will discuss in detail now
+you can take screenshot normally if you install pyautogui if you are and if you are a linux used you have to install scrot by running command sudo apt-get install scrot
+'''
+a=pyautogui.screenshot() # this will take screenshot and will store it in a variable, but to actually save it in a file, we need to send path as a parameter
+pyautogui.screenshot(r"C:\Users\vinil\OneDrive\Desktop\screenshot.png")
+pyautogui.locateOnScreen(r"C:\Users\vinil\OneDrive\Desktop\cal7-4.png")
+'''in the above syntax we already saved a particular image which will be used to find wether
+there is a match that is there in the current screen in the above example i cropped the window 
+logo that will be there on the bottom left and searched for it using the above syntax passing 
+the cropped image as parameter, it will return a tuple with its x,y positions and width and height 
+of the logo, the drawback here is it will try to match the image pixel wise i.e, if you enlarge it
+os minimize it it will not return the expected result(i presume)'''
+pyautogui.locateCenterOnScreen(r"C:\Users\vinil\OneDrive\Desktop\cal7-3.png")#this works exactly as above syntax,but it will not return the hight and widtgh of the matching image, instead it will locate the center of it so ,it can have more accuracy of clicking the target
+-- python allows creation and editing of docx files
+import docx
+d= docx.Document(path)# this will create a document object with the contents of the document that is passed as a path,let it be a doc or docx file.
+'''the d object used above is having multiple paragrapgh objects provided that the document has multiple paragraphs.the paragraph objects are returned as lists'''
+paras_list=d.paragraphs
+paras_list[0].text# this will return the text that is in the first paragraph
+'''a paragraph in a document can have many types of text varying at style or type of the font, below method returns the runs which will divide the para into partitions based on the type of the text i,e. suppose we have a text which is having normal words and then bold and then normal text, it is divided in to 3 runs, the first normal words are grouped into one run, then the bold text is grouped in to one run,then the normal text is categorised into another run.'''
+runs_list=paras_list[0].runs
+'''after this we can also get the type of the text it is holding,'''
+runs_list[1].text #will return the bold as it is bold type
+runs_list[1].text='this text is replaced'#you can even assign a new text like this and update the document
+runs_list[1].underline=True
+'''as shown above the text member variable will deal with bold italic underline, to deal with styles we have to use style method.'''
+paras_list[0].style='Title'
+'''you can also create a new document and add text and changes styles just like you do with opening an existing docx file'''
+new_doc=docx.Document()# this will create a document and this document only exist in python memory and needs to be saved if you want to use it for further referrence
+new_doc.add_paragraph('this is adding a text to paragraph)
+new_doc.save(path)#this will save the newly created document in the specified path, let it be a doc or docx file
+p=new_doc.paragraphs[0]
+p.add_run('this will add new text at the end of para 1')
+p.runs[1].bold=True #this will make the above newly inserted text as bold
+d.save(path) #will store the docx file with all changes reflected
+-'''below sample program will return the text of the any document.'''
+def return_text(doc):
+    para_list=doc.paragraphs
+    stri=''
+    for i in para_list:
+        stri+=i.text+'\n'
+        
+    return stri
+
+
+doc=docx.Document(r"C:\Users\vinil\Downloads\demo.docx")
+print(return_text(doc))
+	
+
+--import mysql.connector.connect#is used to retrieve data from database 
+db=mysql.connector.connect(host='hostname',database='db_name',user='username',password='password')#connection is stored in db variable
+df=pd.read_sql(sql_query,con=db)#connection_stored_variable=db
+--import statsmodels.datasets#it contains real world data analysis
+data=statsmodels.datasets
+-- see import textblob,contractions#here you have to observe that we have imported to modules by seperating them with a comma
+--import random 
+print(random.randint(1,10))
+
+is same as
+from random import *
+print(randint(1,10))
+-import pyperclip
+pyperclip('some random text')#the text in the brackets is copied to clipboard which can be used after exiting from python and used to paste using ctrl+v ,this syntax can be used when you have to export some large amount of text outside script without saving it into any external file andklk to keep it on temporary cache
+pyperclip.paste()#this will take some text which is stored in clipboard of ram and bring it to the variable to which it is assigned.
+################################################################################################################
+set_func:
+--A set is an unordered collection of elements without duplicate entries.,When printed, iterated or converted into a sequence, its elements will appear in an arbitrary order.
+-Basically, sets are used for membership testing and eliminating duplicate entries.
+print({2,3,4,5,1,2,3,4,5,9,1,2,6})
+o/p:{1, 2, 3, 4, 5, 6, 9}
+-set('HackerRank')#o/p:{'H', 'R', 'a', 'c', 'e', 'k', 'n', 'r'}
+-set((6,1,2,3,4,5,5))#o/p:{1, 2, 3, 4, 5, 6}
+-set(['H','a','c','k','e','r','r','a','n','k']) #o/p:{'H', 'a', 'c', 'e', 'k', 'n', 'r'}
+-set({'Hacker' : 'DOSHI', 'Rank' : 616 }) #o/p:['Hacker', 'Rank']
+-set(enumerate(['H','a','c','k','e','r','r','a','n','k']))#o/p;{(5, 'r'), (2, 'c'), (8, 'n'), (9, 'k'), (0, 'H'), (6, 'r'), (4, 'e'), (3, 'k'), (1, 'a'), (7, 'a')}
+-below are commonly operated methods on set
+myset = {1, 2} # Directly assigning values to a set
+myset = set()  # Initializing a set, you cant assign empty plower braces because that is treated as dict in python
+myset = set(['a', 'b']) # Creating a set from a list
+myset.add('c')
+print(myset)     #o/p:{'a', 'c', 'b'}
+myset.add('a') # As 'a' already exists in the set, nothing happens
+myset.add((5, 4))
+print(myset)     #o/p:{'a', 'c', 'b', (5, 4)}
+myset.update([1, 2, 3, 4]) # update() only works for iterable objects
+print(myset)     #o/p:{'a', 1, 'c', 'b', 4, 2, (5, 4), 3}
+myset.update({1, 7, 8})
+print(myset)     #o/p:{'a', 1, 'c', 'b', 4, 7, 8, 2, (5, 4), 3}
+myset.update({1, 6}, [5, 13])
+print(myset)     #o/p:{'a', 1, 'c', 'b', 4, 5, 6, 7, 8, 2, (5, 4), 13, 3}
+myset.discard(10)
+print(myset)     #o/p:{'a', 1, 'c', 'b', 4, 5, 7, 8, 2, 12, (5, 4), 13, 11, 3}
+myset.remove(13)
+print(myset)     #o/p:{'a', 1, 'c', 'b', 4, 5, 7, 8, 2, 12, (5, 4), 11, 3}
+--# Frozensets
+frozenset: it is a data type in python which is almost like set except that a frozen set values once set can't be changed
+syntax: frozenset(iterable)
+- the following operations union,intersection,difference and symmetric difference can also be performed on set and the operational logic remains the same way we perform them on normal sets.
+# initialize A and B
+A = frozenset([1, 2, 3, 4])
+B = frozenset([3, 4, 5, 6])
+
+# copying a frozenset
+C = A.copy()  # Output: frozenset({1, 2, 3, 4})
+print(C)
+
+# union
+print(A.union(B))  # Output: frozenset({1, 2, 3, 4, 5, 6})
+
+# intersection
+print(A.intersection(B))  # Output: frozenset({3, 4})
+
+# difference
+print(A.difference(B))  # Output: frozenset({1, 2})
+
+# symmetric_difference
+print(A.symmetric_difference(B))  # Output: frozenset({1, 2, 5, 6})
+--{1,}*4 will throw an error
+-- to read pdf file content the best package is PyPDF2 which reads almost all pdf files and cant read images and other things, should be opened in readbinary mode
+import os,PyPDF2
+pdfobj=open(path,'rb')
+reader=PyPDF2.PdfFileReader(pdfobj)
+reader.numpages#gives page count
+pageobj=reader.getPage(0) #will return the first page as an object, index starts with 0,i.e, zero index returns page 1
+text=pageobj.extractText() #will return the text in string format.
+for pagenum in range(reader.numpages):
+	print(reader.getPage(pagenum).extractText())#will print text in a pdf page by page
+#similar to reading a pdf, we can also write page object to a pdf
+writer=PyPDF2.PdfFileWriter()
+writer.addPage(pageobj)# we can add pageobjects which are obtained from reader.getPage method
+#now the content is just in computer memory, now to write it into a pdf file we have to create a new pdf file or open an existing one
+output_file=open(path,'wb')
+writer.write(output_file)#this will save exact contents including symbols images or everything as it is , because we are writing page objects directly.
+output_file.close()
+
+
+
+################################################################################################################
+--Disadvantage of python dynamic typing (no need to specify type of variable while typing):
+ a,b=’hello’,7
+>>> a+b
+Traceback (most recent call last):
+File “”””, line 1, in
+a+b
+TypeError: can only concatenate str (not “”int””) to str
+In languages like C++ and Java, adding the two variables will result in a compilation error since one is a string and another is an integer.
+In Python, however, this is syntactically correct. When we run this code though, it results in a TypeError.
+--Compared to more widely used technologies like JDBC (Java DataBase Connectivity) and ODBC (Open DataBase Connectivity), Python’s database access layers are a bit underdeveloped.
+
+--str="Text may contain stop words like ‘the’, ‘is’, ‘are’. Stop words can be filtered from the text to be processed. There is no universal list of stop words in nlp research, however the nltk module contains a list of stop words.
+You can add your own Stop word. Go to your NLTK download directory path -> corpora -> stopwords -> update the stop word file depends on your language which one you are using. Here we are using english (stopwords.words(‘english’))."
+str.count("the")
+######################################################
+tuple_func:
+--tuples will accept all types of datatypes in python, it is faster than list
+--if a function is returning more than one values then the values are returned in the form of tuple.
+--l=('sai') is a string not tuple
+--a='sai', is tuple,not an error
+--a=('sai',) is tuple not an error
+--t=(1,[2,3])
+print(id(t))
+t[1][0]='sai'
+print(id(t)) even though tuple is changed it points to the same address(here tuple is edited,  it can't be)
+--a=('sai',)*4 output:('sai', 'sai', 'sai', 'sai')
+--print(divmod(9,2)) will return a tuple with quotient as first value and reminder as second value
+
+###################################################################
+dataframe_func:
+--data.sort_values("First Name", inplace = True)  will sort dataframe w.r.t "first name" column and changes are replaced in the column
+--data.drop_duplicates(subset=,keep=,inplace=)#subset will have the columns which will have the duplicates to be removed by default it will be none,keep=first will keep the first unique occurence,keep=last will keep the last occurence of the duplicated record,keep=false will remove all records which are duplicated atleaast once
+--df.index #will get the series of the index and it can be converted to list by list(df.index) or get length of it by len(df.index)
+--df.index.get_loc(number)#will return the value stored in the number position.
+--df.set_index(<column_name>,inplace=True/False)#will make the new given column as index
+--df=df.replace(np.nan,'',regex=True)#will replace all the null values with empty strings in a dataframe
+--df.drop([list of column names],axis=1,inplace=true)#will remove the columns declared in the list
+df1=df.drop([list of column names],axis=1,inplace=false)#df1 will have the df with list of columns dropped but df will have even the dropped columns
+--df[['SBSB_ID', 'MEME_CK', 'SBSB_CK', 'GRGR_CK', 'APAP_ID']].head(5)-#will give the top 5 values of all those dataset columns that are mentioned here
+--df.shape#will give the rowXcolumn information
+--df.columns#will give the column information of the dataframe df
+--df.describe(percentiles=[0.2,0.4,0.6,0.8],include=['object','int','float'])
+--df.describe() #will give initial statistics of dataframe df,will give the values of columns such as min,max,count,sum,standard deviation and etc values.
+rslt_df = dataframe.loc[dataframe['Percentage'] > 80]
+->rslt_df = dataframe.loc[dataframe['Percentage'] != 95] 
+->rslt_df = dataframe.loc[dataframe['Percentage'] != 95] 
+-># selecting rows based on condition 
+rslt_df = dataframe[dataframe['Stream'].isin(options)]
+-># selecting rows based on condition 
+rslt_df = dataframe.loc[dataframe['Stream'].isin(options)] 
+-># selecting rows based on condition 
+rslt_df = dataframe.loc[~dataframe['Stream'].isin(options)] 
+-># selecting rows based on condition 
+rslt_df = dataframe[(dataframe['Age'] == 21) & 
+          dataframe['Stream'].isin(options)]
+-># selecting rows based on condition 
+rslt_df = dataframe.loc[(dataframe['Age'] == 21) & 
+              dataframe['Stream'].isin(options)]
+-># sort by index labels 
+sample_df.sort_index(axis = 0) 
+--# sorting based on column labels 
+df.sort_index(axis = 1) 
+--sorting a dataframe based on index(when axis value is not declared it is zero and sorts rows) and inplace=true will reflect changes in dataframe
+df.sort_index(inplace=True)
+--set_index method in dataframe:
+df.set_index('month')
+       year  sale
+month
+1      2012    55
+4      2014    40
+7      2013    84
+10     2014    31
+Create a MultiIndex using columns ‘year’ and ‘month’:
+
+>>> df.set_index(['year', 'month'])
+            sale
+year  month
+2012  1     55
+2014  4     40
+2013  7     84
+2014  10    31
+Create a MultiIndex using an Index and a column:
+
+>>> df.set_index([pd.Index([1, 2, 3, 4]), 'year'])
+         month  sale
+   year
+1  2012  1      55
+2  2014  4      40
+3  2013  7      84
+4  2014  10     31
+Create a MultiIndex using two Series:
+
+>>> s = pd.Series([1, 2, 3, 4])
+>>> df.set_index([s, s**2])
+      month  year  sale
+1 1       1  2012    55
+2 4       4  2014    40
+3 9       7  2013    84
+4 16     10  2014    31
+--DataFrame.set_index(self, keys, drop=True, append=False, inplace=False, verify_integrity=False):\
+drop : bool, default True
+Delete columns to be used as the new index.
+
+append : bool, default False
+Whether to append columns to existing index.
+
+inplace : bool, default False
+Modify the DataFrame in place (do not create a new object).
+data.set_index(["First Name", "Gender"], inplace = True, 
+                            append = True, drop = False) 
+
+df.set_index('pd.Index([5,6,7,8])')#length should be equal to number of rows
+data.reset_index(inplace=True)# this resets the previous index
+
+data['DocName']=data.index
+--import string;set(string.punctuation)
+--punc_lgc = str.maketrans('ab','cd') #punc_lgc is a string
+    punctuationremoval = document.translate(punc_lgc) #after this line in punc_lgc 'a' will be replaced by 'c' and b will be replaced by 'd'
+-- df.shape[0] #which will always correctly tell you the number of rows (dont use df.count() will return no of NaN values), because df.shape will return a tuple with two values, (row_count,col_count) df.shape[0] will return row count
+--df.append([tempdf[0:int(0.2*tempdf.shape[0])]['Word'].values])-will append 20 values of 'word' column to df dataframe
+--df= df[df['APAP_CUR_STS']=='CL']
+--df2= df1[df['APAP_CUR_STS']=='CL']#here df['APAP_CUR_STS']=='CL' will return a series which will give the true,false values based on condition,df1 should have equal row length as df1 and now df1 rows will be returned based on true and false values that are returned in the above generated series and all rows are assigned to df2
+df2.head(5)
+--df['column1'].value_counts() # will give each value and its corresponding repititive count in 'column1'
+--df['column1'].unique() #will return a numpy ndarray which will return unique values in column1 which can be converted to list
+--print(df.columns) and print(df.columns.values) will return the columns of that dataframe and the return type of both functions is not same
+--#standardize the data to normal distribution
+from sklearn import preprocessing
+dataset1_standardized(this is a excel which is converted to dataframe) = preprocessing.scale(dataset1)
+--#merging 2 similar dataframes (same columns)
+dataf = pd.DataFrame({'Date':['10/2/2011', '12/2/2011', '13/2/2011', '14/2/2011'], 
+                      'Event':['Music', 'Poetry', 'Theatre', 'Comedy'], 
+                      'Cost':[10000, 5000, 15000, 2000]})
+v=dataf.head(2)
+v1=pd.concat([v,dataf])
+v1
+--df.info()#will give all datatypes of columns in df
+converts dataframe to csv
+df_bi.to_csv(r'C:\Users\saivinil.pratap\Desktop\bigrams and unigrams of pdf3.csv')
+--print(df.isna()) #will return all columns with missing values in df
+--print(df.isna().sum()) #will return all columns and their corresponding null count
+
+###################################################################
+scope_explanation:
+--global scope is the area which is outside all functions,the variables declared here are global variables
+--local space of a function contains its code and, the variables declared here are local variables
+--code in global scope can't use any local variables
+--local scope means the assignments done to a variable or anything is limited to the function in which it is defined,global scope means the assignemnts done to a variable or anything is accessible from anywhere of the program(even in other functions) if a function has to access an variable but if the variable is not defined inside the function then the interpreter looks if there is any global variable that is existing with the same name already(assigned before the current function is called), if so that variable will be used.
+--code in one local function cannot use local scope variables of other functions
+-- if we want to assign a new value to a global variable which is already assigned a value, to change it inside a function we have to use "global" keyword, if you just want to use a global variable you can use it directly the same way you use local variables
+ex:
+g=5
+def spam():
+    global g
+    print("before changing global variable it's value is :",g)
+    g='the global value is changed inside the function'
+    print(g)
+spam()
+--a scope can be thought as an area of source code and a container of variables
+--
+	
+
+
+
+###################################################################
+list_func:
+
+--if and else in list comprehension
+ex:[f(x) if condition else g(x) for x in sequence]
+
+--very very important in competitive programming:
+to divide a list of size n in to m equal list of lists
+li=[1,2,3,4,5,6,7,8,9]
+no_of_sublists=3
+sub_li=[li[i:i+no_of_sublists] for i in range(0,len(li),no_of_sublists)] o/p:[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+--to join 2 lists you can follow the above method
+l=[]
+l.append([1])
+l.extend([2])
+l#check output
+'''but the above method will add them to first list, but there might be a scenario where you want to keep the both the lists intact and create a new list which will be obtained by joining the both lists, consider the below scenario'''
+l=[1,2,3];l1=[4,5,6]
+joined_list=[*l,*l1]#or you can use l+l1
+
+-when you want first input into first list second input into second list  and so on...
+l=list(range(15,30))
+no_of_sub_lists=4
+sub_li=[[] for _ in range(no_of_sub_lists)]
+for i,v in enumerate(l):
+    sub_li[i%no_of_sub_lists].append(v)
+sub_li
+simplified approach for the above example:
+li=[1,2,3,4,5,6,7,8,9]
+no_sub_li=3
+sub_li=[[] for _ in range(no_sub_li)]
+[sub_li[i%no_sub_li].append(v) for i,v in enumerate(li)]
+sub_li
+-when you assign a list a to b as 
+a=[1,2,3]
+b=a.copy()
+c=a
+a[0]='hello'
+a,b,c #o/p:(['hello', 2, 3], [1, 2, 3], ['hello', 2, 3])
+and if you print a, you will get ['hello',2,3] so it will be a major blunder(this happens because on normal assignment both lists will point to same memory and changes made using one variable will reflect in another as well)THIS NOT ONLY HAPPENS WITH LISTS IT HAPPENS WITH ALL MUTABLE VALUES, if you do assignment directly,so just use .copy() function which will avoid the mistake
+a=[1,2,3]
+b=a
+b[0]='hello'
+--in copy module shallow copy method(copy.copy) just copies reference of the object but not the duplicate object, the deep copy method will create a duplicate object for each object iteratively,they make difference only when the iterables are mutable elements check the below example:
+# importing "copy" for copy operations
+import copy
+li1 = [1, 2, [3,5], 4]
+li2=copy.copy(li1)
+li3=copy.deepcopy(li1)
+li2[2][1]=980
+li3[2][1]=890
+li2[0]='li2'
+li3[0]='li3'
+print(li1,li2,li3)
+#in the above example we changed elements of li2 and li3 at index 0 and 2 but it reflected in li1 at index 2 but not at index 0 as at index 0 it is not a mutable whereas item at index 2 is a mutable element.
+
+--a list on slicing will return a new list
+[1,2,3,4,5][1:3] will return [2,3]
+--[1,2,3]+[4,5,6]->[1,2,3,4,5,6]
+--list({1:2,3:4}) #will return [1,3] i.e, list(dict) will return the keys as list
+--difference between list and tuple is that tuple is immutable whereas list is immutable
+-- the values in the list are called items
+--you can convert a value in to list by passing it in to list(value), but the passed value must be compatible.
+-- len(A_list) will give length of A_list
+l=[1,2,2,4]
+l.index(2)
+#o/p:1- that will give the position of the FIRST OCCURENCE of 2 in the list
+--range(0,8,1) #will return a range object,but to get a list obj use the below code
+list(range(0,8))
+output:[0, 1, 2, 3, 4, 5, 6, 7]
+in addition to above example
+- if we dont pass staring index to range object it will behave in abnormal way, for the below syntax it will return an empty list because it will think of 8 as start index and 1 as end index as start index is smaller than end index it will return an empty list.
+list(range(8,1)) 
+to get output from this type of operation you have to give negative step as given in the example below:
+--list(range(8,2,-1))#o/p:[8, 7, 6, 5, 4, 3]
+--rat=[0,1,2]
+zero,one,two=rat
+zero#o/p:0
+--list1=[99,88,77,66]
+for i,j in enumerate(list1):
+	print(i,j)
+will store index value in i and item value in j
+-- to remove duplicates the list we should use
+list1=list(dict.fromkeys(list1))
+or we can use
+list1=list(set(list1))#this is not preferred as it doesnot maintain order and it  wont work for problems where order is specific,mostly it returns the list in sorted order
+
+--a=['a','b','d','c']
+a.sort() will save ['a', 'b', 'c', 'd'] in a and a.sort() will return None type but sorts the elements in the list in which it is declared
+a.sort(reverse=True)# will return the list in reverse sorted order
+''.join(a) will return 'abcd'
+to return a list which is sorted you have to use sorted(iterable) which will return sorted list, but the order in the source list will not get sorted
+ex: a=['a','b','d','c']
+note:items in the list are sorted based on ASCII BETICAL ORDER rather than ALPHA BETICAL ORDER
+ex:l=['ant','Aant','Bat','bat']
+l.sort()
+print(l)#the output is ['Aant', 'Bat', 'ant', 'bat'] because the starting letter of Ant is A and its ascii value is 65 but a is 97
+to get them in normal sorting order you have to pass an argument key=str.lower
+l=['ant','Aant','Bat','bat']
+l.sort(key=str.lower)
+print(l)#o/p:['Aant', 'ant', 'Bat', 'bat']
+--b=sorted(a)
+a will return ['a','b','d','c'] whereas b will return ['a','b','c','d']
+b=sorted(a,reverse=True)
+b will return ['d','b','c','a'] that is in reverse of sorted order
+note the difference between sorted and sort functions sorted will return the sorted list with out changing the parameter that is passed to it, whereas listname.sort() will return None but changes the listname from which the function is called.
+--to implement addition of elements position wise of two lists we use
+import numpy as np
+a1= [1,2,3]
+b1= [3,2,1]
+a=np.array(a1)
+b=np.array(b1)
+list(a+b)
+--a = [1,5,8]
+b = [3,4,7]
+result = [min(i) for i in zip(a,b)]--zip will match elementwise and i will store first zipped element of a,b i.e, (1,3),(5,4),(8,7)
+result-o/p:[1, 4, 7]
+--a1= [1,2,3]
+b1= [3,2,1]
+c1=[1,1,1]
+[sum(i) for i in zip(a1,b1,c1)]
+--arr_list = [1,4,6,8,10,11]
+a, *b, c = arr_list
+ a--1
+ b--[4, 6, 8, 10]
+ c--11
+--[2]*4 will give [2,2,2,2]
+or
+[2,]*4 will give [2,2,2,2]
+-l=[2]*4
+l[0]=l[0]+1
+l
+o/p:[3, 2, 2, 2]
+--sorting a list should be done on a list of homogeneous items
+--a=[0,1,2,3]
+for a[-1] in a:
+    print(a)
+    print(a[-1])
+output-
+[0, 1, 2, 0]
+0
+[0, 1, 2, 1]
+1
+[0, 1, 2, 2]
+2
+[0, 1, 2, 2]
+2
+--list is a sequence DS,a heterogeneous DS
+--list.insert(index,value) will insert value at a given index and pushes remaining elements to the right
+--list.remove(value) will remove the first occurence of that value in the list pushing all the elements to the left
+--del list_name[index] will remove the value from the list and reflects it in the list dynamically
+the difference between remove and del function is that we use remove when we dont know where the element resides in the list(here we should remember that remove function deletes the first occurence of the element to be deleted) and we use del when we have an element index at our hand which is to be removed and also del is useful when we know that we should delete the element based on its position not on its content.
+--a=l.pop() will remove the right most value from list l and assigns it to a
+a=l.pop(2) will remove the element at index 2 and assigns it to a
+--a=[1,2,11,110]
+print([int(i) for i in sorted([i for i in [str(i) for i in a]])])#output:[1, 11, 110, 2]
+sorted in lexicographic sorted order for digits, also notice that you have sorted using list comprehension in another comprehension which is a beautiful way of doing it, also you printed directly (in one line) using list comprehension.
+--
+l='HACK 2'.split()
+string=l[0]
+count=int(l[1])
+[print(i) for i in sorted([''.join(i) for i in list(permutations(string,count))])]
+--s,n='HACK 2'.split()
+print(*[''.join(i) for i in permutations(sorted(s),int(n))],sep='\n')# this also serves the same purpose but it uses unpack operator and prints all unpacked values by seperating them by a '\n'
+-print('sai','vinil','pratap',sep='space')
+#this gives the observation that print function has keywordargurments end and sep
+print(sorted(a))#sorted in normal order
+-from itertools import combinations
+l='HACK 2'.split()
+print(*[''.join(j) for i in range(1,int(l[1])+1) for j in combinations(sorted(l[0]),i,)],sep='\n')#here it is different from the above approach in the range of 1 to n  and then the value is passed to combinations.
+ 
+###################################################################
+dict_func:
+--Dictionaries preserve insertion order. Note that updating a key does not affect the order. Keys added after deletion are inserted at the end. The Dictionary order is guaranteed to be insertion order.
+-- to check wether the key is already present in a dictionary or not, you can just use the "in" keyword
+1 in {1:2,3:4} # will return true
+2 in {1:2,3:4} # will return false
+--a={0:1,2:3,4:5}
+del a[0]
+a#o/p;{2: 3, 4: 5}
+a.clear()#will remove all elements but dictionary will remain
+del a#will remove whole dictionary elements alongside it's existence
+d=a#will point to same memory,i.e,changes made in one dict will reflect in another
+d=a.copy()#will point both dictionaries to different memory,i.e, changes made are independant of other dict
+--x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}#play with this(incomplete)
+{k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
+--x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}#play with this(incomplete)
+l=sorted(x)
+p={}
+for i in l:
+    p[i]=x[i]
+print(p)
+-- to have multiple values assigned in the from of key to a list, we need to give the below code, but below to this there is a simple approach
+-
+d={}
+d.setdefault(1,[]).append('list1')
+d.setdefault(1,[]).append('list1')
+d.setdefault(2,[]).append('list2')
+#format-dict.setdefault(key,[]).append(value)
+print(d)
+#o/p:{1: ['list1', 'list1'], 2: ['list2']}
+or you can use the below example:
+d={}
+d[1]=[]
+d[1].append('list1')
+d
+to eliminate the duplicates in the above process you should use set:
+d={}
+d.setdefault(1,{}).append('list1')
+d.setdefault(1,{}).append('list1')
+d.setdefault(1,{}).append('list2')
+#o/p:{1:{'list1'},2:{'list2}}, check more information on help({}.setdefault)
+-from collections import defaultdict
+d = defaultdict(list)
+d['python']#o/p: defaultdict(list, {'python': []})# as the above parameter is list , by default the items appended will be a list.
+d['python'].append("awesome")
+d['something-else'].append("not relevant")
+d['python'].append("language")
+d=dict(d)
+d#o/p:{'python': ['awesome', 'language'], 'something-else': ['not relevant']}
+--a={0:1,2:3,4:5}
+print((a.popitem()))#will return (4,5) the right most item as a tuple
+--#dictionary comprehension
+d={i-1:i for i in range(1,10)}
+d
+--dict dont follow order and therefore doesnt support index
+d={1:2,3:4}
+# d[0] #will raise error
+e={3:4,1:2}
+d==e #will return true
+l1=[1,2]
+l2=[2,1]
+l1==l2#will return false
+--d={1:2,3:4}
+d.keys(),d.items(),d.values()
+#will print (dict_keys([1, 3]), dict_items([(1, 2), (3, 4)]), dict_values([2, 4]))
+-- there will be a scenario where you might want to return a default value for a key if it is not found in the dictionary
+ex:if you are going to a picnic and you have to check if you got all the items and if there is any item missing you have the choice of assigning a default value,here in this case 0
+d={'apples':10,'tables':2,'chairs':5}
+d.get('napkins',0)
+'napkins' in d#tha above get function simply returns a default value and doesnot add that key into dictionary
+--d={'apples':10,'tables':2,'chairs':5}
+d.get('napkins',0)
+d.setdefault('napkins',3)#will set napkins as key and value will be 3 and this only works when there is no key named napkin in the dictionary d
+--the pprint modules pprint() (pretty print) can print a dictionary value clearly,pprint.pformat will RETURN A STRING VALUE ASSIGNED TO A VARIABLE,DOES NOT PRINT UNLESS USED PRINT FUNCTION.
+###################################################################
+iterable_func:
+--all(variable) will return true if all elements in the variable/iterable are true,else returns false,an empty iterable also returns true
+all([0])#False
+all([1,2,3]) #True
+###################################################################
+--gensim.corpora.dictionary.doc2bow (
+document,
+allow_update: bool=False,
+return_missing: bool=False
+)[If allow_update is set, then also update dictionary in the process: create ids for new words. At the same time, update document frequencies -- for each word appearing in this document, increase its document frequency (self.dfs) by one.
+
+If allow_update is not set, this function is const, aka read-only.]
+--gensim.corpora.dictionary.doc2bow expects an array of unicode tokens on input
+
+--sys.exit(value or string)
+Exit from Python. This is implemented by raising the SystemExit exception, so cleanup actions specified by finally clauses of try statements are honored, and it is possible to intercept the exit attempt at an outer level.
+
+The optional argument arg can be an integer giving the exit status (defaulting to zero), or another type of object. If it is an integer, zero is considered “successful termination” and any nonzero value is considered “abnormal termination” by shells and the like. Most systems require it to be in the range 0–127, and produce undefined results otherwise. Some systems have a convention for assigning specific meanings to specific exit codes, but these are generally underdeveloped; Unix programs generally use 2 for command line syntax errors and 1 for all other kind of errors. If another type of object is passed, None is equivalent to passing zero, and any other object is printed to stderr and results in an exit code of 1. In particular, sys.exit("some error message") is a quick way to exit a program when an error occurs.
+Since exit() ultimately “only” raises an exception, it will only exit the process when called from the main thread, and the exception is not intercepted.
+--import sympy
+sympy.isprime(7)
+--from datetime import datetime as dt
+# from datetime import timedelta
+timestamp=(dt.now()).strftime('%Y-%m-%d %H:%M:%S')
+timestamp output:'2020-02-05 17:01:01'
+--Compile-time is the instance where the code you entered is converted to executable code while Run-time is the instance where the executable code is running
+--"in" and "not in" operators return true or false about existence of an element/value in an iterable
+--dir(variable/method/library) will print all methods that can be applied with that variable
+--isinstance('sai',str) will return true if first parameter datatype matches with second parameter
+--def power(num):
+    return num**2
+lis=[0, 1, 2, 3, 4, 5, 6]
+squared=list(filter(power,lis))#filter will remove the elements in the iterable and return elements which are viable with the logic,whereas map will return the value which the function will return for better understanding remove filter and place map.
+--filter: applies a certain condition to items in the iterable and rules out elements which are not viable with the logic
+even_lst=list(filter(lambda x:(x%2==0),lst))#very usefull
+--from functools import reduce
+def sum(x,y):
+    return x+y
+lis=[0, 1, 2, 3, 4, 5, 6]
+squared=reduce(sum,lis)
+print(squared) #o/p:21
+reduce will return a single value so we will not use list as we use list(map()
+--default argument in function assigns a value to a variable in that function, if any value is assigned in function call, then that value is used instead of default value
+
+--map,filter or reduce will have 2 parameters parameter 1 is the function and parameter 2 is the iterable
+--a file with name abc.py containing code is called a module and name of the module is abc,to import that module we simply write abc.py
+--in python we can open a file in 3 modes
+f=open(file,mode)
+3 modes(all extended modes will have basic conditions,example w+ will create a file if doesn't exist and):
+1:r  -> opens a file for reading,it is default mode ,cursor is placed at starting
+2:w  -> opens a file for writing, if a file is already existing it's content is deleted and writing starts again, if not creates a new file with the filename provided
+3:x  -> opens a file for e'X'clusive creation i.e, creates a file if it doesn't exist, else throws an error
+4:a  -> opens a file for Appending data,appends data at the end of the file,creates a new file if it does not exist
+5:t  -> opens a file in text mode,it is default mode
+6:b  -> opens a file in binary mode,used for scientific computations
+7:rb  -> opens a file to read in binary mode
+8:r+  -> opens a file to read and write mode,file pointer is placed at beginning of the file
+9:rb+   -> opens a file in reading and writing in binary format,file pointer is placed at beginning of the file
+10:w+   -> opens a file for writing and reading ,creates a file if doesn't exist and erases the existing content if file exist
++  -> open a file for updating(reading/writing)
+wb+,ab,a+,ab+ are some other formats
+--file_var=open(r"path","mode") now file_var variable is an object 
+here are some of the operations performed on file_var file object:
+file_var.mode-> returns the mode of the file
+file_var.closed-> returns true if the file_var is closed
+file_var.name-> returns the name of the file
+file_var.softspace-> a read-write attribute that is used internally by the print statement to keep track of its own state. A file object does not alter nor interpret softspace in any way: it just lets the attribute be freely read and written, and print takes care of the rest.
+--close a file after opening it else, it will be stored in ram
+--safer way of opening a file is below
+try:
+	f=open("path","mode",encoding='encoding_format if it is different')
+finally:
+	f.close()
+encoding 
+--#to get the encoding format of a file
+f=open(r"C:\Users\vinil\OneDrive\Desktop\notes.txt","rb").read()
+import chardet
+result=chardet.detect(f)
+encod_f=result['encoding']
+encod_f
+--when a file is opened in read mode,
+f.read() will read all the content
+f.read(digit) will read from 0 position to digit-1 position,next f.read(digit) will give the data after the updated cursor at digit-1 position
+f.tell()-will return the cursor position
+f.seek(position) - will move cursor to specified point
+for i in file_var:
+	print(i)#prints data line by line
+f.read_Lines() - will return list of lines from the file
+
+--raise <error_name>  will raise an error ,if in try block will turn to exception block stopping execution in try block,else raises an error and stops execution
+ex:raise ValueError("any message you want to type for that error"),message is optional
+type 1:
+try:
+    raise MemoryError("this is error")
+except MemoryError as e:
+    print(e)
+type 2:
+try:
+	raise MemoryError
+except:
+	print("any error message you want")
+
+type 3:
+try:
+	raise 
+except:
+	print("error raised manually")
+type 4:
+try:
+    raise MemoryError("this is error")
+except Exception as e:
+    print(e)#incase you dont know the type of error that might get raised. it will print the message that is typed with exception
+--
+import traceback#python traceback will help us get lot of information about how an exception is raised
+try:
+    raise Exception('this is just to get an implementation of traceback')
+except:
+    error_file=open(r"C:\Users\saivinil.pratap\Desktop\log.txt",'a')
+    error_file.write(traceback.format_exc())
+    error_file.close()
+--assert in python:
+l=-1
+'''assert is more or less like exception in python,to explain it with an example:
+if you want to have only positive number in list and if you get any negative number you need it to be informed
+in those cases you use assert statements
+when the assert statement is false the string next to it will be raised as an assertion error
+here we dont have try and except so when an assert statement is failed it will stop there itself, assert statememt is for programmers errors while programming and these statements can be removed after the application is fully developed as user side issues will be dealt with exceptions 
+'''
+assert l>0, 'number is not positive'
+-- logging data in program to a text file while running
+import logging
+# logging.basicConfig(filename=r"C:\Users\saivinil.pratap\Desktop\log.txt",level=logging.DEBUG,format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(levelname)s - %(message)s') #this will just print log messages on the console whereas the above syntax will save the log message in the text file
+'''logging is divided in to 5 categories and it has some priority
+    below are the 5 categories:
+    1:logging.DEBUG
+    2:logging.INFO
+    3:logging.WARNING
+    4:logging.ERROR
+    5:logging.CRITICAL
+    HERE THE ORDER OF PRIORITY IS DEBUG being the least and CRITICAL being the highest, this is useful when we disable it when we disable a log of particular order,then the priority logging messages will be disabled provided that they have less priority than the current priority logging category
+    syntax:logging.disable(category)
+'''
+# logging.disable(logging.ERROR) will ignore ERROR,WARNING,INFO,DEBUG categories
+
+
+logging.debug('start of the program')
+
+def factorial(n):
+    logging.debug('start of factorial (%s)' % (n))
+    total=1
+    for i in range(n+1):
+        total *=i
+        logging.critical('i is %s,total is %s' % (i, total))#notice there are no commas and parameters are in ()
+    logging.info('return value is %s'%(str(total)))
+    return total
+print(factorial(5))
+
+logging.debug('end of program')
+
+
+--%timeit - will give average iteration time it will take for one iteration
+########################################################################################################
+numpy:
+--computation with numpy array is 200x faster than lists
+--a nD numpy array is alled tensor
+--import numpy as np
+b=np.arange(0,10,1)#(start,end,step)#similar to for loop end is not included in array
+b->o/p:array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+--a=np.linspace(0,1,6)#1 at ending is fixed total 6 positions remaining 5 positions (0+1)/5=0.2 so interval is 0.2 starting with 0
+a#o/p:array([0. , 0.2, 0.4, 0.6, 0.8, 1. ])
+--a=np.eye(3)#o/p:[[1., 0., 0.],[0., 1., 0.],[0., 0., 1.]]
+b=np.eye(3,2)#o/p:[[1., 0.],[0., 1.],[0., 0.]]
+c=np.diag([5,6,7,8])#o/p:[[5, 0, 0, 0],[0, 6, 0, 0], [0, 0, 7, 0],[0, 0, 0, 8]] notice the square braces
+d=np.diag(c)#o/p:[5, 6, 7, 8]
+a=np.random.randn(3,3)#gives random values of shape 3x3
+a#o/p:[[ 0.26309984, -0.68504932, -0.05957326],[-0.25660805,  0.31861719,  0.65046857],[-2.41144948, -0.59969052,  1.15969629]]
+a.dtype#will give datatype that a given numpy array holds
+a=np.ones((3,3))#o/p:[[1., 1., 1.],[1., 1., 1.],[1., 1., 1.]],notice double braces
+b=np.zeros((3,3))#o/p:[[0., 0., 0.],[0., 0., 0.],[0., 0., 0.]]
+c=np.arange(10,dtype='int');print(c)#o/p:[0 1 2 3 4 5 6 7 8 9]
+a=np.diag([1,2,3])
+a#o/p:[[1, 0, 0],[0, 2, 0],[0, 0, 3]]
+a[2,2]=5
+a#o/p:[[1, 0, 0],[0, 2, 0],[0, 0, 5]]
+--a=np.arange(1)
+b=a[1:8:2]
+c=a[5:]
+print(a,b,c)#o/p:[0] [] []
+or
+a=np.arange(10)
+b=a[::2]
+c=a[::]
+print(a,b,c)#o/p:[0 1 2 3 4 5 6 7 8 9] [0 2 4 6 8] [0 1 2 3 4 5 6 7 8 9]
+--a=np.arange(0,10,1)
+b=np.arange(0,10,2)
+np.shares_memory(a,b)#o/p:False
+a=np.arange(0,10,1)
+b=a[0::2]#this is a view,it shares common memory
+c=a[0::2].copy()#this is a copy,it doesn't share common memory
+np.shares_memory(a,b)#o/p:True
+np.shares_memory(a,c)#o/p:False
+--a=np.random.randint(0,20,10)#(start,end,count)will have elements from start to end-1 and the number of elements is count parameter
+a#output:[ 8, 11, 18,  1, 18, 11,  1, 15,  0, 16]
+--a=np.random.randint(0,20,10)
+mask=(a%2==0)
+a_b=a[mask]#mask creates copy not views
+a_b
+--a=np.array([0,10,20,30,40,50,60,70,80,90])
+b=a[[0,3,2,4,7]]#an np array with 2 square brackets will deal with indices of nparray
+a[[9,7]]=-200
+a,b#array([   0,   10,   20,   30,   40,   50,   60, -200,   80, -200]),array([ 0, 30, 20, 40, 70])
+b=a+1#arithmetic operators operate elementwise on numpy array
+c=a-b
+a,b,c#array([   0,   10,   20,   30,   40,   50,   60, -200,   80, -200]),array([   1,   11,   21,   31,   41,   51,   61, -199,   81, -199]),array([-1, -1, -1, -1, -1, -1, -1, -1, -1, -1])
+
+--a=np.array([147, 176, 105,  35, 229,  90, 140, 272,  44, 295])
+b=a[[9,3,-4,5,1,6,7,-1,2]]#values in double square brackets indicate indices of the array a,np array b will hold corresponding indice vales declared in array a
+b
+--a=np.array(any_list)#will create an array
+--a=np.array([147, 176, 105,  35, 229,  90, 140, 272,  44, 295])
+b=a+1#o/p:[148 177 106  36 230  91 141 273  45 296] 
+c=a-1#o/p:[146 175 104  34 228  89 139 271  43 294]
+#all arithmetic operators operate element wise(corresponding position wise)
+print(b,c)
+--a=np.diag([3,5,7])
+a[[1,2]]=4#will make second and third rows values 4 as index starts from 0
+--a=np.diag([3,5,7])
+a[1,2]=4#will make secondrow and third column value 4 as index starts from 0
+c=a*a# it can also be declared as a.dot(a)
+c#o/p:[[ 9,  0,  0],[ 0, 25, 16],[ 0,  0, 49]]
+--a=np.array([1,2,3,4])
+b=np.array([5,2,2,4])
+a=np.array([1,2,3,4])
+print(a>b) #output:[False False  True False]
+print(a==b)#output:[False  True False  True]
+np.array_equal(a,b)#will return true or false 
+np.array_equal(a,c)#will return true or false 
+np.logical_or(a,b)#logical op
+np.logical_and(a,b)
+np.sin(a)
+np.log(a)
+np.exp(a)#all above  operations will return np array as output
+--shape mismatch error will come when we operate on 2 uncompatible arrays
+--flatten?
+--ravel?
+########################################################################################################
+----a='{}{}'.format(10,20)
+print(a)#o/p:1020
+--a=2
+b=10
+b**=a
+b#o/p:100
+--print('{name} inital {surname}'.format(name='vinil',surname='pratap'))#o/p:vinil inital pratap
+-- **=, &=, |=, ^= are some unknown assignment operators
+--unzip <folder_name> will unzip the folder in putty
+--python <file_name.ext>  install -will install the filein putty.
+--after running setup.py file any package will be installed.
+--one package after installation maybe depended upon the other packages which further needs to be installed.
+--import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+plt.figure(figsize=(30,30))#30,30 will give the x and y values for plotting the below heatmap
+c= df.corr()#here c is also a dataframe which is obtained by processing row column relation correspondence of dataframe 'df'
+print(c)
+sns.heatmap(c,cmap="BrBG",annot=True)#here heatmap is plotted fr dataframe c which is obtained above ,annot parameter will give the values displayed on the plot
+--cython package is used to get c features in python,It makes writing C extensions for Python as easy as Python itself.Cython is a programming language that aims to be a superset of the Python programming language, designed to give C-like performance with code that is written mostly in Python with optional additional C-inspired syntax.
+--os.system('date') # will give current date
+--os.system('notepad')#will open notepad
+--The full-form of JSON is JavaScript Object Notation. It means that a script (executable) file which is made of text in a programming language, is used to store and transfer the data. Python supports JSON through a built-in package called json. To use this feature, we import the json package in Python script which provides us with a lot of methods which among loads()(loads string as a json object) and load() (loads json file as json object)methods are gonna help us to read the JSON file. The text in JSON is done through quoted string which contains the value in key-value mapping within { }.
+ex:
+import json
+  
+data = {
+    "name": "Satyam kumar",
+    "place": "patna",
+}
+datas = '''{
+    "name": "Satyam kumar",
+    "place": "patna"
+}'''
+
+with open(r"C:\Users\saivinil.pratap\Desktop\TEMP.txt","w" ) as write:
+    json.dump( data , write )
+with open(r"C:\Users\saivinil.pratap\Desktop\TEMP.txt", "r") as read_content:
+    print(json.load(read_content))#first we created a json file and then loading the content of it by loading a json object using json.load method
+print(json.loads(datas))#here we use loads method to load a string object, the string object we load should be a documented string 
+the following objects in json is read as corresponding elements in python.
+object ->Dict,  array  ->List, string ->Str,  null   ->None ,  number (int)->int ,  number(real) ->float,  true   ->True,  false  ->False
+load is used when we are loading a json file object,loads is used when we are using json string object
+ex1(string obj):
+# JSON string 
+a = '{"name": "Bob", "languages": "English"}'
+  
+# deserializes into dict  
+# and returns dict. 
+y = json.loads(a)
+
+ex2(file object):
+f = open('data.json',) 
+  
+# returns JSON object as a dictionary 
+data = json.load(f) 
+  
+# Iterating through the json 
+# list 
+for i in data['emp_details']: 
+    print(i) 
+--In programming, a metasyntactic (which derives from meta and syntax ) variable is a variable (a changeable value) that is used to temporarily represent a function .
+--"Foo" and "bar" as metasyntactic variables
+--Python provides, you can use the PyPI (Python Package Index). It is a repository of third-party Python modules 
+--df[temp_col]="" used to create a column on a dataframe df with no values
+--Let’s now talk about Python architecture and its usual flow –
+i. Parser
+It uses the source code to generate an abstract syntax tree.
+ii. Compiler
+It turns the abstract syntax tree into Python bytecode.
+iii. Interpreter
+It executes the code line by line in a REPL (Read-Evaluate-Print-Loop) fashion.
+
+##################################################
+class:
+getattr(obj or self,variable)#will give the value of the variable in the passed object.
+setattr(obj or self,variable,value)#will set the passed value to the variable in the given object.
+ex:setaattr(obj/self,'%s_pv'%mode,value)#i think mode will be replaced by %s
+-- functions are mini programs in a program
+##################################################
+arithmetic operators:
+a//b will return integer divison
+a/b will return float divison
+a^b mod m can be calculated simply using pow(a,b,m) this pow is not a module from math library it is a general function and it does not need import statement
+ex:
+x = 7
+y = 2
+z = 5
+print(pow(x, y, z))    # 4
+##################################################
+oops_explanation_with_python:
+--Major principles of object-oriented programming system are given below.
+	Class
+	Object
+	Method
+	Encapsulation
+	Polymorphism
+	Abstraction
+	Inheritance
+	(first letters of above principles are COMEPAI)
+MAIN PILLARS IN OOPS CONCEPTS ARE:(EPAI)
+	E-ENCAPSULATION
+	P-POLYMORPHISM
+	A-ABSTRACTION
+	I-INHERITANCE
+
+object has 2 charecteristics:
+	1:attributes- it explains the physical appearance or properties of object using metrics ex: each parrot might have different color,height and name
+		variables are of two types:
+			instance variables: variables which change with the change in object are called instance variables in simple words, we can say variables declares inside the init method are called instance variables. for example,name variable differsn for each object created through person class
+			static variables: variables which are common for all the objects ,that are declared outside init and other methods are called static variables, for example wheels variable for all the car objects remain the same, and also it acts as a single point so that when we change the value here and execute it from then it changes for all the objects it is instantiated through, whereas the color of each car may differ , so the color is better when declared as instance variable.
+	2:behaviour-it explains what the object can do , ex: a parrot can sing or fly
+	the concept of OOP in python is to create reusable code,AKA DRY(Dont Repeat yourself)
+	class: it is a blue print for the object, it contains all details of what a object should have.
+	object: it is an instantation of class,when an object is instantiated , memory is also allocated for it.
+	in short:
+	every object KNOWS SOMETHING(attributes), and it DOES SOMETHING(behaviour), attributes are stored in variables and behaviours are stored in methods.
+
+classname.method(object) is same as object.method() #both does the same job of calling a method using an object, method() is defined  as 
+def method(self):
+	//statements
+obj.method() will be changed as method(obj) internally and when it goes to the function definition method(self) the self will get replaced by object and execution continues
+everything in python is an object and every object needs some memory and it is stored in heap Memory,size of an object depends upon number of variables and size of the variables it has.
+--creating an class in python:
+class Parrot:
+
+    #notice how a class attribute is being declared
+    species = "bird"
+
+    # instance attribute
+    def __init__(self, name, age): #here __init__ is a special method (which is used to initialize the variables(as it is called automatically) this is similar to constructor concept in java and cpp) and any variable sorrounded by a double underscore is called a special variable
+        self.name = name #in the above declaration we had defined name and age as attributes but unless it get assigned to the object using the self.name it will not get assigned to the object.
+        self.age = age
+
+# instantiate the Parrot class
+blu = Parrot("Blu", 10)
+woo = Parrot("Woo", 15)
+
+# access the class attributes
+print("Blu is a {}".format(blu.__class__.species)) #or print("Blu is a {}".format(Parrot('','').__class__.species)) to fetch a "class attribute"
+	1:using object
+	 you have to use object.__class__.<attributename> and name,age are called "instance attributes"
+	print("Woo is also a {}".format(woo.__class__.species))
+	2:using classname
+	print(Parrot.species)
+
+# access the instance attributes
+print("{} is {} years old".format( blu.name, blu.age))
+print("{} is {} years old".format( woo.name, woo.age))
+--class inside a class:
+class Student:
+    def __init__(self,name,age):
+        self.student_name=name
+        self.student_age=age
+        self.lap=self.Laptop('lenovo','i5',9)#declaring the object of the class which is ddefined in the current class, notce the self getting declared on both sides
+        
+        
+    def show(self):
+        print(self.student_name,self.student_age)
+        self.lap.show()
+    
+    class Laptop:										#declaring class inside a class
+        def __init__(self,brand,cpu,ram):
+            self.brand=brand
+            self.cpu=cpu
+            self.ram=ram
+        def show(self):
+            print(self.brand,self.cpu,self.ram)
+s1=Student('sai',6)
+s1.show()
+lap1=Student.Laptop('hp','i6',8)#creating an object of laptop using Student class
+lap1=s1.Laptop('hp','i6',8)#creating an object of laptop using Student object.
+Student.Laptop('hp','i6',8).show()#calling an method of laptop using laptop object and Student class
+lap1.show()
+--defining methods in class:
+class Parrot:
+    
+    # instance attributes
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    # instance method, an instance method will definetly have self as a parameter
+    def sing(self, song):
+        return "{} sings {}".format(self.name, song)
+
+    def dance(self):
+        return "{} is now dancing".format(self.name)
+
+# instantiate the object
+blu = Parrot("Blu", 10)
+
+# "sing and dance are instance methods"
+print(blu.sing("'Happy'"))
+print(blu.dance())
+--inheritance
+types of inheritance:
+	single-	A->B
+	multiple a,b->c  
+	multi level	A->b->C
+	hybrid- a mix of two or more of the above inheritance types is an example of hybrid inheritance.
+how init works in inheritance:
+if a __init__(self) method is in a class, then it will be called instantly without any explicit call, if class b is inherited from class a and class b dont have an init method and class a has an init method and if an object is called from class b, then as the class b does not have an init method an init method from class a is called (as class a is the parent of class b),if the class b (which is inherited from the class a) is also having the init method and for suppose you want to call the init method in the parent class a then you can call using the following syntax- super().__init__(), 
+Now comes to the interesting part of MRO-Method Resolution object: if there is a multiple inheritance and in the child class if we try calling method from the parent class then the firstly inherited class method is called, observe the below example:
+
+class A:
+    def __init__(self):
+        print('inside init of A')
+class B:
+    def __init__(self):
+        print('inside init of B')
+class C(B,A):
+    def __init__(self):
+        print('inside init of C')
+        super().__init__()
+c=C()
+output:
+inside init of C
+inside init of B
+
+#here init of class B is called because B is getting inherited first in class C(B,A) 
+
+# parent class
+class Bird:
+    
+    def __init__(self):
+        print("Bird is ready")
+
+    def whoisThis(self):
+        print("Bird")
+
+    def swim(self):
+        print("Swim faster")
+
+# child class
+class Penguin(Bird):
+	birdfamily='arthropoda'
+    def __init__(self):
+        # call super() function
+        super().__init__()
+        print("Penguin is ready")
+
+    def whoisThis(self):
+        print("Penguin")
+
+    def run(self):#all methods other than static and class method are instance methods,they are of two types and are discussed below
+        print("Run faster")
+	@classmethod
+	def bird_family(cls):
+		return cls.birdfamily #Penguin.bird_family() this is the way to call class method, classname.classmethod() here we use cls instead of self as parameter
+	@staticmethod# a static method will not have any parameters.
+	def basic_info():
+		return "this class is about birds and their capabilities."
+
+peggy = Penguin()
+peggy.whoisThis()
+peggy.swim()
+peggy.run()
+Penguin.bird_family()#you can call a class method using class name
+Penguin.basic_info()#you can also call a static method using class name
+three types of methods in OOPS python(unlike variables which are only two types-static variables,instance variables):
+1:instance methods- the methods which use self as parameter are called instance methods
+	further classified into 2 types:
+	1.1 accessor methods- this methods are used to access the variables ex: get methods
+	1.2 mutator methods- this method is used to mutate the varibles ex: set methods
+2:class methods
+	class methods use class variables it uses decorator @classmethod to differentiate the method from an instance method. the above bird_family method is an example of class method
+3:static methods
+	static methods are methods which dont have the need of class variables or static variables and it doesnt have any parameters passes to it (unlike self,cls), check the above example method basic_info, a decorator @staticmethod is needed to make the interpreter understand
+	
+	notes:In the above program, we created two classes i.e. Bird (parent class) and Penguin (child class). The child class inherits the functions of parent class. We can see this from the swim() method.
+	Again, the child class modified the behavior of the parent class. We can see this from the whoisThis() method. Furthermore, we extend the functions of the parent class, by creating a new run() method.
+	Additionally, we use the super() function inside the __init__() method. This allows us to run the __init__() method of the parent class inside the child class.
+--Encapsulation: in python we can restrict the access of methods and variables and thereby prevent direct modification of them.private attributes are declared using prefix - single underscore _ or double underscore__.
+ex prgrm:
+class Computer:
+
+    def __init__(self):
+        self.__maxprice = 900
+
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def setMaxPrice(self, price):
+        self.__maxprice = price
+
+c = Computer()
+c.sell()
+
+# change the price
+c.__maxprice = 1000
+c.sell()
+
+# using setter function
+c.setMaxPrice(1000)
+c.sell()
+note:We used __init__() method to set the maximum selling price of Computer. We tried to modify the price. However, we can't change it because Python treats the __maxprice as private attributes.
+As shown, to change the value, we have to use a setter function i.e setMaxPrice() which takes price as a parameter.
+--polymorphism
+a concept in object oriented programming where a common interface is provided to multiple forms(data types)
+Suppose, we need to color a shape, there are multiple shape options (rectangle, square, circle). However we could use the same method to color any shape. This concept is called Polymorphism.
+class Parrot:
+
+    def fly(self):
+        print("Parrot can fly")
+    
+    def swim(self):
+        print("Parrot can't swim")
+
+class Penguin:
+
+    def fly(self):
+        print("Penguin can't fly")
+    
+    def swim(self):
+        print("Penguin can swim")
+
+# common interface
+def flying_test(bird):
+    bird.fly()
+#or you can also use class for the above example
+class flying_tests():
+    def __init__(self,clas):
+        clas.fly()
+
+#instantiate objects
+blu = Parrot()
+peggy = Penguin()
+# passing the object
+flying_test(blu)
+flying_tests(blu)
+flying_test(peggy)
+note:"Polymorphism allows the same interface for different objects, so programmers can write efficient code."
+In the above program, we defined two classes Parrot and Penguin. Each of them have a common fly() method. However, their functions are different.
+To use polymorphism, we created a common interface i.e flying_test() function that takes any object and calls the object's fly() method. Thus, when we passed the blu and peggy objects in the flying_test() function, it ran effectively.
+
+Data Abstraction: often abstraction and encapsulation are treated as synonyms, and it is true to some extent because abstraction is achieved through encapsulation. abstraction hides the implementation behind and allows to call the function, abstracting something means giving name to the functionality based on what the function or program does at core.
+abstract classes in python:
+python by default does not have abstract classes, but we can implement them by importing a certain module named abc, a class is called abstract class if it has an abstract method,and abstract method will have a function declaration not function definition.The abstract class is usefule when there comes a scenario where the method from a parent class has to be definitely overridden.
+from abc import ABC,abstractmethod #abc stands for abstract base classes.
+
+class Vehicle(ABC):#NOTICE ABC sent as parameter
+    @abstractmethod #NOTICE the abstract method annotations here
+    def wheel_count(self):
+        pass
+class car(Vehicle):
+    def wheel_count(self):
+        print('the car has 4 wheels')
+car().wheel_count()
+#if we don't declare wheel_count method in car class then we will have the error-TypeError: Can't instantiate abstract class car with abstract methods wheel_count 
+--duck typing:
+if an object walks like a duck,quacks like a duck,swims like a duck then the "object" is a duck, this ducktyping happens in python, i.e, if a number is assigned to a variable then the variable can perform all the tasks an integer can perform similarly if a string is assigned to the same variable then the variable can perform methods related to string object such as 'isdecimal','isdigit','isidentifier'. PYTHON OBEYS DUCK TYPING.
+
+##################################################
+miscellaneous:
+-In Python, functions are first class objects that means that functions in Python can be used or passed as arguments.
+--to copy the content of a file to string in one line use:
+from pathlib import Path
+file_path=r"C:\Users\saivinil.pratap\Downloads\backup db poc\member db\member bkp.sql"
+query = Path(file_path).read_text()
+-- there is no direct do while loop in python, but you can use the below structure:
+while(True):
+
+	if(condition)#the condition for which you want to exit from the loop
+		break
+
+--shelve in python:
+import shelve#this works exactly like dictionary with a small difference as it can be stored and called from anywhere in the memory
+shelfFile=shelve.open('mydata')#This creates mydata.bak mydata.dir mydata.dat files in the current folder(or current working directory) as the path passed is a relative one , if the path is absolute then the before mentioned 3 files will be created in the mentioned absolute paths 
+shelfFile['people i love']=['ANITHA','BADRI','LATHA','AKSHAY','NEERJA','MYSELF']#this is key value declaration
+print(shelfFile['people i love'])#this will print all the values that are under the current key
+shelfFile['people i hate']=['I HATE NO ONE']
+print(shelfFile['people i hate'])
+shelfFile['1']='1'
+print(list(shelfFile.keys()))#will print all the list of keys that are under the current shelfFile object based on the path passed in sheshelve.open() method
+print(list(shelfFile.values()))# this will return a list of elements which are declared on current shelfobject
+shelfFile.close()
+--
+You can see which Python interpreter you're running by doing:
+
+>>> import sys
+>>> sys.executable	
+-to check the location of the package
+import <package name>
+<package name>.__file__
+-to install package directly from jupyter 
+!pip install <packagename>
+-to check version of python
+from platform import python_version
+print(python_version())
+-environment error while installing packages can be removed if we try using admin mode
+--decorators in python:
+let us say we have some function in some class which is to be imported into the current class and you need to do changes to the mthod but not in the class from which it is imported but in the current class then we can use decorators
+def div(a,b):
+    print(a/b)
+# it will return the division of a/b but if you need to only get numbers > 1 we need to have the bigger number in the numerator so we can use decorators to alter the function as below,this is a very small introduction for decorators
+
+def smart_div(func):
+    
+    def inner(a,b):
+        if a<b:
+            a,b=b,a
+        return func(a,b)
+    return inner
+
+div=smart_div(div)
+
+div(2,4)
+--variable arguments usage in python:
+fav_col=['pink','orange','green']
+def fav_col_printer(*col):
+    print('my fav colors are ' , ', '.join(*col))
+print('printing a list using *',*fav_col)
+fav_col_printer(fav_col)
+#here no matter how many colors you chose the code will run fine as it obeys variable argument usage.
+--operator overloading:
+#operator overloading through classes
+class inti:
+    def __init__(self,num):
+        self.num=num
+    def __add__(self,other):
+        summ=self.num+other.num
+        print('the sum of 2 numbers is '+str(summ))
+n1=inti(5)
+n2=inti(6)
+n1+n2
+#here operator overloading is happening as __add__ is the default method of addition but we have over rided the method by calling it in the current class so if we add 2 objects it is calling the locally defined __add__ method this is called operator overloading in python in similar way we can override all the methods we obtain using dir(datatype) option
+--method overriding 
+a=1
+# print((a.__str__()))
+print(a)
+class inp:
+    def __init__(self,inti,inti2):
+        self.inti=inti
+        self.inti2=inti2
+c=inp(1,2)
+print(c)
+class inti:
+    def __init__(self,inti,inti2):
+        self.inti=inti
+        self.inti2=inti2
+    def __str__(self):
+#         print(type(self.inti))
+        return '{} {}'.format(self.inti,self.inti2)
+b=inti(1,2)
+print(b)
+print(b.__str__())
+#when we try to print an object by default it will call(even if we call or not) the .__str__() and by default __str__() will return the address of the object, but in some exceptional cases if the object is storing an inbuilt datatype it will print the value the variable holds see the printing of variable a b and c in above example, this is an example of method overriding because the default __str__() method is getting overriden by the current declared method, THIS STRING METHOD SHOULD BE DEFINED IN SUCH A WAY THAT IT COVERS AND OUTPUTS ALL MEMBERS OF A CLASS, consider the below example.
+-
+class MyClass:
+    x = 0
+    y = ""
+
+    def __init__(self, anyNumber, anyString):
+        self.x = anyNumber
+        self.y = anyString
+    def __str__(self):
+        return "the Myclass contains {} as a number and {} as a string".format(self.x,self.y)
+
+myObject = MyClass(12345, "Hello")
+# even though the the below print statements are different they give the same output(if the str method is not overrided, if it is overrided repr method will give different results), because when an object is instantiated in the class, it will populate this str method involuntarily and if you print the object it will call str method involuntarily.
+print(myObject.__str__())
+print(myObject.__repr__())
+print(myObject)
+-but if the __repr__ method is overrided then the output for class.__str__(), and other print statements used in the below program return the same results
+class MyClass:
+    x = 0
+    y = ""
+
+    def __init__(self, anyNumber, anyString):
+        self.x = anyNumber
+        self.y = anyString
+    def __repr__ (self):
+        return "the Myclass contains {} as a number and {} as a string".format(self.x,self.y)
+myObject = MyClass(12345, "Hello")
+#the below print statements will return the same values.
+print(MyClass.__str__(MyClass(1,'23')))
+print(myObject.__str__())
+print(myObject)
+print(str(myObject))
+print(myObject.__repr__())
+--method overloading: though we dont strictly have an method overloading function in python(as we cannot declare two methods with same name and one more other reason is python is dynamically typed language and you cannot have two methods with same name and same parameters and different datatypes as python determines the datatype dynamically and therefore no need of having two methods declared with same number of parameters and different data types) the closest we can come is with the example below or by using keyword arguments
+ex:
+from multipledispatch import dispatch
+  
+#passing one parameter
+@dispatch(int,int)
+def product(first,second):
+    result = first*second
+    print(result);
+  
+#passing two parameters
+@dispatch(int,int,int)
+def product(first,second,third):
+    result  = first * second * third
+    print(result);
+  
+#you can also pass data type of any value as per requirement
+@dispatch(float,float,float)
+def product(first,second,third):
+    result  = first * second * third
+    print(result);
+  
+  
+#calling product method with 2 arguments
+product(2,3,2) #this will give output of 12
+product(2.2,3.4,2.3) #
+--stream methods return a value but the value which it stores will remain intact, for example if you call a method upper it will give a different result, but the value it stores stays the same
+ex:
+s='this is original string with small case letters'
+print(s.upper(),s)#here s will not change 
+--print()#this will print a empty line
+-- the difference between string and list is that
+1:string is immutable whereas the list is not
+ex:strp='hiiii',strp[3]='p' #will result in an error 
+--getting precision up to n decimal places
+1:print('%.2f'%4.346)#output:4.35
+2:print('{0:.8f}'.format(4))# will print 4.35
+3:print(round(5,4)) # will print 5 ,
+but
+print(round(5.1654435,3))#will print upto 3 decimal places i.e, 5.165
+
+?<any variable or method or function or package> will give its type,string,file location and docstring
+-- if a python instruction evaluates to a single expression it is a expression or else it is a statement
+-- interactive shell or (interpreter) evaluates one instruction at a time, file editor (such as notepad or any file generating program which can hold multiple instructions and save them as a python file with .py extension)
+--
+name=input()
+if name:
+	print('name is entered')
+else:
+	print('nothing is entered')
+here if name is not entered it will go to else loop because empty string is treated as false by python
+0,0.0,'' are treated as false by python
+--None returns nothing(type it in interpreter and you can see by yourself)
+a function without any return statement will return none
+--main function in python will be something like this
+	if __name__== '__main__':
+		#enter code here
+--
+
+the below code will calculate ((input1^input2)+(input3^input4))
+	if __name__=='__main__':
+		print (pow(int(input()),int(input()))+pow(int(input()),int(input())))	
+--str_list = ['A', 'C', 'F']
+syntax for combinations: itertools.combinations(list_of_strings,count_of_strings)
+list(itertools.combinations(str_list,2))o/p:[('A', 'C'), ('A', 'F'), ('C', 'F')]
+list(itertools.permutations(str_list,2)o/p:[('A', 'C'), ('A', 'F'), ('C', 'A'), ('C', 'F'), ('F', 'A'), ('F', 'C')]#position starts with p and permutation starts with p and position also matters in permutations, that means ('A','C') is different from ('C','A')
+--chr(unicode code point) will return symbol in string format of the character
+print (chr(176))# and check output,other type convertrs are int,str,float,ord,hex,oct,list,tuple,dict,set,complex
+--bin(number) will return binary from of number
+ex:bin(7) will return '0b111'	
+--the first line of all python programs should be a shebang line.
+begins with a #!
+in windows it is:#! python3
+in osx: #!usr/bin/env python3
+in linux: #!usr/bin/python3
+in windows python.exe will read the  shebang line at the top of the python source code and will decide which version of python should run the script
+--sys.argv will store the path of the python file(the file which is called for running) and all other command line arguments(parameters that are passed as inputs for program to execute) that are passed along with while running the file in list of strings format
+--python supports batch file execution,a batch file will run lot of commands that contains in itself at once.(will have .bat extension)
+--for _ in range(5):
+	print('hi)
+#will print hi for 5 times even if you did not use any iterable in for statement
+--when you use an object as a  default argument in function and if the function is called more than once and if you have some variables in def __init__(self): of the default object which is used as a parameter then they will not get initialized again and the old initialized/changed values (when it is called for the first time will be used again and this will lead to an error.
+-- when input is passed to a program the value is treated as string initially, to cast it into the type we need programmers follow the conventional way mentioned below the datatype mentioned below is user specific:
+input_list=list(map(datatype,input().rstrip().split()))
+my approach: input_list=[int(i) for i in input().split()]
+-- if you are operating on a variable which is declared in a for loop and incrementing or decrementing it in the same loop is a mistake
+ex:if you want to print values form 1 to 10 then 
+for i in range(10):
+    i=8+i
+    print(i)#this will not give the same result
+-- placing a r before a string will make the interpreter treat it as a raw one and when a string is raw it treats escape sequences as escape sequences and make its functionality work, if there is a single slash,it wont check what is its adjacent character and thereby avoids unexcpected escape seuence getting reflected
+ex:
+#here in the below example first is a raw string so a single slash is treated as single slash, but if the string is not a raw sting we have to mention double slash as an escape sequence for a slash is to mention it as a double slash.
+print(r"C:\Users\saivinil.pratap\Desktop\PractitionerDataModel_v0.xlsb.xlsm","C:\\Users\\saivinil.pratap\\Desktop\\PractitionerDataModel_v0.xlsb.xlsm")
+
+-- escape sequences help us to include characters in a string which are hard to type
+-- when you try to divide a number by zero, it raises an error (ZeroDivisonError) and there are many such errors and an error will cause the program to crash and we have to avoid the crash because it will prevent the program from running,to prevent errors we can use exception statements,in layman terms python doesn't know how to carry on with improper data and it also does not want to run program with improper data
+ex:
+num=input()
+try:
+    if int(num)>=0:
+        print('dividing 20 with input number  gives',20/int(num))
+    else:
+        print('please enter positive number')
+except ZeroDivisionError:
+    print('you cannot divide a number by zero')
+except:
+    print('please enter input in number format')   
+-int('05') will print 5
+-x, y, z, n = (int(input()) for _ in range(4)) #crisp code to accept for 4 consecutive inputs
+-print('Hello',first,last+'!','You just delved into python.')#here , will replaced by an empty space ' ', whereas + will make the concatenation next to it without any space in between, as the name represents in english when you have comma between the wods you have to take a pause and then continue reading,the same way comma will use a space similar to pause in english language, and + in math will add 2 values,in the same way python uses + between strings to concatenate them immediately
+-batch files achieves the automation, you can include a syntax 
+syntax:@py <path of the script to be executed> %* 
+the star at the end takes the command line arguments as input i.e, sys.argv[0] will be the path of the script and the other inputs after that seperated by space are sent as commandline arguments
+after you save the file as a batch file (with .bat extension) , then declaring that file containing folder in the path variable of system variable. so that on pressing windows+r we can directly type the name of the bat file which in turn executes the python script inside it.this saves a lot of time when we want to run scripts periodically 
+
+####################################################################################################
+string_func:
+-- to convert a timestamp which in in string to timestamp we need to use string.strptime to convert it into a timestamp format
+--string.rsplit(separator, maxsplit)
+Parameter   Values
+Parameter	Description
+separator	Optional. Specifies the separator to use when splitting the string. By default any whitespace is a separator
+maxsplit	Optional. Specifies how many splits to do. Default value is -1, which is "all occurrences"
+--string.replace(old, new, count)#we can replace as manytimes as we want look at the count parameter
+--if you want a string with 5 dollar symbols just give stri=5*'$'
+--shorthand assignment operators are also called as augmented operators
+-- to withhold a large strings we can use '''(triple quotes) the information that is hold between triple quotes can be assigned to a variables
+--in python strings we have escape sequences those escape sequences will start with '\' but there might be instances where we want the compiler to treat the '\' as a back slash , not an escape sequence, in that scenario preceeded by r so it will be treated as raw string.
+raw_str=r'this is a raw string which treats back slash as a '\' not as a escape sequence'#it also ignores escape sequences
+raw_str will be stored differently and will be printed(sent to console) differently
+ex:
+raw_str=r'this is a raw string which treats back slash as a \\'' not as a escape sequence'
+print(raw_str)
+raw_str
+--<string>.islower function will check wether all the elements in the string are lower or not and then return true or false accordingly, same happens with isupper function.
+ex:
+'123'.isupper()
+'123'.islower() #both return false
+'A12'.isupper() #true
+'a12'.islower() #false
+some similar functions are isdigit,isalnum
+--<string>.isspace()#will return true if string is containing only space characters
+ex:' \t'.isspace()#true
+ex:'    '.isspace()#true
+ex: ' \b'.isspace()#false the string should have only blank spaces but \b is a blank space 
+--<string>.isdecimal()#will return true if the number is decimal
+ex:'11'.isdecimal()#will return truw
+,'11.1'.isdecimal()#will return false
+,"\u0030".isdecimal(),"\u0047".isdecimal()
+'\u0030'->unicode for '0'#will return true
+'\u0047'-> unicode for 'G'#will return false
+--<string>.istitle()# will return true if the starting letter of the text is capital, else letters in the first word should not be.
+ex:
+'Dad name is Pratap Badri Narayana'.istitle()#true
+'dad'.istitle()#false
+'DaD'.istitle()#false will return true only if the first letter (not other letters) in the first word are capital
+--rjust and ljust will add spaces on the right side and left side making it the required length.
+<string>.rjust(integer,pattern) or <string>.ljust(integer,pattern) or <string>.center(integer,pattern)#pattern is optional
+ex:'hello'.rjust(10)#'     hello' #rjust means keeping the text at rightside
+ex:'hello'.ljust(10,'$')#'hello$$$$$' #ljust means keeping the text at leftside
+ex:'hello'.center(10,'$')#'$$hello$$$'#center means keeping the text at center
+note: rjust,ljust,center can be used recursively
+ex:'hello'.rjust(10,'l').ljust(15,'r').center(20,'y') #will first append l at left to hello, then append r to right of hello, then append y to both sides of the result string, recursion is possible because each rjust,ljust or center will return a string.
+--starts with and ends with are python string functions which will check wether the pattern is matching with the input string if matches will return true else false.
+ex:'sadefcnedkfjcndkc'.endswith('dkc')#true
+--strip function will remove the specified character at the both ends as long as the character pattern exists,whereas rstrip only removes at right end and lstrip removes only at left end
+ex:'ppdfppppppppppppppppp'.rstrip('p')#'ppdf'
+--strip function tries to strip letters(each seperately) that are passed as a parameter
+ex:'abcabcdefabcghiabccab'.strip('abc')
+the output is 'defabcghi' as it strips a or b or c that esist at the starting or at the end.
+--when we want to concatenate multiple strings as a single string, we can use string formatting
+ex:
+name,age,sex,country='vinil','21','Male','india'
+details='my name is %s, my age is %s, i am a %s, i am from %s' %(name,age,sex,country)#%s used here is called conversion specifiers
+details
+output:'my name is vinil, my age is 21, i am a Male, i am from india'
+--import textwrap
+string = "T his i ss a verry verry very very very long string."
+print (textwrap.fill(string,4))
+print( textwrap.wrap(string,4))
+T		#have to play with it and check
+his
+iss
+a ve
+rry 
+verr
+y
+very
+very
+very
+long
+stri
+ng.
+['T', 'his', 'iss', 'a ve', 'rry ', 'verr', 'y', 'very', 'very', 'very', 'long', 'stri', 'ng.']
+###############################################
+math_library:
+math.sin(value) will calculate the sine angle of the value in radians
+math.degrees(radians) will calculate values in degrees
+math.hypot(value1,value2) will calculate hypotenuse
+
+###############################################
+eval_functionality:
+it only acccepts string as its input.
+eval is a very powerful function built in python, it helps in evaluationg an expression, an expression can be a statement or an code object
+eval(polynomial expression in string format) will return the value by replacing variables with values that are defined by us
+it will also take inbuilt functions or variables or keywords or defined functions. ex:type(eval('int'),type(eval('len'))
+ex:
+x,y=1,2
+eval('x**3 + x**2 + y + 1') #will return 5 as output which is equal to the calculation of replacing variables in expression with values
+ex:a=[1,2,3,4,5]
+eval('a.insert(3,5)')
+a#[1, 2, 3, 5, 4, 5]
+--polynomial can be calculated in the below manner as well, this manner is useful when we want to create a polynomial easily without manual intervention
+a list of values can be converted into a polynomial by using numpy.poly1d(list)
+ex1:
+import numpy as np
+p1=np.poly1d([4,9,5,-4])
+#p1 will be of datatype numpy.poly1d and the expression will be 4x**3+9x**2+5x-4
+#if you want to pass the x value as 2 then
+c=p1(2) # this will pass 2 as value of x to the above polynomial
+ex2:
+d=np.polyval(np.poly1d([4,9,5,-4]),np.poly1d(2))
+#value of c and d[0] will be same in both the examples
+--eval() will return int and bool types
+ex:eval('False'):-output False-bool type
+eval = eval(input("Enter any number of your choice"))
+print(eval)
+print(type(eval))
+Enter any number of your choice: 10 + 10 
+20 
+<class 'int'>
+###############################################
+regex_func:
+--often we use raw strings in the regex because we might have back slashes and compiler should not misunderstand them for escape sequences
+re module has 3 string functions
+1:split-> re.split->split(pattern, string, maxsplit=0, flags=0)
+normal split -> string.split(separator,count) will split the string using seperator for the given count and returns the output in form od list
+ex:'a b c d'.split(' ',2)
+2:sub-> re.sub(pattern,substitute,string,count) #replaces the substitute in the pattern till the splitting count is matched
+3:subn-> same as sub but returns tuple with the count of substitutions it done
+4: re.findall ->
+ex:import re
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)#['ai', 'ai']returns a list, it returns the elements in the order it is found
+5:re.search(): returns the match object(provided that a match is found, if not found it will return None) and it has many methods such as 
+ex: import re
+x=re.search('there','hi there')#x.span() will return the start and end points for first occurence, x.string will return the string that is passed to perform operation on, in the above example it is "The rain in Spain",x.group() returns the part of the string where there was a match
+print('match started at ',x.start(),'position', 'ends at ',x.end())#returns None if no match found
+6:
+symbols used in regex:
+--[arn]-> returns match if it contains a or r or n
+ex:
+import re
+txt = "The rain in Spain"
+#Check if the string has any a, r, or n characters:
+x = re.findall("[arn]", txt)
+print(x)
+if x:
+  print("Yes, arn there is at least one match!")
+else:
+  print("No match")
+#o/p:['r', 'a', 'n', 'n', 'a', 'n']  
+--[a-n] -> returns match if it contains letters that are in between a to n INCLUDING a and n
+ex:
+import re
+
+txt = "The rain in Spain"
+
+#Check if the string has any a, r, or n characters:
+
+x = re.findall("[a-n]", txt)
+
+print(x)
+
+if x:
+  print("Yes, arn there is at least one match!")
+else:
+  print("No match")
+#o/p:['h', 'e', 'a', 'i', 'n', 'i', 'n', 'a', 'i', 'n']
+txt="The rain in Spain"
+--[^arn]	Returns a match for any character EXCEPT a, r, and n
+--[0-5][0-9]	Returns a match for any two-digit numbers from 00 and 59
+--[a-zA-Z]	Returns a match for any character alphabetically between a and z, lower case OR upper case
+--[+]	IN SETS, +, *, ., |, (), $,{} has no special meaning, so [+] means: return a match for any + character in the string
+--^(starts with) ->x=re.search('^the',txt) #will return re.match object and you can use it in if condition to check like given below
+if(x):
+	print('match found)
+else:
+	print('doesn't match')
+. (denoted by fullstop and fills in any character as replacement) a dot is like a fill in the blank with one space
+.{3}-> exactly 3 empty blank spaces which will accept anything as input
+.* -> unlimited blank spaces
+abcd$ -> will check wether the string ends with "abcd" or not
+[a-m] -> will allow one letter which is in between a and m-%d
+\ ->\d signals a special sequence and it will accepts one digit 
+$(ends with) -> the string before dollar symbol if it matches with the input it is a match
+* -> "zero" or more occurences
++ -> "one" or more occurences
+| -> either or 
+() -> capture and group  
+special sequences:(these examples are underdeveloped refer link(https://www.w3schools.com/python/python_regex.asp) if you want extensive information)
+--\A ->starts with
+ex:
+import re
+txt = "The rain in Spain"
+#Check if the string starts with "The":
+x = re.findall("\AThbe", txt)
+print(x)
+if x:
+  print("Yes, there is a match!")
+else:
+  print("No match")
+--\b -> returns a match if the specified characters are at the beginning of a word or at the ending of a word
+ex1 for beginning of a word:
+import re
+txt = "ain in Spain"
+#Check if "ain" is present at the beginning of a WORD:
+x = re.findall(r"\bain", txt)
+print(x)
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+ex2: if the pattern is present anywhere anynumber of times
+import re
+txt='ain the rain in spain'
+res=re.findall(r'ain\b',txt)
+if res:
+	print(res)
+else: 
+    print('no match')
+--\B -> it will ignore the match(if exists ) at the start of the string or at the end of the string based on the way it is declared.
+ex1(ignores pattern at the start of the string):
+import re
+
+txt = "ainThe rin Spain"
+
+#Check if "ain" is present, but NOT at the beginning of a word:
+
+x = re.findall(r"\Bain", txt)
+
+print(x)
+
+if x:
+  print("Yes, there is at least one match!")
+else:
+  print("No match")
+  #the output will contain one 'ain' even though it has two ain's in the string
+--\d	Returns a match where the string contains digits (numbers from 0-9)	
+ex:"\d"
+--\D	Returns a match where the string DOES NOT contain digits	
+ex:"\D"
+--\s	Returns a match where the string contains a white space character	
+ex:"\s"
+--\S	Returns a match where the string DOES NOT contain a white space character	
+ex:"\S"
+--\w	Returns a match where the string contains any word characters (characters from a to Z, digits from 0-9, and the underscore _ character)	
+ex:"\w"
+--\W	Returns a match where the string DOES NOT contain any word characters
+ex: "\W"
+--\Z	Returns a match if the specified characters are at the end of the string	
+ex:"Spain\Z"
+--the \d,\D,\w,\W,\s,\S .... etc are called shorthand codes for character classes, you know the meaning of class , you know the meaning of character,combine them both you get what is meant by character class
+--import re
+fetchnumberregex=re.compile(r'\d{2}-\d{10}')#the input should be a raw string
+first_number=fetchnumberregex.search('my home number is +91-8332010393 my office number is +92-8072351904')#it will only fetch first occurence of the pattern
+all_numbers=fetchnumberregex.findall('my home number is +91-8332010393 my office number is +92-8072351904')#it will only fetch all occurences of the pattern
+print(first_number.group(),all_numbers)
+output-91-8332010393 ['91-8332010393', '92-8072351904']
+--import re
+fetchnumberregex=re.compile(r'((\d{2})-(\d{10}))')#the input should be a raw string
+first_number=fetchnumberregex.search('my home number is +91-8332010393 my office number is +92-8072351904')#it will only fetch first occurence of the pattern
+all_numbers=fetchnumberregex.findall('my home number is +91-8332010393 my office number is +92-8072351904')#it will fetch all occurences of the pattern
+print(first_number.group(2),all_numbers)
+output-8332010393 [('91', '8332010393'), ('92', '8072351904')], here the output is different from the above code because we used groups with brackets here and this might be useful for specific use cases
+--batRegex=re.compile(r'(bat) (man|mobile|van)')
+res1=batRegex.search('bat mobile lost a wheel')
+res2=batRegex.search('bat chan is not an valid input')
+res1.group(0),res1.group(1),res1.group(2),res2#the 0th index of the match object(example res1)will have the matched object and 1st and 2nd index and so on will have the matching characters that are included in the braces,res2.group will return an error because it will have a None object which doesnot have a group method         
+--mobregex=re.compile(r'(\d{3}-\d{3}-\d{4},?)')
+mobregex.findall('123-123-1231,123-123-1232,123-123-1233,123-123-1234,123-123-1235,123-123-1236,123-123-1237')
+mobregex.search('123-123-1231,123-123-1232,123-123-1233,123-123-1234,123-123-1235,123-123-1236,123-123-1237').group()
+--haregex=re.compile(r'(ha){3,5}')# this will accept minimum 3 ha's->'hahaha' to 5 ha's ->'hahahahaha' here minimum field or maximum field is optional, here if it has 'hahaha'(3 ha's) and 'hahahahaha' (5 ha's) it will go for 5 ha's this is called greedy approach(greedy means maximum possible value),to get non greedy match check the below example ,if both are left optional then it means there is no minimum or maximum count
+haregex=re.compile(r'(ha){3,5}?')#notice the question mark '?' at last 
+haregex.search('hahahahaha hahaha')#here even if the minimum match(3 ha's->'hahaha') is at last it will be preferred and this is the non greedy approach and this have question mark at last in the re.compile method
+ha=haregex.search('hahaha haaaa ha haha hahahaha')
+--phoneregex=re.compile(r'((\d{3})-(\d{3}-\d{4}))')
+phoneregex.findall('ph 1: 123-123-1234 , ph2: 123-123-1235')
+output-[('123-123-1234', '123', '123-1234'), ('123-123-1235', '123', '123-1235')]
+the output is in the form of a tuple of lists, each tuple will have the length which is equal to the number of braces we use,the order of items will have from outer bracket to innermost bracket and the order is left to right,i.e,in the re.compile the outer most bracket holds (\d{3})-(\d{3}-\d{4}) the next outermost bracket from left to right has (\d{3}) and the left outermost bracket is (\d{3}-\d{4}) the output follows the above explained order.
+--re.compile(r'\d+\s{1}\w+').findall('12 drummers drumming 11 pipers piping') or --re.compile(r'\d+ \w+').findall('12 drummers drumming 11 pipers piping')
+#will output ['12 drummers', '11 pipers'] and we have used \s{1} because a space can be a single space or a tab space here we need a single space, a single space can be expressed as normal space (single press on space bar) we use on a english text, it can be understood by the second example code explained above.
+--singlevowelsregex=re.compile(r'[aeiouAEIOU]')
+couplevowelsregex=re.compile(r'[aeiouAEIOU]{2}')
+consonantsandspecialcharactersregex=re.compile(r'[^aeiouAEIOU]')
+print('to return single vowel characters we use "[aeiouAEIOU]"',singlevowelsregex.findall('robocop eats baby food'))
+print('to return couple vowel characters we use "[aeiouAEIOU]{2}"',couplevowelsregex.findall('robocop eats baby food'))
+print('to return consonants characters we use "[^aeiouAEIOU]" caret symbol means everything expect characters specified in regex',consonantsandspecialcharactersregex.findall('robocop eats baby food'))
+-- import re
+>>> startswithregexobj=re.compile(r'^hello')
+>>> startswithregexobj.search('hello there')
+<re.Match object; span=(0, 5), match='hello'>
+>>> endswithregexobj=re.compile(r'there!$')
+>>> endswithregexobj.search('hi there!')
+<re.Match object; span=(3, 9), match='there!'>
+>>> allnumbersregex=re.compile(r'^\d+$')
+>>> allnumbersregex.search('1223456789')
+<re.Match object; span=(0, 10), match='1223456789'>
+>>> allnumbersregex.search('12234x56789')
+>>> allnumbersregex.search('12234x56789')==None
+True
+note:here in the above example allnumbersregex(which will use both ^ and $) will not accept any other character than number because the regex explains it should have one or more numbers which inturn can indicate that more than one = length of the input passed
+--the '.' character class will act as a placeholder for any character except newline i.e, a digit or a number or a space is accepted.
+ex:>>> atregexobj=re.compile(r'.{1,2}at')#a flower bracket indicates a definite number,but here it varies and allows a length of 1 or 2
+atregexobj.findall('the cat along with the bat are lying on a flat mat')
+output:[' cat', ' bat', 'flat', ' mat']
+-- dot star - .* this literally means it accepts anything anynumber of times, if it encounters a newline it will stop its traversing and returns the string
+this is helpful when we have to capture a pattern somewhere in the input and we have no idea what it can have after pattern,it can be clearly explained with an example.
+ex:re.compile(r'First name: (.*) Last name: (.*) Middle name: (.*)').findall('First name: badri Last name: pratap Middle name: narayana')
+output:[('sai vinil', 'pratap')]
+the above example explains well that name can be variable in nature and to capture patterns that vary, we can use .*
+the 'dot star' method is a greedy approach, that is it will try fetching the maximum string that matches the pattern
+-- dot star greedy and non greedy approach.
+import re
+serve='<when you use non greedy>this is also included if you use greedy approach>'
+nongreedy=re.compile(r'<(.*?)>')#to get non greedy approach all we have to do is place a question mark right next to the place in the regex where we want to implement greedy approach.
+greedy=re.compile(r'<(.*)>')
+nongreedy.findall(serve),greedy.findall(serve)#the difference between greedy and non greedy is a question mark symbol
+--import re
+stri='this example will explain \n that a dot star pattern can also accept newline character '
+newlineregex=re.compile(r'.*',re.DOTALL)
+newlineregex.findall(stri)
+o/p:['this example will explain \n that a dot star pattern can also accept newline character ',
+ '']
+with out re.DOTALL it will it will get a list like this ['this example will explain ','',' that a dot star pattern can also accept newline character ','']
+--import re
+stri='Agent Bob had handed over the documents to Agent Charlie'
+substituteregex=re.compile(r'(Agent) (\w)\w*')
+substituteregex.sub(r'\1 \2****',stri)
+note:the above example illustrates the usage of groups and substituting them with the help of sub function,
+the output we get here for re.findall(substituteregex(stri) is [('Agent', 'B'), ('Agent', 'C')], each time when a pattern is found and it checks for replace ment string as we used numbers here it will check for 0th index of the [('Agent', 'B'), ('Agent', 'C')] as zeroth index has ('Agent', 'B') \1->Agent,\2->B , it will search for further pattern and takes element at 1st index i.e, is ('Agent', 'C') here also it replaces \1-> by Agent,\2-> by C which roughly translates the string to 
+"Agent B**** had handed over the documents to Agent C****"
+--re.verbose #this will help you get a detailed explanation on how to give comment for complex regular expression so that it will be easy for further reference
+example:import re
+re.compile(r'''#regex for telephone number matching
+(((\d\d\d-)| #without paranthesis and with dash note the pipe symbol
+(\(\d\d\d\))) #with paranthesis and without dash
+\d\d\d     #first 3 digits
+-       #dash
+\d\d\d\d #last 4 digits
+(\sx\d{2,4})?) #area code optional
+''',re.VERBOSE).findall('123-123-1234 123-123-1234 x123  (123)123-1234 x12')
+--vowel_regex=re.compile(r'[aeiou]',re.I)
+vowel_regex.findall('hey VINIL , why cant you maximize your potential when you know you can be much better than you already are')
+#here even though we did not mention capital letters in re.compile by passing it will ignore the case and simply match the letters
+#you can use re.IGNORECASE inplace of re.I
+--in re.compile function , you can use only 2 arguments first one is the pattern and second one is the parameter ex:re.DOTALL,re.I but if you want to pass more than one function as a parameter you have to use bitwise or '|' parameter.
+ex:import re
+re.compile(r'''#regex for telephone number matching
+(((\d\d\d-)| #without paranthesis and with dash
+(\(\d\d\d\))) #with paranthesis and without dash
+\d\d\d     #first 3 digits
+-       #dash
+\d\d\d\d #last 4 digits
+(\sx\d{2,4})?) #area code optional
+''',re.VERBOSE | re.DOTALL | re.I).findall('''123-123-1234 123-123-1234 X123  (123)123-1234 x12''') 
+-- ? in regex pattern means the pattern can come zero or one times
+###############################################
+zip_functionality:
+when there are multiple lists of equal sizes and you want to group elements by index then you can use zip function 
+zip([[89.0, 90.0, 78.0, 93.0, 80.0], [90.0, 91.0, 85.0, 88.0, 86.0], [91.0, 92.0, 83.0, 89.0, 90.5]]) will be giving a zip object.
+which will have [(89.0, 90.0, 91.0),(90.0, 91.0, 92.0),(78.0, 85.0, 83.0),(93.0, 88.0, 89.0),(80.0, 86.0, 90.5)]
+to operate on it:
+for i in zip(*subjects_marks_list): #we have to use star as mentioned in the for loop and i stores tuple information,unpack operator is used here
+
+###############################################
+annotations: an annotation is nothing but additional information that is required to be explained for optional or compulsory data that is to be conveyed along with the process we perform
+function annotations-
+	user defined data that adds some information to functions, adds information to function arguments and results, they are optional and makes no difference for interpreters
+	and makes no difference to interpreter.
+	ex1:
+	def add(a: int,b: int) ->int:
+		return a+b
+	add(1,2)#o/p:3
+	add('hi ','there!')#o/p:hi there!
+	ex2:
+	def add(a: list,b: (1,2,3)) ->lambda:-1:
+		return a+b
+	add(1,2)#o/p:3
+	above both the functions work perfecly well, it explains a is of int type, b is of int type and the return type is specified after the brackets.but as specified above, it does not mean that it should accept only int type, it will accept string type as well, and function annotations are for our refference to let that effect be on code we need 3rd party tools such as mypy for that
+	ex3:
+	def add(a: str,b: int) ->lambda:-1:
+    return a+b
+	message=f'''you are supposed to pass "a" variable of {add.__annotations__['a']} 
+				and "b" variable of {add.__annotations__['b']}
+				and the return type is {add.__annotations__['return']}'''#here add.annotations is a dictionary which will store the data type of the parameter that is in function definition
+	print(message)
+	ex4:
+	def add(a: str,b: int) ->str:
+    '''you are supposed to pass "a" variable of string
+				and "b" variable of int
+				and the return type is string'''
+		return a+b
+	help(add)#this will return the function definition and the documented string it contains
+	ex5:
+	def add(a: str='no value passed,so default arugments are used here',b: int=1) ->str:
+		'''you are supposed to pass "a" variable of string
+					and "b" variable of int
+					and the return type is string'''
+		return a*b
+	add()
+	
+###############################################
+snippets:
+-print('hello',end=' 00p')
+ print('appended')#hello 00pappended
+
+- the below code will take a list of strings as input and will print the count of unique strings and also count of each unique string.
+from collections import Counter
+p=[input() for _ in range(int(input()))]
+d = Counter(p)
+print(len(d))
+print(*d.values())
+-- checking wether a number is even or odd using bitwose manipulations
+n=int(input())
+if (n&1):
+	print(n,'is odd')
+else:
+	print(n,'is even')
+#this is a bit manipulation program and n if it is an odd number it will always have one at its right most position, and if n is an even number it will have 0 at its left most and and 0&1 will be 0
+--check the difference between seconds of two dates:
+pgm1:
+from dateutil import parser#check what does this parser do
+for _ in range(int(input())):
+    d1 = parser.parse(input().strip())
+    d2 = parser.parse(input().strip())
+    print(abs(int((d2-d1).total_seconds())))
+pgm2:
+from datetime import datetime as dt
+fmt = '%a %d %b %Y %H:%M:%S %z'
+for i in range(int(input())):
+    print(int(abs((dt.strptime(input(), fmt) - 
+                   dt.strptime(input(), fmt)).total_seconds())))
+input format-Sun 10 May 2015 13:54:36 -0700,Sun 10 May 2015 13:54:36 -0000				   
+###############################################
+interview questions:
+difference between list and tuple: tuple is faster than list,list is mutable,tuple is immutable(but if you try to place a list inside a tuple and then try muting it it will be mutable)
+difference between dynamically-typed and statistically-typed:
+--A language is statically-typed(if you don't have the need to declare the type of the variable while declaring it) if the type of a variable is known at compile-time instead of at run-time. Common examples of statically-typed languages include Java, C, C++, FORTRAN, Pascal and Scala
+--Dynamically typed languages. A language is dynamically-typed if the type of a variable is checked during run-time, no need to expliciltly specify the type of data a variable holds. Common examples of dynamically-typed languages includes JavaScript, Objective-C, PHP, "Python", Ruby, Lisp, and Tcl
+key features of python:
+1:python is interpreted language, unlike c and its variants it code doesnt have the need to compile.
+2:dynamically-typed
+3:supports object oriented programming
+4:many inbuilt functions
+5:functions are first class functions,i.e,functions can be assigned to variables and can be returned from other functions or can be passed as a parameters to a functions,instance of an object type,can be stored in datatype such as lists.
+6:writing python code is quick,but execution is slow when compared to complied languages such as c, but python offers inclusions of c based extensions so mostly no issues, one such example is nympy,its fast and most of the number crunching 
+7:is in many applications such as flask,django, pyramid
+--what type of language is python?Programming or scripting?
+python is a scripting language, it is a general purpose programming language(a language which is used for writing  software in a wide variety of application domains)
+--what are access modifiers or specifiers in python?
+access specifiers help us organize and label data according to its scope and prevent unneccessary access 
+public access specifier:members of a class that are declared public are easily accessible from anywhere of the program , ALL DATA MEMBERS AND DATA FUNCTIONS ARE PUBLIC BY DEFAULT
+protected access specifier: data members of a class that are only accessible to the classes that are derived from it are called protected members, a member is declared protected if it is preceded by an underscore('_') (A PROTECTED PROPERTY IS ONLY INHERITED BY CHILDREN IN REAL LIFE)
+private access specifiers: data members that are only accessible within the class and they are preceeded by a double underscore('__')
+what is an interpreted language , is python an interpreted language explain?
+a language which is executed line by line WITHOUT GETTING COMPILED is called interpreted language, as it is not compiled the code should not be in MACHINE LEVEL before run time, python is interpreted language
+--what is pep8?
+pep stands for python enhancement proposal.it will have a set of conditions which will help python code for maximum readability.
+--memory management in python is done through "python private heap space", all data structures and variables are stored in this heap space , programmer will not have access to this space and interpreter takes care of this, allocation of heap space to objects is done through memory manager and python has inbuilt garbage collector which will recycle unused memory so that it can be made available to heap
+what is namespace?
+it is a naming system used to make sure names are unique to avoid naming conflicts, it is an area where we create and store variables, it is of two types:
+1:class namespace- used to store class variables or static variables
+2:object/instance namespace- used to store instance variables 
+--what is pythonpath?
+it is a environment variable, when a module is imported PYTHONPATH is used to check its presence in various directories,interpreter uses it to decide which module to load
+--what are python modules?
+python modules are files containing python code which is executable,the code can be either classess,functions or variables
+ex:os,math,random,json,datetime.
+--what are local variables,global variables?
+variables which are declared outside a function are called global variables,they can be accessed anywhere in the program,local variables are declared inside the function and they are accessible inside the function,trying to access it outside the function will throw an error
+--python is a case sensitive language, FOR EX; IF YOU USE PRINT IN CAPS INTERPRETER WILL NOT RECOGNISE.
+--what is type conversion in python?
+type conversion means converting data from one datatype to another.
+ex:int(float('5.5')) will return 5 , other type convertrs are int,str,float,ord,hex,oct,list,tuple,dict,set,complex
+--indentation is mandatory
+--array and list hold data the same way,but array can only hold single data type,list can hold multiple data types
+import array as arr
+arr.array('i',[1,2,3,'p']) #here i stands for int and arr will accept only integers in list, but 'p' is string and it will raise an error
+-- a function is a block of code executed when called
+-- __init__ is a method or constructor called automatically each time to allocate memory so that  a class is invoked to create an object or instance of it is created.
+-- what is a lambda function?
+it is an anonymous function which can have any number of parameters of just one statements
+syntax: function_name=lambda <parameter1>,<parameter2>.... :one line code that is to be implemented in function
+example: a=lambda x,y: x+y
+print(a(3,2))#outputs 5
+--what is self in python?
+self variable in the init method refers to the newly created object, and in all other functions it refers to the object from which it is called.
+-- can you shuffle a list?
+from random import shuffle
+x=[1,2,3,4,5]
+shuffle(x)
+print(x)
+--difference between range and xrange
+range					xrange
+supported in python 3	not supported
+returns a range obj		returns an xrange object
+a list is created		a generator is created
+occupies more space		occupies less space
+slicing is possible		slicing is not possible
+--what are python iterators?
+python objects which can be traversed through or iterated upon
+-- what is yield in python?
+yield is a keyword in python used to return a value from a function without destroying the state of the variables when the function is called  the execution starts from last yield statemnt, if a function has a yield keyword then the function is called a generator.yield keyword in python is less known but has a greater utility one can think of, however it has its pros (it stores local variable states overhead of memory allocation is controlled,since old state is retained , flow doesnt start from the beginning and it saves time)and cons(if function calling is not called properly it will become erroneous, complexity is more and difficult to understand) 
+ex:# Python3 code to demonstrate yield keyword
+  
+# generator to print even numbers
+def print_even(test_list) :
+    for i in test_list:
+        if i % 2 == 0:
+            yield i
+test_list = [1, 4, 5, 6, 7]
+print ("The original list is : " +  str(test_list))
+print ("The even numbers in list are : ", end = " ")
+for j in print_even(test_list):
+    print (j, end = " ")
+-- what is pickling and unpickling in python?
+pickle module accepts any python object and converts into string and dumps into a file using dump function, the process is pickling, the process of converting stored python object in string form to python object is called unpickling.
+-- what are generators ?
+functions which return iterable set of items are called generators
+generators provided a space efficient method for data processing as only parts of a function are handled at a given point of time.
+a generator function is defined like a normal function,whenever it needs to return a value it uses the yield keyword instead of return, when a function is using a yield keyword it is called generator.
+generator object: a generator function returns a generator object, it can be called using "next" method(depricated now) of generator object or iterating the generator in a for loop.
+def fib(limit):
+    a, b = 0, 1
+    # One by one yield next Fibonacci Number
+    while limit>0:
+        yield a
+        a, b = b, a + b
+        limit-=1
+for i in fib(int(input())): 
+    print(i)
+--what is the way in which data is stored in lists and dictionaries?
+in lists the data is stored in continous memory blocks and in dictionaries the data is stored in hash map functionality, what happens in background is performing hash map on a key will return the memory location of the value to which the key is linked to.
+--what is dictionary?
+dictionary defines one to one relation between one key and one or more values, key cannot be duplicate in dictionary.
+-- what is difference between *args and **kwargs?
+we use *args when we dont know how many arguments are passed to a function, we use **kwargs when we dont know how many keyword arguments are passed to a function.
+-- len() in python? 
+used to determine length of a list or array or string.
+-- whenever python exits all the memory is not deallocated because python has a few modules which have circular reference to other objects and objects that refer to global namespace are not always deallocated or freed, c library space will never be freed, due to its own efficient cleanup mechanism it will clear all possible unused memory allocations
+-- types of ternary operators
+if loop: a if a<b else b # if a is less then b(means the expression is true) will return a else b
+tuple loop: (a,b) [a>b] # if a is greater than b (means the expression is true) will return b else return a
+dictionary loop: {True:b,False:a} [a>b] # if the expression is true it will return True value and if false it will return false
+nested if else: print ("Both a and b are equal" if a == b 
+						else 
+							"a is greater than b" if a > b else "b is greater than a")# if the cndition is true left part will be executed else the right part is executed
+-- to remove a file:
+import os
+os.remove('filepath')
+--Elements can be added to an array or list using the append(), extend() and the insert (i,x) functions
+--Array or list elements can be removed using pop() or remove() and del method. pop returns the removed element remove funtion doesnot
+							
+snippets:
+-- checking wether a number is even or odd using bitwose manipulations
+n=int(input())
+if (n&1):
+	print(n,'is odd')
+else:
+	print(n,'is even')
+#this is a bit manipulation program and n if it is an odd number it will always have one at its right most position, and if n is an even number it will have 0 at its left most and and 0&1 will be 0
+--check the difference between seconds of two dates:
+pgm1:
+from dateutil import parser#check what does this parser do
+for _ in range(int(input())):
+    d1 = parser.parse(input().strip())
+    d2 = parser.parse(input().strip())
+    print(abs(int((d2-d1).total_seconds())))
+pgm2:
+from datetime import datetime as dt
+fmt = '%a %d %b %Y %H:%M:%S %z'
+for i in range(int(input())):
+    print(int(abs((dt.strptime(input(), fmt) - 
+                   dt.strptime(input(), fmt)).total_seconds())))
+input format-Sun 10 May 2015 13:54:36 -0700,Sun 10 May 2015 13:54:36 -0000				   
+
+competitive_programming_tips:
+--check the range function, it will not include end value i.e, list(range(5)) will give [0,1,2,3,4]it doesnt include 5 in it
+--list(range(10)) will give [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],list(range(1,10+1)) will give [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(string.capwords('asdasf         adda adcksj'))#o/p:Asdasf Adda Adcksj, main disadvantage here is it will swallow the extra spaces.
+--import string
+print(string.ascii_uppercase) #o/p:ABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.ascii_lowercase) o/p:abcdefghijklmnopqrstuvwxyz
+print(string.ascii_letters)o/p:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+print(string.digits) o/p:0123456789
+other operations on string module are string.hexdigits,string.octdigits,string.printable,string.punctuation,string.whitespace
+--very very important in competitive programming
+when you want first input into first list and so on...
+l=list(range(11))
+subli=3
+l_i=[[] for i in range(subli)]
+count=0
+for i in range(len(l)):
+    l_i[i%subli].append(l[i]) 
+l_i
+--very very important in programming
+when you assign a list a to b as 
+a=[1,2,3]
+b=a
+b[0]='hello'
+a,b
+and if you print a, you will get ['hello',2,3] so it will be a major blunder(this happens because on normal assignment both lists will point to same memory and changes made using one variable will reflect in another as well)THIS NOT ONLY HAPPENS WITH LISTS IT HAPPENS WITH ALL MUTABLE VALUES, if you do assignment directly,so just use .copy() function which will avoid the mistake
+a=[1,2,3]
+b=a.copy()
+b[0]='hello'
+--l_i=[[] for i in range(3)] #this method is prefered compared to the one below it as it refers each list to different memory.
+l_p=[[]]*3
+o/p for both:[[],[],[]]
+--help(re.split) #will show all the methods related to it and explanation if exists
+--num_list=[10,20,30,40,50]
+print("Map example")
+print(list(map(lambda x:x*2,num_list)))#[10, 20, 30, 40, 50]
+print("Filter Example")
+print(list(filter(lambda x:x>30,num_list)));#[40, 50]
+print("Chain Example")
+print(list(filter(lambda x:x>30,map(lambda x:x*2,num_list))));#[40, 60, 80, 100] in chain example execution happens from right to left here, first it gets multiplied by 2 and then it checks if it is greater than 30 or not
+
+topics to learn:
+from collections import Counter, OrderedDict
+str.maketrans
+--check os and sys functionalities completely in python(incomplete)
+--recursion problems
+--WHY IS MAIN SURROUNDED BY __
+--https://www.geeksforgeeks.org/decorators-in-python/
+
+11/5/21

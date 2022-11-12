@@ -543,10 +543,15 @@ ls -ls /usr/bin/python* to check all python versions in centos
 
 misc:
 make file is a simple bash script that is used to compile/run our code files
-
+linux operating system represents everything in a file system, the hardware devices that we attach are also represented as a file. tty is short for teletype, which prints the file name of the standard input, standard input 
 commonly used commands:
 to just print the output of an env variable: echo $<env variable> # here $  is just a sign of the shell prompt, means that shell is ready to accept commands, anything after $ is executed as command
 cd ~ : will change cwd to home
 .* is a wild character which will match any character, any number of times. it is used in grep as well
 cat /etc/*-release  - used to check which linux distribution are you using, ex: fedora, debian, centos
 ./ or ../ indicates that we are considering relative path, not absolute
+to search for particular option in a particular command, i.e., for --all option in ls command, you can first give "man ls" and then type "/" and then enter "--all" it will show its search results with highlighted --all, similar to ctrl+f in chrome
+to search in vi editor type "/" and then give search word
+to untar tar.gz files : tar -zxvf <path of the file in quotes>
+when using wsl (will already have a seperate space like we have c and d drive and it will be in the computer network afaik) and to go to c or d drive after opening WSL, you need to go to its parent directories (one at a time) untill you'll find mnt folder where you'll find c and d drives
+to open wsl (to traverse through its folders ) you need to open file explorer and type \\wsl$\ to go to that path from there you need to traverse something like this : \\wsl$\Ubuntu-20.04\home\saivinil_pratap

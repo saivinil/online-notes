@@ -8,24 +8,29 @@ RDS
 skim assignments for other things
 
 wrap up:
-stop other ec2 instances
-stop RDS
 
 
-check abin-Refer this example for kubernetes cluster setup: https://kubernetes.io/docs/tasks/run-application/run-stateless-application-deployment/#creating-and-exploring-an-nginx-deployment
 
-10:
-generate ec2-instance using rsa.pem link: https://tigeranalytics.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19336632#questions
-
-
-understand terraform commands in jenkinsfiles
 read glossary and environment variables in jenkins
 play with contents of jenkinsfiles shared in playground, git example
-pending jenkins file explanation jagadeeswari
-https://tigeranalytics.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/22086678?course_portion_id=91148#questions -> handson pending
-pushing local repository to github
 terraform assignments skimming in learning perspective
-udemy mail comment respinse zeal
+pending video recording jagadeeswari
 
 google makefile, bandit
 junit plugin jenkins
+git add -a -m . #play with this
+git restore . 
+
+helm tutorial pending
+
+
+
+
+
+priority
+1: at 42 min in kt video  -> check drawio image, and check paralell implementation in code ->
+2: what is bandit
+3: junit plugin
+4: search about ARG in docker at 1h11m in kt video
+5: build-arg in docker build command is used to pass variable in to the docker file
+6: go through EMR pipeline jenkinsfile.commodity

@@ -47,47 +47,22 @@ linkedin?
 
 
 
-really small team
-client side architect - regan
-client manager- borris
 
-sbd- part of data science dept - lot of data science projects in sbd
 
-set up platform for them to work on- development environment data scientists work on
+ 
 
-here,everything is on kubernetes
 
-automate pipeline what data scientsts work
-
-set up is complex, we have templates, need to tweak the templates
+enable_local_mode_training = False
+ !/bin/bash ./local_mode_setup.sh
+ in pytorch example, they were mentioning about organizing and modularizing custom jobs, models and inference process, 
+ train and test is happening in underlying model and then estimator.fit is taking train and test as inputs, why?
 
 
 
 
 
-
-
-
-https://drive.google.com/file/d/1IH0fLJK7niqSixpxd8eXFlM31NyU3XM4/view
-repository specific credentials: 14m30s - deploy keys : person with admin access can always create credentials at repository level
-16m 45 sec changes part, did not understand	
-
-
-after making commit, the pipeline is throwing error, if we build again with parameters it is working fine, any workaround for this?
-naming convention for jenkinsfile is always Jenkinsfile(.*)
-
-jenkinsfile.infra
-command,cat,tty part, what does it mean? 
-can you explain terraform commands
-
-
-cloud 'mlops' \\this cloud is pre configured
-prod_docker_login,prod_image_repo,prod_last_preprod_commit,prod_app_commit_hash
-unstable-https://www.jenkins.io/doc/pipeline/tour/post/ in what sense a pipeline is deemed unstable
-git branch: 'master', link: https://www.jenkins.io/doc/pipeline/steps/git/
-agent inside a stage which is already inside another agent
-beforeAgent true ; can't see any agent after this declaration, does this mean the containers declared previously will be used in this secnario after before agent executes?
-!(currentBuild.previousBuild != null && "SUCCESS".equals(currentBuild.previousBuild.result))
-
-									
+points:
+how is input_fn called?, what is the flow behind it, i tried to call using predict object of generated estimator, didnt work.
+my model is working fine with normal predict approach?
+we are passing ndarray, but it is throwing "sagemaker_containers._errors.ClientError: Expected 2D array, got scalar array instead"
 

@@ -1,0 +1,68 @@
+
+
+mentor questions:
+aws ML specialty certificate?
+	need aws developer certificate- any courses 
+which udemy course?
+docker or kubernetes?
+need other certifications?
+level of ml expertise
+my roles and responsibilites?
+	model scaling
+	model drifting or data drifting
+	ask opinion on model re engineering
+	after model engineering- integrating with other parts or api's
+	
+how many mle's per project?
+depends size on project
+what is the average duration of a project?
+
+heirarchy of MLE:
+	mle
+	sr mle
+	lead mle
+	subject matter expert
+
+takeaway:
+udemy course link?
+ask a lot of doubts
+chennai meetup
+review?
+	how he handles deliveries?
+	productivity- time taken to solve things skillfully
+	are they trying to learn out of the box?
+	communication-(with clients and others?)
+	punctuality
+	client appreciations?
+linkedin?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+enable_local_mode_training = False
+ !/bin/bash ./local_mode_setup.sh
+ in pytorch example, they were mentioning about organizing and modularizing custom jobs, models and inference process, 
+ train and test is happening in underlying model and then estimator.fit is taking train and test as inputs, why?
+
+
+
+
+
+points:
+how is input_fn called?, what is the flow behind it, i tried to call using predict object of generated estimator, no luck
+my model is working fine with normal predict approach?
+we are passing ndarray, but it is throwing "sagemaker_containers._errors.ClientError: Expected 2D array, got scalar array instead"
+

@@ -1,0 +1,64 @@
+ in 4.5.0
+
+
+ Error: only alphanumeric characters and hyphens allowed in "name_prefix"
+│
+│   with module.rds_example_complete-mysql.module.db_option_group.aws_db_option_group.this[0],
+│   on .terraform/modules/rds_example_complete-mysql/modules/db_option_group/main.tf line 12, in resource "aws_db_option_group" "this":
+│   12:   name_prefix              = local.name_prefix
+│
+╵
+╷
+│ Error: Missing required argument
+│
+│   with module.rds_example_complete-mysql.module.db_option_group.aws_db_option_group.this[0],
+│   on .terraform/modules/rds_example_complete-mysql/modules/db_option_group/main.tf line 14, in resource "aws_db_option_group" "this":
+│   14:   engine_name              = var.engine_name
+│
+│ The argument "engine_name" is required, but no definition was found.
+╵
+╷
+│ Error: only lowercase alphanumeric characters and hyphens allowed in parameter group "name_prefix"
+│
+│   with module.rds_example_complete-mysql.module.db_parameter_group.aws_db_parameter_group.this[0],
+│   on .terraform/modules/rds_example_complete-mysql/modules/db_parameter_group/main.tf line 12, in resource "aws_db_parameter_group" "this":
+│   12:   name_prefix = local.name_prefix
+
+
+
+
+in 4.4.0
+
+│ Error: only alphanumeric characters and hyphens allowed in "name_prefix"
+│
+│   with module.rds.module.db_option_group.aws_db_option_group.this[0],
+│   on .terraform/modules/rds/modules/db_option_group/main.tf line 12, in resource "aws_db_option_group" "this":
+│   12:   name_prefix              = local.name_prefix
+│
+╵
+╷
+│ Error: Missing required argument
+│
+│   with module.rds.module.db_option_group.aws_db_option_group.this[0],
+│   on .terraform/modules/rds/modules/db_option_group/main.tf line 14, in resource "aws_db_option_group" "this":
+│   14:   engine_name              = var.engine_name
+│
+│ The argument "engine_name" is required, but no definition was found.
+╵
+╷
+│ Error: only lowercase alphanumeric characters and hyphens allowed in parameter group "name_prefix"
+│
+│   with module.rds.module.db_parameter_group.aws_db_parameter_group.this[0],
+│   on .terraform/modules/rds/modules/db_parameter_group/main.tf line 12, in resource "aws_db_parameter_group" "this":
+│   12:   name_prefix = local.name_prefix
+│
+
+
+in 4.5.0 with complete my sql: but unable to override
+       }
+    }
+
+Plan: 38 to add, 0 to change, 1 to destroy.
+╷
+
+
