@@ -555,3 +555,5 @@ to search in vi editor type "/" and then give search word
 to untar tar.gz files : tar -zxvf <path of the file in quotes>
 when using wsl (will already have a seperate space like we have c and d drive and it will be in the computer network afaik) and to go to c or d drive after opening WSL, you need to go to its parent directories (one at a time) untill you'll find mnt folder where you'll find c and d drives
 to open wsl (to traverse through its folders ) you need to open file explorer and type \\wsl$\ to go to that path from there you need to traverse something like this : \\wsl$\Ubuntu-20.04\home\saivinil_pratap
+if the letters you are typing on the screen are not visible but terminal is accepting them invisibly, then type the command, stty sane
+if a particular port is not running, but if terminal is saying, port is already in use, then you need to run the command- sudo fuser -k <port number>/tcp

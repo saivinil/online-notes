@@ -1,40 +1,6 @@
+madhuri:
 
-
-mentor questions:
-aws ML specialty certificate?
-	need aws developer certificate- any courses 
-which udemy course?
-docker or kubernetes?
-need other certifications?
-level of ml expertise
-my roles and responsibilites?
-	model scaling
-	model drifting or data drifting
-	ask opinion on model re engineering
-	after model engineering- integrating with other parts or api's
-	
-how many mle's per project?
-depends size on project
-what is the average duration of a project?
-
-heirarchy of MLE:
-	mle
-	sr mle
-	lead mle
-	subject matter expert
-
-takeaway:
-udemy course link?
-ask a lot of doubts
-chennai meetup
-review?
-	how he handles deliveries?
-	productivity- time taken to solve things skillfully
-	are they trying to learn out of the box?
-	communication-(with clients and others?)
-	punctuality
-	client appreciations?
-linkedin?
+almost all APIs are working without authentication
 
 
 
@@ -49,20 +15,57 @@ linkedin?
 
 
 
- 
-
-
-enable_local_mode_training = False
- !/bin/bash ./local_mode_setup.sh
- in pytorch example, they were mentioning about organizing and modularizing custom jobs, models and inference process, 
- train and test is happening in underlying model and then estimator.fit is taking train and test as inputs, why?
 
 
 
 
 
-points:
-how is input_fn called?, what is the flow behind it, i tried to call using predict object of generated estimator, didnt work.
-my model is working fine with normal predict approach?
-we are passing ndarray, but it is throwing "sagemaker_containers._errors.ClientError: Expected 2D array, got scalar array instead"
 
+
+
+
+
+
+
+
+
+
+
+
+observations:
+no default values in swagger for 
+	promo-
+		offer_configuration/dsmodel
+		offer_configuration/edit -> giving results for offer_config_id->1
+		offer_configuration/export/scenario_offers/1
+		offer_configuration/save/2 -> giving 400->data": "offer_duration is required for POST,PUT
+		offer_configuration/scenario_offers/1001 ->1001
+
+offer_configuration/scenario_metrics->post-500 ->"data": "Data is not available"
+offer_configuration/export/scenario_metrics->http code-500 ->"data": "Data is not available"
+offer_configuration/getitem/ -http -500
+offer_configuration/item/ -> giving 200 (because of JsonResponse) for error
+offer_configuration/objective/ -> giving 200 for error (same as above)
+offer_configuration/product-category/-> giving 200 for error (same as above)
+offer_configuration/promochannel/-> giving 200 for error (same as above)
+offer_configuration/promomechanic-> giving 200 for error (same as above)
+offer_configuration/promoobjective
+offer_configuration/segment/-> giving 200 for error (same as above)
+
+
+
+offer_configuration/promoobjective/list-> JsonResponse->500 -> TypeError: 'int' object is not callable
+offer_configuration/segment/list-> (same as above)
+offer_configuration/scenario_metrics/report ->data": "Data is not available",->500
+done->api/resetpasswordtoken/ ->message": "module 'datetime' has no attribute 'now'"->500
+how line-> reset_password_token_created.send(sender=self.__class__,reset_password_token=token,) is getting linked to line request_info=tmpObj, created_ts=datetime.datetime.now() in send_email.py?
+
+
+
+
+
+
+imported timedelta (from datetime import timedelta) in /home/saivinil_pratap/github-repos/ViT/vitapi_promo/apps/scenario_planner/service.py, changed prev_one_month = datetime.now() - datetime.timedelta(30) to prev_one_month = datetime.now() - timedelta(30) in get_offers method of ScenarioOfferList class
+changed request_info=tmpObj, created_ts=datetime.now() to request_info=tmpObj, created_ts=datetime.datetime.now() in SendEmail method of /home/saivinil_pratap/github-repos/ViT/vitapi_promo/apps/utils/send_email.py
+
+remove breakpoints
