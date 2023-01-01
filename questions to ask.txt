@@ -1,6 +1,23 @@
 madhuri:
+what to do with GetOfferConfigSummary.segments_data_filter?
+	this also needs to be converted in to query
 
-almost all APIs are working without authentication
+i think if data.getlist("segment_id", None) is obsolete whenever we are using with loop conditional checks, because if no values are passed still it sends list with empty string, which makes it eligible to go inside the loop it should be either if data.getlist("segment_id", None)!=[''] or data.get("segment_id", None)
+
+if data.get("segment_id", None) or data.get("promo_id", None): # why is this involving segment_id even if it is not using segment_id in below piece of code
+
+
+use channel_code or promo_id (in requests object) to query promochannel table to get promo_id and promo_name
+
+are we using segment_config_id, maximize anywhere in the (list API response) front end
+after segment_config_id replaced by segment_id use that segment_id to fetch segment_name
+
+
+
+
+
+
+
 
 
 
