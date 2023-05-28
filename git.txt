@@ -2637,3 +2637,5 @@ to push to a remote branch that does not exist in your local (simply means you a
 	2:git pull origin X #to make sure that we are taking latest code of branch X
 	3:git pull origin Y #to make sure that we are taking latest code of branch Y
 	4:git push origin Y # to push all the combined changes to branch Y
+	
+check update dummy
